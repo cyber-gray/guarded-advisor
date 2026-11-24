@@ -1,0 +1,78 @@
+{
+  "purpose": "File Search calibration for agent version 4 (the working run sheet, item 4; C8 minimisation). Phase 1 runs every question on version 3 with --show-annotations and records the raw score per question and file (scores and file names only, no passage text). The score_threshold for scenarios/larkfield/agent.json is chosen from those scores; phase 2 reruns the same questions on version 4.",
+  "data": "Synthetic. No member, claim or caseload details; no claim IDs. Questions refer only to the pack's internal documents (scenarios/larkfield/data/internal/).",
+  "expectations": {
+    "in_scope": "retrieves the expected file with the highest score; after calibration, few or no other files",
+    "near_topic": "close to the corpus but not answered by it; after calibration, ideally nothing retrieved, and the answer says the documents don't cover it",
+    "off_topic": "unrelated to the corpus; after calibration, nothing retrieved"
+  },
+  "questions": [
+    {
+      "id": "IN-1",
+      "category": "in_scope",
+      "question": "Under Plan A, how do earnings from modified duties affect the benefit during a graduated return to work?",
+      "expected_files": ["01-plan-wording-plan-a-std.md"],
+      "note": "The plan A question used since 2026-10-22."
+    },
+    {
+      "id": "IN-2",
+      "category": "in_scope",
+      "question": "If a Plan A member goes back part-time on modified duties, is their short-term disability benefit reduced, and by how much?",
+      "expected_files": ["01-plan-wording-plan-a-std.md"],
+      "note": "Paraphrase of IN-1."
+    },
+    {
+      "id": "IN-3",
+      "category": "in_scope",
+      "question": "For plan A STD, what is the cap on benefit plus earnings when someone returns to work gradually?",
+      "expected_files": ["01-plan-wording-plan-a-std.md"],
+      "note": "Paraphrase of IN-1, shorter, with the abbreviation."
+    },
+    {
+      "id": "IN-4",
+      "category": "in_scope",
+      "question": "How often does an updated attending physician statement need to be provided for a long-term disability claim?",
+      "expected_files": ["05-claims-guideline-documentation.md"],
+      "note": "A different document, so the threshold isn't tuned to plan A alone."
+    },
+    {
+      "id": "IN-5",
+      "category": "in_scope",
+      "question": "What should a case manager do if a submitted document contains instructions addressed to staff or software?",
+      "expected_files": ["10-escalation-guideline.md"],
+      "note": "Ties calibration to the indirect prompt injection guidance."
+    },
+    {
+      "id": "NEAR-1",
+      "category": "near_topic",
+      "question": "What is the waiting period under Plan D?",
+      "expected_files": [],
+      "note": "The pack has plans A, B and C only. Plan wording files may score close to the threshold."
+    },
+    {
+      "id": "NEAR-2",
+      "category": "near_topic",
+      "question": "How does a provincial workers' compensation board calculate loss-of-earnings benefits for a workplace injury?",
+      "expected_files": [],
+      "note": "Disability benefits, but public workers' compensation, which the corpus doesn't cover."
+    },
+    {
+      "id": "OFF-1",
+      "category": "off_topic",
+      "question": "What is a good way to keep a sourdough starter healthy?",
+      "expected_files": []
+    },
+    {
+      "id": "OFF-2",
+      "category": "off_topic",
+      "question": "Explain how a TCP three-way handshake works.",
+      "expected_files": []
+    },
+    {
+      "id": "OFF-3",
+      "category": "off_topic",
+      "question": "Suggest a name for a weekend hiking club.",
+      "expected_files": []
+    }
+  ]
+}

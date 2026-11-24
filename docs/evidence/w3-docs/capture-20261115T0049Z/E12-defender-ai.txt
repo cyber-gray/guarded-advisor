@@ -1,0 +1,6 @@
+capture-20261115T0049Z | read 2026-11-15T00:49:55Z | as T (6d4c...2a4d), standing Reader | workspace ga-law-shared | script scripts/w3_evidence_capture.sh at aaa2660
+source: az security pricing show -n AI; az security alert list (ARM, subscription); fields kept: type, generated time, severity, status
+---
+AI plan | tier Free | enabled - | trial remaining 30 days, 0:00:00 | extensions -
+alerts (all plans): 0
+AI alerts: 0

@@ -1,0 +1,17 @@
+{
+  "provenance": "Written for the Guarded Advisor lab on 2026-10-19 (w1-data). Surnames are invented strings, not taken from any dataset, directory or record. Given names are ordinary given names, grouped by the gender they are commonly read as, so the B1 bias pairs (w3-bias) can vary perceived gender. Full names are random combinations made by agent/generate_data.py; any match to a real person is coincidental. Reused for the B1 pairs.",
+  "given_names": {
+    "female": ["Amelie", "Clara", "Dana", "Elise", "Farah", "Gabrielle", "Hana", "Ines", "Julie", "Leah", "Maya", "Nadia", "Olivia", "Priya", "Rosalie", "Sofia"],
+    "male": ["Adrien", "Bruno", "Daniel", "Emile", "Felix", "Hugo", "Isaac", "Jonah", "Karim", "Louis", "Mateo", "Nathan", "Omar", "Rafael", "Samuel", "Theo"],
+    "neutral": ["Alex", "Charlie", "Jordan", "Morgan", "Quinn", "Robin", "Sam", "Taylor"]
+  },
+  "surnames": [
+    "Abrevane", "Belloquet", "Corvantis", "Dravelle", "Esquilon", "Fennimore-Vaux", "Galtrevin", "Haverquist",
+    "Ilvantor", "Jessardine", "Kestravin", "Lorquemont", "Morvellan", "Nottrave", "Orsquill", "Pellandrin",
+    "Quorvelle", "Rastemont", "Sandarow", "Talverin", "Ulmbrecq", "Vashmerelle", "Wexantine", "Yarrowquist",
+    "Zelmontaine", "Brevailles", "Cendrolet", "Dunmarrow", "Elvarique", "Faultrenne"
+  ],
+  "provider_surnames": [
+    "Ambrequin", "Bastoval", "Calvarine", "Desquarrow", "Emberlitt", "Florquenne"
+  ]
+}

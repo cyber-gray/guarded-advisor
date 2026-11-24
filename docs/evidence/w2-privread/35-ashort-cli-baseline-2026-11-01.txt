@@ -1,0 +1,18 @@
+A-short, CLI, T, window A (nothing activated). Same loop as 12, output as printed.
+
+2026-11-01T18:18:05Z
+== AppDependencies | where TimeGenerated > ago(7d) | count
+Count    TableName
+-------  -------------
+144      PrimaryResult
+exit=0
+== AppGenAIContent | count
+Count    TableName
+-------  -------------
+0        PrimaryResult
+exit=0
+== AdjudicationLog_CL | count
+Count    TableName
+-------  -------------
+0        PrimaryResult
+exit=0

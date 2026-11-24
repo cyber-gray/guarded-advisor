@@ -1,0 +1,36 @@
+ga-reader-test lifecycle, 2026-11-01, output as printed. Object IDs and assignment IDs masked (first 4, last 4); UPN and tenant domain never printed.
+
+== Graph read-back after the guest created the user (az ad user list returns default properties only, so the first try printed None)
+match 1: id d204...a385  accountEnabled None  userType None
+matches: 1
+id d204...a385  accountEnabled true  userType Member
+
+== Log Analytics Reader on ga-law-shared (T)
+create exit=0
+Log Analytics Reader  /subscriptions/<sub>/resourceGroups/rg-guardedadvisor-shared/providers/Microsoft.OperationalInsights/workspaces/ga-law-shared  assignment 4764...7418
+wait starts: 2026-11-01T18:35:32Z
+
+== TAP (Tooni, recorded from the portal): multi-use, 150 minutes asked, 120 applied, valid 18:46:23Z to 20:46:23Z. Never recorded or shown here.
+
+== /me in each CLI profile
+2026-11-01T19:04:45Z
+.azure-readertest: id d204...a385  userType Member
+.azure: id 6d4c...2a4d  userType Member
+
+== Cleanup 1: the guest had already deleted the user, so the lookup came back empty and nothing was deleted
+ERROR: usage error: --assignee can't be an empty string. Either omit it or provide a non-empty string.
+assignments matched: 0  name 
+== read-back, all scopes
+ERROR: usage error: --assignee can't be an empty string. Either omit it or provide a non-empty string.
+2026-11-01T19:49:41Z
+
+== Diagnostic: user gone, assignment left as an orphan
+users matched: 0
+Log Analytics Reader  principalType User  principalName   principalId d204...a385  name 4764...7418
+
+== Delete by assignment ID (diff shown to Tooni first)
+assignments matched: 1  name 4764...7418
+delete exit=0
+== read-back: assignments on the workspace for principal d204...a385
+0
+2026-11-01T19:51:51Z

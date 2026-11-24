@@ -1,0 +1,11 @@
+# G10, 2026-11-04, as T. Deactivation requested 18:56:59Z, completed 18:57:06Z (51 to 53).
+signed in: 6d4c...2a4d
+now: 2026-11-04T19:01:37Z
+--- T's active instances by type
+Assigned: 6
+--- T's activated instances
+none
+--- T's eligible instances
+Container Apps SandboxGroup Data Owner  ga-sbx-lab                2026-11-19T14:39
+Owner                                   Azure subscription 1      2026-11-19T02:21
+Privileged Monitoring Data Reader       rg-guardedadvisor-shared  2026-11-19T23:25

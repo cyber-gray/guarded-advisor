@@ -1,0 +1,9 @@
+# G14, 2026-11-04, as T. Count queries 4.5 minutes after activation.
+signed in: 6d4c...2a4d
+now: 2026-11-04T23:36:02Z
+T's activated roles: Privileged Monitoring Data Reader
+expectation set before this query: AdjudicationLog_CL 2, AppGenAIContent 90, AppDependencies 144, AgentToolAudit_CL 2
+AppDependencies, last 7 days | General | 144
+AppGenAIContent | Protected | 0
+AdjudicationLog_CL | Protected | 0
+AgentToolAudit_CL | General | 2

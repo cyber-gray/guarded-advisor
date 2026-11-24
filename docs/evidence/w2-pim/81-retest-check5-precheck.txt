@@ -1,0 +1,14 @@
+# Retest check 5, as T, Reader only. teardown.sh precheck with its gates.
+signed in: 6d4c...2a4d
+now: 2026-11-05T02:04:11Z
+T's activated instances: 0
+gate ok | teardown.sh sha256 | 9f9fd6a6e6112003aa3b4fcf2cead75b60e3d5ddfec7b60d1f570aef0f75d89f
+gate ok | lines that source another file | 0
+gate ok | trap statements | 0
+gate ok | eval statements | 0
+gate ok | case fall-through | 0
+gate ok | exported functions in the environment | 0
+--- teardown.sh precheck output
+Stopped before any change: no Microsoft.Authorization/roleAssignments/delete on rg-guardedadvisor-lab.
+  Activate Owner in PIM, sign in again, then rerun. A new activation can take a few minutes to apply.
+exit code: 1

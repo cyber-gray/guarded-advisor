@@ -1,0 +1,31 @@
+# w1-rbac-detail, as T. Read-only. No keys are requested.
+now: 2026-11-05T18:26:44Z
+OK    T activated instances: 0
+--- a. project identity's storage roles on gaailabv3dost: role | condition version | condition
+Storage Blob Data Contributor | none | no condition
+Storage Blob Data Owner | 2.0 | ((!(ActionMatches{'Microsoft.Storage/storageAccounts/blobServices/containers/blobs/tags/read'})  AND  !(ActionMatches{'Microsoft.Storage/storageAccounts/blobServices/containers/blobs/filter/action'}) AND  !(ActionMatches{'Microsoft.Storage/storageAccounts/blobServices/containers/blobs/tags/write'}) ) OR (@Resource[Microsoft.Storage/storageAccounts/blobServices/containers:name] StringStartsWithIgnoreCase '6763...9501' AND @Resource[Microsoft.Storage/storageAccounts/blobServices/containers:name] StringLikeIgnoreCase '*-azureml-agent'))
+--- b. ga-ai-labv3dosearch
+disableLocalAuth: true
+authOptions: "not returned"
+keys unusable: yes, the mitigation holds
+--- c. ga-ai-labv3docosmosdb
+disableLocalAuth: true
+--- d. built-in definitions
+Cosmos DB Operator:
+  key or wildcard actions: ["Microsoft.DocumentDb/databaseAccounts/*","Microsoft.Insights/alertRules/*","Microsoft.Resources/deployments/*","Microsoft.Support/*"]
+  includes listKeys, listAdminKeys or searchServices/*: no
+  notActions touching keys or connection strings: ["Microsoft.DocumentDB/databaseAccounts/readonlyKeys/*","Microsoft.DocumentDB/databaseAccounts/regenerateKey/*","Microsoft.DocumentDB/databaseAccounts/listKeys/*","Microsoft.DocumentDB/databaseAccounts/listConnectionStrings/*"]
+  all notActions: ["Microsoft.DocumentDB/databaseAccounts/copyJobs/*","Microsoft.DocumentDB/databaseAccounts/dataTransferJobs/*","Microsoft.DocumentDB/databaseAccounts/readonlyKeys/*","Microsoft.DocumentDB/databaseAccounts/regenerateKey/*","Microsoft.DocumentDB/databaseAccounts/listKeys/*","Microsoft.DocumentDB/databaseAccounts/listConnectionStrings/*","Microsoft.DocumentDB/databaseAccounts/sqlRoleDefinitions/write","Microsoft.DocumentDB/databaseAccounts/sqlRoleDefinitions/delete","Microsoft.DocumentDB/databaseAccounts/sqlRoleAssignments/write","Microsoft.DocumentDB/databaseAccounts/sqlRoleAssignments/delete","Microsoft.DocumentDB/databaseAccounts/mongodbRoleDefinitions/write","Microsoft.DocumentDB/databaseAccounts/mongodbRoleDefinitions/delete","Microsoft.DocumentDB/databaseAccounts/mongodbUserDefinitions/write","Microsoft.DocumentDB/databaseAccounts/mongodbUserDefinitions/delete","Microsoft.DocumentDB/databaseAccounts/tableRoleAssignments/write","Microsoft.DocumentDB/databaseAccounts/tableRoleAssignments/delete","Microsoft.DocumentDB/databaseAccounts/tableRoleDefinitions/write","Microsoft.DocumentDB/databaseAccounts/tableRoleDefinitions/delete","Microsoft.DocumentDB/databaseAccounts/gremlinRoleAssignments/write","Microsoft.DocumentDB/databaseAccounts/gremlinRoleAssignments/delete","Microsoft.DocumentDB/databaseAccounts/gremlinRoleDefinitions/write","Microsoft.DocumentDB/databaseAccounts/gremlinRoleDefinitions/delete","Microsoft.DocumentDB/databaseAccounts/cassandraRoleAssignments/write","Microsoft.DocumentDB/databaseAccounts/cassandraRoleAssignments/delete","Microsoft.DocumentDB/databaseAccounts/cassandraRoleDefinitions/write","Microsoft.DocumentDB/databaseAccounts/cassandraRoleDefinitions/delete","Microsoft.DocumentDB/databaseAccounts/mongoMIRoleAssignments/write","Microsoft.DocumentDB/databaseAccounts/mongoMIRoleAssignments/delete","Microsoft.DocumentDB/databaseAccounts/mongoMIRoleDefinitions/write","Microsoft.DocumentDB/databaseAccounts/mongoMIRoleDefinitions/delete"]
+  dataActions: []
+Search Service Contributor:
+  key or wildcard actions: ["Microsoft.Insights/alertRules/*","Microsoft.Resources/deployments/*","Microsoft.Search/searchServices/*","Microsoft.Support/*"]
+  includes listKeys, listAdminKeys or searchServices/*: yes
+  notActions touching keys or connection strings: []
+  all notActions: []
+  dataActions: []
+--- e. outside-lab identity rows, from the w1-rbac-review snapshot
+rows: 3
+any is a log role on a lab resource: no, these rows are outside-lab scopes by definition
+any is a log role at all: no
+any is held by a lab identity: no
+RESULT: guards match; read a to e above

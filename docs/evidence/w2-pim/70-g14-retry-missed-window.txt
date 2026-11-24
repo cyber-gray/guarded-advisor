@@ -1,0 +1,5 @@
+# G14 retry, as T. Missed window: the activation had expired at 00:31:29Z, so the guard stopped before any query.
+signed in: 6d4c...2a4d
+now: 2026-11-05T00:42:54Z
+T's activated roles: 
+STOP: expected exactly one activated role, Privileged Monitoring Data Reader

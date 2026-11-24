@@ -1,0 +1,7 @@
+# G13a, 2026-11-04, as T, activated. Same self-assignment as G12 check 1.
+signed in: 6d4c...2a4d
+now: 2026-11-04T23:15:18Z
+T's activated roles: Owner
+assignments at ga-ag-ops-shared before: 0
+RESULT: created, assignment 5609...3e7e, role=Reader, condition=no
+assignments at ga-ag-ops-shared after: 1

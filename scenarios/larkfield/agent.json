@@ -1,0 +1,82 @@
+{
+  "note": "Pack settings for the case assistant (w1-agent). The platform code in agent/ reads these when SCENARIO=larkfield and holds no domain data itself (D-012).",
+  "scenario": "larkfield",
+  "agent_name": "larkfield-case-assistant",
+  "model_deployment": "gpt-4.1-mini",
+  "instructions_file": "agent/instructions.md",
+  "documents_dir": "data/internal",
+  "vector_store_name": "larkfield-internal-documents",
+  "file_search": {
+    "note": "C8 and minimisation. Calibrated 2026-10-30 on version 3 (scenarios/larkfield/calibration-questions.json; docs/evidence/w2-filesearch/01): reported scores are RRF-fused (about 0.033 when both keyword and vector search find a chunk, 0.017 or less when only one does). max_num_results 5 keeps the expected file for all in-scope questions (IN-1's ranks 4th, tied with 5th). score_threshold: 0.02 was tested on version 4 and filtered nothing (results reported at 0.016 were returned; docs/evidence/w2-filesearch/04), so it is null again: a setting that filters nothing gives false assurance (D-028). Applies from the next agent version.",
+    "max_num_results": 5,
+    "ranker": "auto",
+    "score_threshold": null
+  },
+  "record_store": {
+    "type": "cosmos",
+    "database": "larkfield",
+    "container": "claims",
+    "partition_key": "/claim_id"
+  },
+  "record_tool": {
+    "name": "get_claim_summary",
+    "description": "Return the summary of one claim assigned to the signed-in case manager. Takes only the claim ID. Returns an error if the claim isn't in the caller's caseload.",
+    "id_parameter": "claim_id",
+    "id_description": "Claim ID, for example LM-CLM-2026-0001",
+    "id_pattern": "^LM-CLM-2026-[0-9]{4}$",
+    "returned_fields": [
+      "claim_id", "member_id", "member_name", "employer", "province", "plan", "benefit_type",
+      "condition_category", "condition_summary", "restrictions", "treating_provider", "clinic",
+      "leave_start", "expected_rtw", "status", "notes", "documents"
+    ],
+    "withheld_fields_note": "age and gender are stored but not returned: not needed for a return-to-work note (minimum necessary), and withholding them reduces what the model can be biased by (C7)."
+  },
+  "max_tool_calls_per_turn": 5,
+  "document_input": {
+    "note": "C3, client fix A (agent/untrusted.py). Applies only to case_assistant.py --document input: the question plus the escaped, delimited documents must fit, or nothing is sent. Learn says guardrails moderate the first 1,000 characters of text (https://learn.microsoft.com/azure/ai-services/content-safety/region-availability#service-limits), but on 2026-11-11 the guardrail reported a moderated length of 3,703 for an 878-character message, so this is a precaution until Learn clarifies the limit. The B1 runner doesn't use it.",
+    "max_message_chars": 1000
+  },
+  "output_check": {
+    "note": "C1, client fix A (agent/untrusted.py). An answer matching any pattern is withheld and audited with decision 'withheld' (not counted by D5). Patterns target a claim decision stated or recommended about the claim, not the words alone: plan wording such as 'an approved graduated return-to-work program' or 'decides whether a claim is approved' must pass. 'close' isn't a decision word here, because RTW drafts legitimately say when to close a claim. Matching is case-insensitive, after markdown emphasis is removed and lines are joined. not_after skips a match preceded by 'whether' or 'if'. Known false positive, failing safe: a report that quotes an injected 'approve this claim' is withheld. Tests: agent/tests/test_untrusted.py.",
+    "decision_patterns": [
+      {"id": "claim-to-be-decided", "regex": "\\b(?:the|this)\\s+claim\\s+(?:should|must|will|shall|can|needs\\s+to|is\\s+to|ought\\s+to)\\s+(?:\\w+\\s+){0,2}?be\\s+(?:\\w+\\s+)?(?:approved|denied|declined|terminated)\\b"},
+      {"id": "claim-stated-decided", "regex": "\\b(?:the|this)\\s+claim\\s+(?:is|was|has\\s+been|is\\s+now|has\\s+now\\s+been)\\s+(?:\\w+\\s+)?(?:approved|denied|declined|terminated)\\b"},
+      {"id": "decide-the-claim", "regex": "\\b(?:approve|deny|decline|terminate)\\s+(?:the|this)\\s+claim\\b"},
+      {"id": "recommend-decision", "regex": "\\b(?:recommend|suggest|advise)\\w*\\s+(?:\\w+\\s+)?(?:approving|denying|declining|terminating|approval|denial|termination)\\s+(?:of\\s+)?(?:the|this)\\s+claim\\b"}
+    ],
+    "not_after": "\\b(?:whether|if)\\s+$",
+    "withheld_message": "Withheld: the draft stated or recommended a claim decision. This assistant never makes claim decisions (C1). Review the claim yourself; nothing was decided or recorded."
+  },
+  "decision_check": {
+    "note": "C1, layer 2 (agent/decision_checker.py). Runs only when output_check finds nothing. A second prompt agent, called through its own agent endpoint like the main agent (Foundry Agent Consumer is enough), classifies the draft only, wrapped in the documents delimiter. Fails closed: an error, a timeout, a guardrail block, an unparseable or off-schema reply, or a draft over max_draft_chars withholds with reason decision_check_unavailable. temperature and the JSON schema live in the agent definition (agent/checker_agent.py), because neither can be sent per call when an agent is named (B1 probe, 2026-11-11). Tests: agent/tests/test_decision_checker.py. Offline eval: decision-check-eval.json.",
+    "agent_name": "larkfield-decision-checker",
+    "model_deployment": "gpt-4.1-mini",
+    "instructions_file": "agent/decision-checker.md",
+    "temperature": 0,
+    "question": "Classify the case assistant draft in the documents block below. Reply with the JSON object only.",
+    "max_draft_chars": 8000,
+    "timeout_seconds": 30,
+    "response_schema": {
+      "name": "decision_check",
+      "strict": true,
+      "schema": {
+        "type": "object",
+        "properties": {
+          "decision_language": {"type": "boolean"},
+          "evidence": {"type": "string"}
+        },
+        "required": ["decision_language", "evidence"],
+        "additionalProperties": false
+      }
+    },
+    "unavailable_message": "Withheld: the decision check couldn't run, so this draft isn't shown (C1, fail closed). Nothing was decided or recorded. Try again, or review the claim yourself."
+  },
+  "b1_agent": {
+    "note": "w3-bias, C7. A copy of the case assistant for bias test B1 only: same model, instructions, File Search vector store and record tool, plus temperature 0 and the b1_summary JSON schema in the definition, because neither can be sent per call when an agent is named (B1 probe, findings 2026-11-11). Created and deleted by agent/b1_agent.py, each its own gate; called by redteam/bias_b1.py through its own agent endpoint.",
+    "agent_name": "larkfield-case-assistant-b1",
+    "temperature": 0,
+    "response_format_name": "b1_summary",
+    "output_schema_file": "bias/pairs.json"
+  },
+  "draft_label": "AI-generated draft for case manager review. Not a decision."
+}

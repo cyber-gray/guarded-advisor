@@ -1,0 +1,75 @@
+<!--
+  Guarded Advisor global API Management policy (w2-policies; C2, C3, C6). Set at global scope by infra/apim.bicep, so it
+  applies to every API on the instance (today one: ga-foundry-openai-v1, imported in the same template).
+
+  Inbound, in this order:
+  1. ip-filter: only the jumpbox subnet (192.168.3.0/24). Also covers the window before public network access is turned
+     off in the portal. https://learn.microsoft.com/azure/api-management/ip-filter-policy
+  2. validate-azure-ad-token: a token from the lab tenant for the Cognitive Services audience (the caller runs
+     `az account get-access-token`-style sign-in on the jumpbox). Failure: 401. The validated token is kept in
+     ga-caller-jwt. https://learn.microsoft.com/azure/api-management/validate-azure-ad-token-policy
+  2a. Caller authorization (2026-11-12 finding, GW-X2): the backend calls Foundry as APIM's identity, so an
+     authenticated tenant user would otherwise get APIM's access. Only object IDs in the named value
+     ga-gateway-allowed-oids pass; anyone else gets 403 before any token or content safety cost. The audience is a
+     Microsoft first-party resource, so app roles or groups can't be required on this token; an oid allowlist is the
+     lab option with no Entra change (option (ii), a gateway app registration with an app role, is the production
+     path). Named values inside expression strings: https://learn.microsoft.com/azure/api-management/api-management-howto-properties#use-a-named-value
+     Jwt.Claims.GetValueOrDefault: https://learn.microsoft.com/azure/api-management/api-management-policy-expressions#context-variable
+  3. llm-token-limit: 3,000 tokens a minute per subscription key, counted from the model's reported usage
+     (estimate-prompt-tokens false). https://learn.microsoft.com/azure/api-management/llm-token-limit-policy
+  4. llm-content-safety on the prompt: harm categories at threshold 4 (FourSeverityLevels: 0, 2, 4, 6, so medium and
+     high are blocked, as in the C3 guardrail) and Prompt Shields (shield-prompt). Blocks with 403. Prompts are sent
+     in windows of 10,000 characters. https://learn.microsoft.com/azure/api-management/llm-content-safety-policy
+  Outbound: llm-content-safety on the completion, same categories.
+
+  Not here today: llm-emit-token-metric. It needs an Application Insights logger and custom metrics with dimensions,
+  which this instance doesn't have (https://learn.microsoft.com/azure/api-management/llm-emit-token-metric-policy#prerequisites).
+  Token counts are still in ApiManagementGatewayLlmLog.
+-->
+<policies>
+    <inbound>
+        <ip-filter action="allow">
+            <address-range from="192.168.3.0" to="192.168.3.255" />
+        </ip-filter>
+        <validate-azure-ad-token tenant-id="{{ga-tenant-id}}" header-name="Authorization" failed-validation-httpcode="401" failed-validation-error-message="Unauthorized" output-token-variable-name="ga-caller-jwt">
+            <audiences>
+                <audience>https://cognitiveservices.azure.com</audience>
+                <audience>https://cognitiveservices.azure.com/</audience>
+            </audiences>
+        </validate-azure-ad-token>
+        <choose>
+            <when condition="@(!(&quot;,&quot; + &quot;{{ga-gateway-allowed-oids}}&quot; + &quot;,&quot;).Contains(&quot;,&quot; + context.Variables.GetValueOrDefault&lt;Jwt&gt;(&quot;ga-caller-jwt&quot;).Claims.GetValueOrDefault(&quot;oid&quot;, &quot;-&quot;).ToLowerInvariant() + &quot;,&quot;))">
+                <return-response>
+                    <set-status code="403" reason="Forbidden" />
+                    <set-header name="Content-Type" exists-action="override">
+                        <value>application/json</value>
+                    </set-header>
+                    <set-body>{"statusCode": 403, "message": "Caller isn't authorized for this gateway."}</set-body>
+                </return-response>
+            </when>
+        </choose>
+        <llm-token-limit counter-key="@(context.Subscription?.Id ?? &quot;no-subscription&quot;)" tokens-per-minute="3000" estimate-prompt-tokens="false" remaining-tokens-header-name="x-ga-remaining-tokens" />
+        <llm-content-safety backend-id="ga-content-safety" shield-prompt="true">
+            <categories output-type="FourSeverityLevels">
+                <category name="Hate" threshold="4" />
+                <category name="SelfHarm" threshold="4" />
+                <category name="Sexual" threshold="4" />
+                <category name="Violence" threshold="4" />
+            </categories>
+        </llm-content-safety>
+    </inbound>
+    <backend>
+        <forward-request />
+    </backend>
+    <outbound>
+        <llm-content-safety backend-id="ga-content-safety" shield-prompt="false">
+            <categories output-type="FourSeverityLevels">
+                <category name="Hate" threshold="4" />
+                <category name="SelfHarm" threshold="4" />
+                <category name="Sexual" threshold="4" />
+                <category name="Violence" threshold="4" />
+            </categories>
+        </llm-content-safety>
+    </outbound>
+    <on-error />
+</policies>

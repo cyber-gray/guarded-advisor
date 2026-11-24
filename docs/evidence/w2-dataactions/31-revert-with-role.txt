@@ -1,0 +1,69 @@
+Output as printed. T = default CLI profile (.azure); reader = ga-reader-test2 (.azure-readertest2). Subscription IDs replaced by <sub>; object and assignment IDs cut to first 4 and last 4.
+
+After the revert, data role still active. The reader's General read came back between 22:53:36Z and 22:56:25Z.
+
+##### profile .azure-readertest2  2026-11-02T22:53:36Z
+== AppDependencies | where TimeGenerated > ago(7d) | count
+Count    TableName
+-------  -------------
+0        PrimaryResult
+exit=0
+== AppGenAIContent | count
+Count    TableName
+-------  -------------
+0        PrimaryResult
+exit=0
+== AdjudicationLog_CL | count
+Count    TableName
+-------  -------------
+0        PrimaryResult
+exit=0
+##### profile .azure  2026-11-02T22:53:42Z
+== AppDependencies | where TimeGenerated > ago(7d) | count
+Count    TableName
+-------  -------------
+144      PrimaryResult
+exit=0
+== AppGenAIContent | count
+Count    TableName
+-------  -------------
+90       PrimaryResult
+exit=0
+== AdjudicationLog_CL | count
+Count    TableName
+-------  -------------
+2        PrimaryResult
+exit=0
+
+##### profile .azure-readertest2  2026-11-02T22:56:25Z
+== AppDependencies | where TimeGenerated > ago(7d) | count
+Count    TableName
+-------  -------------
+144      PrimaryResult
+exit=0
+== AppGenAIContent | count
+Count    TableName
+-------  -------------
+0        PrimaryResult
+exit=0
+== AdjudicationLog_CL | count
+Count    TableName
+-------  -------------
+0        PrimaryResult
+exit=0
+##### profile .azure  2026-11-02T22:56:32Z
+== AppDependencies | where TimeGenerated > ago(7d) | count
+Count    TableName
+-------  -------------
+144      PrimaryResult
+exit=0
+== AppGenAIContent | count
+Count    TableName
+-------  -------------
+90       PrimaryResult
+exit=0
+== AdjudicationLog_CL | count
+Count    TableName
+-------  -------------
+2        PrimaryResult
+exit=0

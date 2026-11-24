@@ -1,0 +1,18 @@
+capture-20261115T0049Z | read 2026-11-15T00:49:55Z | as T (6d4c...2a4d), standing Reader | workspace ga-law-shared | script scripts/w3_evidence_capture.sh at aaa2660
+timespan: P30D
+query (GUIDs masked):
+  ApiManagementGatewayLogs
+  | summarize Rows = count() by Day = format_datetime(TimeGenerated, "yyyy-MM-dd"), ResponseCode, BackendResponseCode,
+      LastErrorSource = tostring(LastErrorSource), LastErrorReason = tostring(LastErrorReason)
+  | order by Day asc, ResponseCode asc
+rows: 9
+---
+2026-11-12 | gateway 200 | backend 200 | error source - | reason - | 9
+2026-11-12 | gateway 401 | backend None | error source authorization | reason SubscriptionKeyNotFound | 10
+2026-11-12 | gateway 403 | backend None | error source llm-content-safety | reason ContentSafetyPolicyViolated | 3
+2026-11-12 | gateway 403 | backend None | error source request-forwarder | reason ContentSafetyPolicyViolated | 1
+2026-11-12 | gateway 500 | backend None | error source request-forwarder | reason - | 8
+2026-11-13 | gateway 200 | backend 200 | error source - | reason - | 21
+2026-11-13 | gateway 400 | backend 400 | error source - | reason - | 3
+2026-11-13 | gateway 403 | backend None | error source llm-content-safety | reason ContentSafetyPolicyViolated | 2
+2026-11-13 | gateway 403 | backend None | error source - | reason - | 1

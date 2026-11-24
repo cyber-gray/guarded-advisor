@@ -1,0 +1,8 @@
+# G13b, 2026-11-04, as T, activated. Removed about 1.5 minutes after creating it.
+signed in: 6d4c...2a4d
+now: 2026-11-04T23:16:52Z
+T's activated roles: Owner
+assignments at ga-ag-ops-shared before: 1
+removing: 5609...3e7e, T, role=Reader
+delete command: succeeded
+assignments at ga-ag-ops-shared after: 0

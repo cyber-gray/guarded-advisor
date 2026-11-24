@@ -1,0 +1,20 @@
+// D5 (C2): two or more entitlement denials for one caller in one conversation_id (docs/threat-model.md, Detection rules).
+// Source: AgentToolAudit_CL (General). Generic fields only (D-012). Never reads reason or detail.
+// Lag: first ingestion took about 3 minutes and query visibility about 5 (docs/findings.md, V5). The window covers
+// the session on TimeGenerated; a group fires only on a run that ingested its latest deny row, so a late row is
+// still counted (https://learn.microsoft.com/azure/sentinel/ingestion-delay).
+// 2-minute overlap so drifting runs can't leave a gap; a duplicate alert joins the same incident (grouping), a gap
+// would be a miss.
+// Known limit: denials more than session_window apart aren't one session for D5.
+let rule_frequency = 5m; // equals queryFrequency in infra/sentinel.bicep
+let session_window = 1h; // equals queryPeriod in infra/sentinel.bicep
+AgentToolAudit_CL
+| where TimeGenerated > ago(session_window)
+| where decision == "deny"
+| extend ingested = ingestion_time()
+| summarize deny_count = count(), first_seen = min(TimeGenerated), last_seen = max(TimeGenerated),
+            record_ids = make_set(record_id, 100), redteam_id = strcat_array(make_set(redteam_id, 10), ","),
+            last_ingested = max(ingested)
+    by caller, conversation_id, scenario
+| where deny_count >= 2 and last_ingested > ago(rule_frequency + 2m)
+| project caller, conversation_id, deny_count, first_seen, last_seen, record_ids, scenario, redteam_id

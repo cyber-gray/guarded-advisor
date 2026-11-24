@@ -1,0 +1,22 @@
+capture-20261115T0049Z | read 2026-11-15T00:49:55Z | as T (6d4c...2a4d), standing Reader | workspace ga-law-shared | script scripts/w3_evidence_capture.sh at aaa2660
+source: ARM GET workspaces/tables/<name>, api-version 2026-03-01
+---
+AppGenAIContent | plan Analytics | analytics 7 | total 7 | protection Protected
+AppDependencies | plan Analytics | analytics 7 | total 7 | protection General
+AppTraces | plan Analytics | analytics 7 | total 7 | protection General
+AppEvents | plan Analytics | analytics 7 | total 7 | protection General
+AppRequests | plan Analytics | analytics 90 | total 90 | protection General
+AppExceptions | plan Analytics | analytics 90 | total 90 | protection General
+ApiManagementGatewayLlmLog | plan Analytics | analytics 30 | total 30 | protection Protected
+ApiManagementGatewayLogs | plan Analytics | analytics 30 | total 30 | protection General
+AgentToolAudit_CL | plan Analytics | analytics 90 | total 90 | protection General
+AdjudicationLog_CL | plan Analytics | analytics 90 | total 90 | protection Protected
+RedTeamRun_CL | plan Analytics | analytics 90 | total 90 | protection General
+AuditLogs | plan Analytics | analytics 30 | total 30 | protection General
+SigninLogs | plan Analytics | analytics 30 | total 30 | protection General
+AADNonInteractiveUserSignInLogs | plan Analytics | analytics 30 | total 30 | protection General
+AzureActivity | plan Analytics | analytics 90 | total 90 | protection General
+SecurityAlert | plan Analytics | analytics 30 | total 30 | protection General
+SecurityIncident | plan Analytics | analytics 30 | total 30 | protection General
+AzureDiagnostics | plan Analytics | analytics 30 | total 30 | protection General
+CDBDataPlaneRequests | plan Analytics | analytics 30 | total 30 | protection General

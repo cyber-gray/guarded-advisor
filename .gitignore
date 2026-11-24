@@ -1,0 +1,35 @@
+# Secrets and local configuration
+.env
+.env.*
+*.local.json
+*.local.bicepparam
+secrets/
+
+# Azure tooling
+.azure/
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+
+# Node
+node_modules/
+
+# Raw red-team output can contain full prompts and responses
+redteam/results/raw/
+
+# OS and editors
+.DS_Store
+.vscode/
+.idea/
+*.log
+
+# Case assistant tool audit logs (local JSONL until AgentToolAudit_CL exists)
+agent/logs/
+redteam/logs/
+
+# Private evidence folder and raw cost exports, if a copy ever lands inside the repo
+guarded-advisor-private/
+*-cost.json
+raw-*.json

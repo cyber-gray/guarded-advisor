@@ -1,0 +1,5 @@
+T's active Privileged Monitoring Data Reader assignment (from PIM) on rg-guardedadvisor-shared, assignment ID masked. Output as printed.
+The assignment carries no condition; the built-in condition is in the role definition (docs/evidence/w2-dataactions/02).
+
+2026-11-01T19:37:30Z
+Privileged Monitoring Data Reader  /subscriptions/<sub>/resourceGroups/rg-guardedadvisor-shared  assignment c12c...fede  conditionVersion null  condition null

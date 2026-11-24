@@ -1,0 +1,21 @@
+# Stage 4 close, as T. Read-only. Resources outside the lab are counted, not named.
+signed in: 6d4c...2a4d
+now: 2026-11-05T16:56:47Z
+OK    T activated instances: 0
+total resources in the subscription: 78
+--- type | lab count | count outside the lab, not named
+Bastion | lab: 0 | outside the lab: 0
+API Management | lab: 0 | outside the lab: 0
+Public IP | lab: 0 | outside the lab: 1
+Virtual machine | lab: 1 (ga-jump-lab) | outside the lab: 0
+AI Search | lab: 1 (ga-ai-labv3dosearch) | outside the lab: 0
+NAT gateway | lab: 0 | outside the lab: 1
+--- lab VM power state
+ga-jump-lab | VM deallocated
+--- checks
+OK    Bastion in the lab: 0
+OK    API Management in the lab: 0
+OK    Public IP in the lab: 0
+OK    Virtual machines in the lab: ga-jump-lab
+OK    ga-jump-lab power state: VM deallocated
+RESULT: all match

@@ -1,0 +1,14 @@
+# G13c, 2026-11-04, as T, activated. teardown.sh precheck with its gates.
+signed in: 6d4c...2a4d
+now: 2026-11-04T23:23:27Z
+T's activated roles: Owner
+hash: 9f9f...d89f
+hash matches the pin
+pattern clear: ^[[:space:]]*(\.|source)[[:space:]]
+pattern clear: (^|[;&|[:space:]])trap[[:space:]]
+pattern clear: (^|[;&|[:space:]])eval[[:space:]]
+pattern clear: ;;?&
+exported bash functions: 0
+--- teardown.sh precheck output
+Pre-check passed: Microsoft.Authorization/roleAssignments/delete on rg-guardedadvisor-lab.
+exit code: 0

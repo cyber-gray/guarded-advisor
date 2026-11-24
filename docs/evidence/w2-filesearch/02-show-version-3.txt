@@ -1,0 +1,11 @@
+{
+ "agent": "larkfield-case-assistant",
+ "version": "3",
+ "file_search_tools": 1,
+ "max_num_results": null,
+ "ranking_options": {
+  "ranker": null,
+  "score_threshold": null,
+  "hybrid_search": null
+ }
+}

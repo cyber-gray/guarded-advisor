@@ -1,0 +1,17 @@
+# G12 check 4, 2026-11-04, as T, Reader only. Permissions API.
+signed in: 6d4c...2a4d
+now: 2026-11-04T23:02:22Z
+T's activated instances: 0
+--- ga-law-shared
+dataAuthorizationMode: not returned
+workspaces/write survives: no
+--- T's scopes, tested against Microsoft.Authorization/roleAssignments/write
+subscription | Reader | roleAssignments/write=no | wildcard write=no
+ga-proj-labv3do | Foundry User | roleAssignments/write=no | wildcard write=no
+ga-jump-lab | Reader, Virtual Machine Administrator Login | roleAssignments/write=no | wildcard write=no
+ga-jump-lab-nic | Reader | roleAssignments/write=no | wildcard write=no
+ga-dcr-redteam-shared | Monitoring Metrics Publisher | roleAssignments/write=no | wildcard write=no
+scopes checked: 5, with a write hit: 0, read errors: 0
+--- correction: the line above read the wrong path; the property is under properties.features
+now: 2026-11-04T23:05:08Z
+dataAuthorizationMode: false

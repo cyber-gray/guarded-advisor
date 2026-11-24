@@ -1,0 +1,30 @@
+Guarded Advisor
+Copyright (c) 2026 Tooni Temowo
+
+This repository is licensed under the MIT License (see LICENSE), except for the
+third-party material listed below, which keeps its own license.
+
+1. OWASP material (docs/threat-model.md, including its "OWASP 2026 source" note)
+
+   Source: "OWASP Top 10 for LLM Applications 2026", Version 2026,
+   OWASP GenAI Security Project, https://genai.owasp.org/resource/owasp-genai-llm-top-10-2026/
+   License: Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0),
+   https://creativecommons.org/licenses/by-sa/4.0/
+
+   What is used: the entry IDs and names (LLM01 to LLM10), the 2025 ranks from Figure 1
+   (page 6), the scope note on page 7 (one short quotation, "becomes an actor, with tools it
+   can call"), and a paraphrase of the introductory letter's remark on the Misinformation
+   entry. The mapping of these entries to the Larkfield scenario, conditions, attacks and
+   results is this repository's own work. The OWASP Agentic Top 10 is mentioned by name only;
+   no material is taken from it.
+
+   The OWASP-derived parts of docs/threat-model.md are offered under CC BY-SA 4.0. Changes:
+   entries were selected, paraphrased and mapped to this lab's scenario.
+
+2. Microsoft foundry-samples (infra/)
+
+   The network-isolated Foundry infrastructure in infra/ is a fork of Microsoft's
+   15-private-network-standard-agent-setup sample from microsoft-foundry/foundry-samples,
+   Copyright (c) Microsoft Corporation, MIT License. The upstream notice is kept in
+   infra/LICENSE-foundry-samples. The upstream files and every change made to
+   them are listed in infra/UPSTREAM.md.

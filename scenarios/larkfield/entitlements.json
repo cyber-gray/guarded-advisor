@@ -1,0 +1,51 @@
+{
+  "scenario": "larkfield",
+  "note": "Public copy: keys are synthetic placeholder object IDs (00000000-0000-4000-8000-...). In a deployment, agent/build_entitlements.sh writes the Entra object IDs of the synthetic case manager accounts in your own tenant. Read by get_claim_summary when SCENARIO=larkfield (C2). Built by agent/build_entitlements.sh.",
+  "caseloads": {
+    "00000000-0000-4000-8000-00000000a1d0": {
+      "alias": "alder",
+      "claims": [
+        "LM-CLM-2026-0002",
+        "LM-CLM-2026-0007",
+        "LM-CLM-2026-0016",
+        "LM-CLM-2026-0019",
+        "LM-CLM-2026-0020",
+        "LM-CLM-2026-0021",
+        "LM-CLM-2026-0023",
+        "LM-CLM-2026-0025",
+        "LM-CLM-2026-0029",
+        "LM-CLM-2026-0030"
+      ]
+    },
+    "00000000-0000-4000-8000-00000000b1c0": {
+      "alias": "birch",
+      "claims": [
+        "LM-CLM-2026-0001",
+        "LM-CLM-2026-0003",
+        "LM-CLM-2026-0004",
+        "LM-CLM-2026-0006",
+        "LM-CLM-2026-0008",
+        "LM-CLM-2026-0009",
+        "LM-CLM-2026-0011",
+        "LM-CLM-2026-0012",
+        "LM-CLM-2026-0013",
+        "LM-CLM-2026-0027"
+      ]
+    },
+    "00000000-0000-4000-8000-00000000ced0": {
+      "alias": "cedar",
+      "claims": [
+        "LM-CLM-2026-0005",
+        "LM-CLM-2026-0010",
+        "LM-CLM-2026-0014",
+        "LM-CLM-2026-0015",
+        "LM-CLM-2026-0017",
+        "LM-CLM-2026-0018",
+        "LM-CLM-2026-0022",
+        "LM-CLM-2026-0024",
+        "LM-CLM-2026-0026",
+        "LM-CLM-2026-0028"
+      ]
+    }
+  }
+}

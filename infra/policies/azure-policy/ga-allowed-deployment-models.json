@@ -1,0 +1,52 @@
+{
+  "name": "ga-allowed-deployment-models",
+  "properties": {
+    "displayName": "Guarded Advisor: model deployments must use an approved model and version",
+    "description": "Exact control-plane allowlist of format/name/version (for example 'OpenAI/gpt-4.1-mini/2025-04-14') on Microsoft.CognitiveServices/accounts/deployments. A missing version is denied. Compensates for the built-in aafe3651, whose data-plane aliases (model.assetId, model.publisher) aren't in an ARM request and which didn't deny an unapproved ARM deployment in test T5 (2026-10-15). D-017.",
+    "mode": "All",
+    "metadata": {
+      "category": "Cognitive Services",
+      "version": "1.0.0",
+      "source": "guarded-advisor infra/policies/azure-policy"
+    },
+    "parameters": {
+      "allowedModels": {
+        "type": "Array",
+        "metadata": {
+          "displayName": "Approved models",
+          "description": "Exact 'format/name/version' strings approved in the model inventory"
+        }
+      },
+      "effect": {
+        "type": "String",
+        "metadata": {
+          "displayName": "Effect",
+          "description": "Deny blocks the request; Audit only reports it"
+        },
+        "allowedValues": [
+          "Audit",
+          "Deny",
+          "Disabled"
+        ],
+        "defaultValue": "Deny"
+      }
+    },
+    "policyRule": {
+      "if": {
+        "allOf": [
+          {
+            "field": "type",
+            "equals": "Microsoft.CognitiveServices/accounts/deployments"
+          },
+          {
+            "value": "[concat(if(empty(field('Microsoft.CognitiveServices/accounts/deployments/model.format')), '', field('Microsoft.CognitiveServices/accounts/deployments/model.format')), '/', if(empty(field('Microsoft.CognitiveServices/accounts/deployments/model.name')), '', field('Microsoft.CognitiveServices/accounts/deployments/model.name')), '/', if(empty(field('Microsoft.CognitiveServices/accounts/deployments/model.version')), '', field('Microsoft.CognitiveServices/accounts/deployments/model.version')))]",
+            "notIn": "[parameters('allowedModels')]"
+          }
+        ]
+      },
+      "then": {
+        "effect": "[parameters('effect')]"
+      }
+    }
+  }
+}

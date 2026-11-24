@@ -1,0 +1,13 @@
+# G13c, 2026-11-04, as T, activated. Count queries, about 9 minutes after activation.
+signed in: 6d4c...2a4d
+now: 2026-11-04T23:20:47Z
+T's activated roles: Owner
+provisioningState: Succeeded
+re-read: level=Protected retentionInDays=90 totalRetentionInDays=90
+properties changed since the before-read: none
+expectation set before this query: AppGenAIContent 0, AdjudicationLog_CL 0, General rows as in check 3 (144 and 2)
+activated since: 2026-11-04T23:11:29Z
+AppDependencies, last 7 days | General | 144
+AppGenAIContent | Protected | 0
+AdjudicationLog_CL | Protected | 0
+AgentToolAudit_CL | General | 2

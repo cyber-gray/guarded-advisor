@@ -1,0 +1,18 @@
+B-3, CLI positive control, T with Privileged Monitoring Data Reader active. Same loop as 36, 10 min 29 s later, output as printed.
+
+2026-11-01T19:16:14Z
+== AppDependencies | where TimeGenerated > ago(7d) | count
+Count    TableName
+-------  -------------
+144      PrimaryResult
+exit=0
+== AppGenAIContent | count
+Count    TableName
+-------  -------------
+90       PrimaryResult
+exit=0
+== AdjudicationLog_CL | count
+Count    TableName
+-------  -------------
+2        PrimaryResult
+exit=0

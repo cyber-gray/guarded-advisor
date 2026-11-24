@@ -1,0 +1,27 @@
+capture-20261116T1952Z | read 2026-11-16T19:52:31Z | as T (6d4c...2a4d), standing Reader | workspace ga-law-shared | script scripts/w3_evidence_capture.sh at f1bb0ee
+timespan: P90D
+query (GUIDs masked):
+  RedTeamRun_CL
+  | extend Kind = iff(tostring(column_ifexists("harness_verdict", "")) startswith "expect-", "registered", "outcome")
+  | summarize Rows = count(), FirstT = min(TimeGenerated), LastT = max(TimeGenerated) by rid = tostring(column_ifexists("redteam_id", "")), Kind
+rows: 19
+---
+DF1-20261116 | registered | 1 | 2026-11-16T18:23Z to 2026-11-16T18:23Z
+C8-20261116-LM-CLM-2026-0020 | registered | 1 | 2026-11-16T18:40Z to 2026-11-16T18:40Z
+A6-20261116-4 | registered | 1 | 2026-11-16T18:46Z to 2026-11-16T18:46Z
+C8-20261116-LM-CLM-2026-0001 | registered | 1 | 2026-11-16T18:50Z to 2026-11-16T18:50Z
+835d...cf84 | outcome | 1 | 2026-11-16T18:11Z to 2026-11-16T18:11Z
+B1-20261116 | registered | 1 | 2026-11-16T18:27Z to 2026-11-16T18:27Z
+C8-20261116-LM-CLM-2026-0002 | registered | 1 | 2026-11-16T18:35Z to 2026-11-16T18:35Z
+C8-20261116-LM-CLM-2026-0010 | registered | 1 | 2026-11-16T19:03Z to 2026-11-16T19:03Z
+C8-20261116-LM-CLM-2026-0016 | registered | 1 | 2026-11-16T18:37Z to 2026-11-16T18:37Z
+C8-20261116-LM-CLM-2026-0019 | registered | 1 | 2026-11-16T18:39Z to 2026-11-16T18:39Z
+A6-20261116-3 | registered | 1 | 2026-11-16T18:44Z to 2026-11-16T18:44Z
+C8-20261116-LM-CLM-2026-0003 | registered | 1 | 2026-11-16T18:52Z to 2026-11-16T18:52Z
+C8-20261116-LM-CLM-2026-0004 | registered | 1 | 2026-11-16T18:53Z to 2026-11-16T18:53Z
+A6-20261116-1 | registered | 1 | 2026-11-16T18:55Z to 2026-11-16T18:55Z
+A6-20261116-2 | registered | 1 | 2026-11-16T18:56Z to 2026-11-16T18:56Z
+C8-20261116-LM-CLM-2026-0005 | registered | 1 | 2026-11-16T19:02Z to 2026-11-16T19:02Z
+C8-20261116-LM-CLM-2026-0014 | registered | 1 | 2026-11-16T19:04Z to 2026-11-16T19:04Z
+9465...15a2 | outcome | 1 | 2026-11-15T20:28Z to 2026-11-15T20:28Z
+9532...6563 | outcome | 1 | 2026-10-22T20:06Z to 2026-10-22T20:06Z

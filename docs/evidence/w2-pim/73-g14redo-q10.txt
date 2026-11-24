@@ -1,0 +1,12 @@
+# G14 redo q10, as T. Count queries about 11 minutes after activation. The positive control.
+signed in: 6d4c...2a4d
+now: 2026-11-05T01:19:48Z
+PMDR activated on rg-guardedadvisor-shared: 2026-11-05T01:08:24.447Z to 2026-11-05T03:08:22.903Z
+minutes since activation: 11
+data action tables/data/read in permissions: yes
+permission entries with a condition (0 isn't a finding on its own): 0
+expectation set before this query: AdjudicationLog_CL 2, AppGenAIContent 90, AppDependencies 144, AgentToolAudit_CL 2
+AppDependencies, last 7 days | General | 144
+AppGenAIContent | Protected | 90
+AdjudicationLog_CL | Protected | 2
+AgentToolAudit_CL | General | 2

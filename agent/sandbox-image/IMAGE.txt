@@ -1,0 +1,7 @@
+# Analysis image for the sandbox (D-025 option A). Reference it by digest, never by tag.
+image=gaacrlabv3doqebnffszc.azurecr.io/ga-analysis@sha256:15082bb5245d7a9ef340f5422924c5eeea2cdf0edecd3d22de621ae396c164cd
+tag=20261024
+base=docker.io/library/python@sha256:6a0e06f5ba0b373d051aabd3fffb9b873f27f9a2a3a14bcbe37dee6f0e3bbc70 (imported as gaacrlabv3doqebnffszc.azurecr.io/base/python:3.12-slim-bookworm)
+built=2026-10-24T02:11:07Z
+disk_image_id=4ad0...ae66 (ga-sbx-lab, registered 2026-10-24T15:37:04Z via diskimages/v2, pulled by ga-id-sbx-pull-lab)
+disk_image_region=canadaeast (by the sandbox group; the API returns no region field)

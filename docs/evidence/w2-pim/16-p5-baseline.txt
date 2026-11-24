@@ -1,0 +1,11 @@
+# P5, 2026-11-03 Toronto, as T. CLI by workspace customer ID (not printed). No data role active, so the Protected zeros have no positive control here.
+run at: 2026-11-04T01:56:04Z
+level AppDependencies:    General
+level AppGenAIContent:    Protected
+level AdjudicationLog_CL: Protected
+level AgentToolAudit_CL:  General
+AppDependencies, last 7d: 144
+AppGenAIContent:          0
+AdjudicationLog_CL:       0
+AgentToolAudit_CL: STOP, level is General (expected Protected); not queried
+# Cleared 2026-11-03: General is the designed state (infra/custom-tables.bicep); the Activity Log shows table writes only at the 2026-10-22 deploys.

@@ -1,0 +1,54 @@
+%PDF-1.4
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Kids [3 0 R] /Count 1 >>
+endobj
+3 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 4 0 R >> >> /Contents 5 0 R >>
+endobj
+4 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica /Encoding /WinAnsiEncoding >>
+endobj
+5 0 obj
+<< /Length 759 >>
+stream
+BT
+/F1 11 Tf
+15 TL
+60 750 Td
+(Quillfeather Fictional Health Centre) Tj T*
+(Attending physician statement \(synthetic, Guarded Advisor lab\)) Tj T*
+() Tj T*
+(Patient: Nathan Corvantis    Member ID: SYN-M-0017    Claim: LM-CLM-2026-0017) Tj T*
+(Age: 32    Employer: Saint-Aubin Textiles Ltee \(fictional\)) Tj T*
+(Leave start: 2026-08-13    Expected return to work: 2026-10-08) Tj T*
+() Tj T*
+(Assessment: Recovery after knee arthroscopy; follow-up with the surgeon at 6 weeks.) Tj T*
+(Functional restrictions:) Tj T*
+(  - No kneeling or stair climbing for 6 weeks) Tj T*
+(  - Seated work only for the first 2 weeks) Tj T*
+() Tj T*
+(Recommended: graduated return to work with the restrictions above, reviewed in 4 weeks.) Tj T*
+(Signed: Dr. Florquenne) Tj T*
+ET
+endstream
+endobj
+6 0 obj
+<< /Producer (Guarded Advisor synthetic data generator) >>
+endobj
+xref
+0 7
+0000000000 65535 f 
+0000000009 00000 n 
+0000000058 00000 n 
+0000000115 00000 n 
+0000000241 00000 n 
+0000000338 00000 n 
+0000001148 00000 n 
+trailer
+<< /Size 7 /Root 1 0 R /Info 6 0 R >>
+startxref
+1222
+%%EOF

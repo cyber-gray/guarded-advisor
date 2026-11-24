@@ -1,0 +1,50 @@
+# Vulnerability scan of the sandbox analysis image (w2-sbx-image, D-025 option A). Optional local scan, Tooni 2026-10-23.
+date=2026-10-24T02:13:52Z
+scanner=Trivy 0.76.1 (Homebrew), --scanners vuln
+trivy_db=v2, updated 2026-10-24T01:18:19Z
+target=ga-analysis:localtest, local linux/amd64 build of the same Dockerfile, same base index digest
+       (sha256:6a0e06f5ba0b373d051aabd3fffb9b873f27f9a2a3a14bcbe37dee6f0e3bbc70) and same hash-pinned wheels as
+       the ACR image in IMAGE.txt; local image ID sha256:59e3b659595553f63e038b8ecf1227b61623ad57cc022667ea7af7ab871a7d86. The ACR image was built separately, so its digest differs.
+os=debian 12.15
+
+## Counts by severity
+CRITICAL 2
+HIGH 61
+LOW 107
+MEDIUM 111
+UNKNOWN 2
+Python packages (numpy, pandas, python-dateutil, six): 0
+Fixed version available for any HIGH or CRITICAL: 0
+
+## HIGH and CRITICAL (one line per CVE; packages, installed version, fixed version, Debian status)
+CRITICAL CVE-2023-45853: zlib1g 1:1.2.13.dfsg-1; fixed: none; status: will_not_fix
+CRITICAL CVE-2025-7458: libsqlite3-0 3.40.1-2+deb12u2; fixed: none; status: affected
+HIGH CVE-2025-69720: libncursesw6, libtinfo6, ncurses-base, ncurses-bin 6.4-4; fixed: none; status: affected
+HIGH CVE-2026-11822: libsqlite3-0 3.40.1-2+deb12u2; fixed: none; status: fix_deferred
+HIGH CVE-2026-11824: libsqlite3-0 3.40.1-2+deb12u2; fixed: none; status: fix_deferred
+HIGH CVE-2026-16742: libsystemd0, libudev1 252.39-1~deb12u2; fixed: none; status: fix_deferred
+HIGH CVE-2026-41992: gzip 1.12-1; fixed: none; status: fix_deferred
+HIGH CVE-2026-53613: bsdutils, libblkid1, libmount1, libsmartcols1, libuuid1, mount, util-linux, util-linux-extra 1:2.38.1-5+deb12u3; fixed: none; status: affected
+HIGH CVE-2026-53615: bsdutils, libblkid1, libmount1, libsmartcols1, libuuid1, mount, util-linux, util-linux-extra 1:2.38.1-5+deb12u3; fixed: none; status: affected
+HIGH CVE-2026-54369: libacl1 2.3.1-3; fixed: none; status: fix_deferred
+HIGH CVE-2026-76642: bsdutils, libblkid1, libmount1, libsmartcols1, libuuid1, mount, util-linux, util-linux-extra 1:2.38.1-5+deb12u3; fixed: none; status: affected
+HIGH CVE-2026-78408: bsdutils, libblkid1, libmount1, libsmartcols1, libuuid1, mount, util-linux, util-linux-extra 1:2.38.1-5+deb12u3; fixed: none; status: affected
+HIGH CVE-2026-78409: bsdutils, libblkid1, libmount1, libsmartcols1, libuuid1, mount, util-linux, util-linux-extra 1:2.38.1-5+deb12u3; fixed: none; status: affected
+HIGH CVE-2026-78410: bsdutils, libblkid1, libmount1, libsmartcols1, libuuid1, mount, util-linux, util-linux-extra 1:2.38.1-5+deb12u3; fixed: none; status: affected
+HIGH CVE-2026-84782: libssl3, openssl 3.0.22-1~deb12u1; fixed: none; status: affected
+HIGH CVE-2026-9538: perl-base 5.36.0-7+deb12u4; fixed: none; status: fix_deferred
+
+## Reachability (threat model: code in the sandbox is already hostile; the boundary is the sandbox VM, default-deny
+## egress and no credentials, not the packages inside it)
+- zlib CVE-2023-45853: the bug is in minizip (zipOpenNewFileInZip), which zlib1g doesn't ship; Debian: will_not_fix.
+  Not reachable.
+- sqlite CVE-2025-7458, CVE-2026-11822, CVE-2026-11824: reachable through Python's sqlite3 module with a crafted
+  database or FTS5 data, but the code that could trigger them already runs arbitrary code in the sandbox; no gain.
+- util-linux (mount, nsenter, libmount and related) CVE-2026-53613, -53615, -76642, -78408, -78409, -78410; acl
+  CVE-2026-54369; systemd-homed CVE-2026-16742: local privilege escalation through privileged helpers or services.
+  No setuid mount use, no systemd-homed in the image, and the image runs as user 10001 (to confirm in S4 that the
+  sandbox honours USER; a root process gains nothing from these anyway).
+- ncurses CVE-2025-69720, gzip CVE-2026-41992, perl-base CVE-2026-9538, openssl DTLS CVE-2026-84782: need a terminal
+  UI, crafted LZH archives, Archive::Tar or DTLS; the analysis tool uses none, and egress is denied.
+- Action: no fixes available today; rebuild when Debian ships them (build-sandbox-image.sh build), and rescan.
+  A smaller runtime base is an option, not a goal (don't chase zero).

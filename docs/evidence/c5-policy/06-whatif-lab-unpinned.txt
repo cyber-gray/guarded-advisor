@@ -1,0 +1,164 @@
+Note: The result may contain false positive predictions (noise).
+You can help us improve the accuracy of the result by opening an issue here: https://aka.ms/WhatIfIssues
+NOTICE! - Want to get What-if without noise? Move to Deployment Stacks What-If https://aka.ms/stackswhatifGA
+
+Resource and property changes are indicated with these symbols:
+  - Delete
+  + Create
+  ~ Modify
+  * Ignore
+
+The deployment will update the following scope:
+
+Scope: /subscriptions/<sub>/resourceGroups/rg-guardedadvisor-lab
+
+  + Microsoft.Authorization/policyAssignments/ga-deny-cosmos-local-auth [2025-11-01]
+
+      apiVersion:                         "2025-11-01"
+      id:                                 "/subscriptions/<sub>/resourceGroups/rg-guardedadvisor-lab/providers/Microsoft.Authorization/policyAssignments/ga-deny-cosmos-local-auth"
+      name:                               "ga-deny-cosmos-local-auth"
+      properties.description:             "Managed by infra/policy-assignments.bicep (D-017)."
+      properties.displayName:             "GA: Cosmos DB accounts must disable key (local) authentication"
+      properties.enforcementMode:         "Default"
+      properties.metadata.managedBy:      "bicep"
+      properties.metadata.project:        "guarded-advisor"
+      properties.nonComplianceMessages: [
+        0:
+
+          message: "Guarded Advisor C2: Cosmos DB disableLocalAuth must be true, so account keys can never bypass Entra RBAC on the claim store."
+
+      ]
+      properties.parameters.effect.value: "Deny"
+      properties.policyDefinitionId:      "/providers/Microsoft.Authorization/policyDefinitions/5450f5bd-9c72-4390-a9c4-a7aba4edfdd2"
+      type:                               "Microsoft.Authorization/policyAssignments"
+
+  ~ Microsoft.Authorization/policyAssignments/ga-allowed-locations [2025-11-01]
+    - properties.definitionVersion: "1.*.*"
+
+  ~ Microsoft.Authorization/policyAssignments/ga-deny-ai-local-auth [2025-11-01]
+    - properties.definitionVersion: "1.*.*"
+
+  ~ Microsoft.Authorization/policyAssignments/ga-deny-ai-network [2025-11-01]
+    - properties.definitionVersion: "3.*.*"
+
+  ~ Microsoft.Authorization/policyAssignments/ga-deny-cs-public-network [2025-11-01]
+    - properties.definitionVersion: "1.*.*"
+
+  ~ Microsoft.Authorization/policyAssignments/ga-deny-deployment-sku [2025-11-01]
+    - properties.definitionVersion: "1.*.*"
+
+  ~ Microsoft.Authorization/policyAssignments/ga-deny-kv-public-network [2025-11-01]
+    - properties.definitionVersion: "1.*.*"
+
+  ~ Microsoft.Authorization/policyAssignments/ga-deny-search-public-network [2025-11-01]
+    - properties.definitionVersion: "1.*.*"
+
+  ~ Microsoft.Authorization/policyAssignments/ga-deny-storage-public-network [2025-11-01]
+    - properties.definitionVersion: "1.*.*"
+
+  ~ Microsoft.Authorization/policyAssignments/ga-deny-unapproved-models [2025-11-01]
+    - properties.definitionVersion: "1.*.*"
+
+  ~ Microsoft.Authorization/policyAssignments/ga-deny-unpinned-models [2025-11-01]
+    - properties.definitionVersion: "1.*.*"
+
+  * Ignore
+
+The deployment will update the following scope:
+
+Scope: /subscriptions/<sub>/resourceGroups/rg-guardedadvisor-lab
+
+  + Microsoft.Authorization/policyAssignments/ga-deny-cosmos-local-auth [2025-11-01]
+
+      apiVersion:                         "2025-11-01"
+      id:                                 "/subscriptions/<sub>/resourceGroups/rg-guardedadvisor-lab/providers/Microsoft.Authorization/policyAssignments/ga-deny-cosmos-local-auth"
+      name:                               "ga-deny-cosmos-local-auth"
+      properties.definitionVersion:       "1.*.*"
+      properties.description:             "Managed by infra/policy-assignments.bicep (D-017)."
+      properties.displayName:             "GA: Cosmos DB accounts must disable key (local) authentication"
+      properties.enforcementMode:         "Default"
+      properties.metadata.managedBy:      "bicep"
+      properties.metadata.project:        "guarded-advisor"
+      properties.nonComplianceMessages: [
+        0:
+
+          message: "Guarded Advisor C2: Cosmos DB disableLocalAuth must be true, so account keys can never bypass Entra RBAC on the claim store."
+
+      ]
+      properties.parameters.effect.value: "Deny"
+      properties.policyDefinitionId:      "/providers/Microsoft.Authorization/policyDefinitions/5450f5bd-9c72-4390-a9c4-a7aba4edfdd2"
+      type:                               "Microsoft.Authorization/policyAssignments"
+
+  = Microsoft.Authorization/policyAssignments/ga-allowed-locations [2025-11-01]
+  = Microsoft.Authorization/policyAssignments/ga-deny-ai-local-auth [2025-11-01]
+  = Microsoft.Authorization/policyAssignments/ga-deny-ai-network [2025-11-01]
+  = Microsoft.Authorization/policyAssignments/ga-deny-cs-public-network [2025-11-01]
+  = Microsoft.Authorization/policyAssignments/ga-deny-deployment-sku [2025-11-01]
+  = Microsoft.Authorization/policyAssignments/ga-deny-kv-public-network [2025-11-01]
+  = Microsoft.Authorization/policyAssignments/ga-deny-search-public-network [2025-11-01]
+  = Microsoft.Authorization/policyAssignments/ga-deny-storage-public-network [2025-11-01]
+  = Microsoft.Authorization/policyAssignments/ga-deny-unapproved-models [2025-11-01]
+  = Microsoft.Authorization/policyAssignments/ga-deny-unpinned-models [2025-11-01]
+  * Microsoft.App/sandboxGroups/ga-sbx-lab
+  * Microsoft.CognitiveServices/accounts/ga-ai-labv3do
+  * Microsoft.CognitiveServices/accounts/ga-ai-labv3do/projects/ga-proj-labv3do
+  * Microsoft.CognitiveServices/accounts/ga-cs-labv3do
+  * Microsoft.Compute/disks/ga-jump-lab-osdisk
+  * Microsoft.Compute/virtualMachines/ga-jump-lab
+  * Microsoft.Compute/virtualMachines/ga-jump-lab/extensions/AADLoginForWindows
+  * Microsoft.Compute/virtualMachines/ga-jump-lab/extensions/GuestAttestation
+  * Microsoft.ContainerRegistry/registries/gaacrlabv3doqebnffszc
+  * Microsoft.DevTestLab/schedules/shutdown-computevm-ga-jump-lab
+  * Microsoft.DocumentDB/databaseAccounts/ga-ai-labv3docosmosdb
+  * Microsoft.Insights/components/appi-tracing-v3do
+  * Microsoft.KeyVault/vaults/ga-kv-y3sm7whkmwflm
+  * Microsoft.ManagedIdentity/userAssignedIdentities/ga-id-sbx-pull-lab
+  * Microsoft.Network/networkInterfaces/ampls-tracing-v3do-pe.nic.86b2...82df
+  * Microsoft.Network/networkInterfaces/ga-ai-labv3do-private-endpoint.nic.d05a...a2e6
+  * Microsoft.Network/networkInterfaces/ga-ai-labv3docosmosdb-private-endpoint.nic.9f38...e843
+  * Microsoft.Network/networkInterfaces/ga-ai-labv3dosearch-private-endpoint.nic.3ad2...be44
+  * Microsoft.Network/networkInterfaces/ga-cs-labv3do-private-endpoint.nic.c107...95d8
+  * Microsoft.Network/networkInterfaces/ga-jump-lab-nic
+  * Microsoft.Network/networkInterfaces/ga-kv-y3sm7whkmwflm-private-endpoint.nic.86d7...c729
+  * Microsoft.Network/networkInterfaces/gaailabv3dost-private-endpoint.nic.79d6...885e
+  * Microsoft.Network/networkSecurityGroups/ga-nsg-agent-lab
+  * Microsoft.Network/networkSecurityGroups/ga-nsg-apim-lab
+  * Microsoft.Network/networkSecurityGroups/ga-nsg-jump-lab
+  * Microsoft.Network/networkSecurityGroups/ga-nsg-pe-lab
+  * Microsoft.Network/privateDnsZones/privatelink.agentsvc.azure-automation.net
+  * Microsoft.Network/privateDnsZones/privatelink.agentsvc.azure-automation.net/virtualNetworkLinks/privatelink-agentsvc-azure-automation-net-link
+  * Microsoft.Network/privateDnsZones/privatelink.blob.core.windows.net
+  * Microsoft.Network/privateDnsZones/privatelink.blob.core.windows.net/virtualNetworkLinks/storage-v3do-link
+  * Microsoft.Network/privateDnsZones/privatelink.cognitiveservices.azure.com
+  * Microsoft.Network/privateDnsZones/privatelink.cognitiveservices.azure.com/virtualNetworkLinks/aiServicesCognitiveServices-v3do-link
+  * Microsoft.Network/privateDnsZones/privatelink.documents.azure.com
+  * Microsoft.Network/privateDnsZones/privatelink.documents.azure.com/virtualNetworkLinks/cosmosDB-v3do-link
+  * Microsoft.Network/privateDnsZones/privatelink.monitor.azure.com
+  * Microsoft.Network/privateDnsZones/privatelink.monitor.azure.com/virtualNetworkLinks/privatelink-monitor-azure-com-link
+  * Microsoft.Network/privateDnsZones/privatelink.ods.opinsights.azure.com
+  * Microsoft.Network/privateDnsZones/privatelink.ods.opinsights.azure.com/virtualNetworkLinks/privatelink-ods-opinsights-azure-com-link
+  * Microsoft.Network/privateDnsZones/privatelink.oms.opinsights.azure.com
+  * Microsoft.Network/privateDnsZones/privatelink.oms.opinsights.azure.com/virtualNetworkLinks/privatelink-oms-opinsights-azure-com-link
+  * Microsoft.Network/privateDnsZones/privatelink.openai.azure.com
+  * Microsoft.Network/privateDnsZones/privatelink.openai.azure.com/virtualNetworkLinks/aiServicesOpenAI-v3do-link
+  * Microsoft.Network/privateDnsZones/privatelink.search.windows.net
+  * Microsoft.Network/privateDnsZones/privatelink.search.windows.net/virtualNetworkLinks/aiSearch-v3do-link
+  * Microsoft.Network/privateDnsZones/privatelink.services.ai.azure.com
+  * Microsoft.Network/privateDnsZones/privatelink.services.ai.azure.com/virtualNetworkLinks/aiServices-v3do-link
+  * Microsoft.Network/privateDnsZones/privatelink.vaultcore.azure.net
+  * Microsoft.Network/privateDnsZones/privatelink.vaultcore.azure.net/virtualNetworkLinks/keyvault-link
+  * Microsoft.Network/privateEndpoints/ampls-tracing-v3do-pe
+  * Microsoft.Network/privateEndpoints/ga-ai-labv3do-private-endpoint
+  * Microsoft.Network/privateEndpoints/ga-ai-labv3docosmosdb-private-endpoint
+  * Microsoft.Network/privateEndpoints/ga-ai-labv3dosearch-private-endpoint
+  * Microsoft.Network/privateEndpoints/ga-cs-labv3do-private-endpoint
+  * Microsoft.Network/privateEndpoints/ga-kv-y3sm7whkmwflm-private-endpoint
+  * Microsoft.Network/privateEndpoints/gaailabv3dost-private-endpoint
+  * Microsoft.Network/virtualNetworks/ga-vnet-lab
+  * Microsoft.Search/searchServices/ga-ai-labv3dosearch
+  * Microsoft.Storage/storageAccounts/gaailabv3dost
+  * microsoft.alertsmanagement/smartDetectorAlertRules/Failure Anomalies - appi-tracing-v3do
+  * microsoft.insights/actiongroups/Application Insights Smart Detection
+  * microsoft.insights/privateLinkScopes/ampls-tracing-v3do
+
+Resource changes: 1 to create, 10 to modify, 61 to ignore.

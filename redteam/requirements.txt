@@ -1,0 +1,4 @@
+# Red-team harness on Tooni's laptop (w3-harness). Same pins as agent/requirements.txt (newest release at least
+# 14 days old). PyRIT and Promptfoo are added by their own tasks.
+azure-identity==1.26.0
+azure-monitor-ingestion==1.1.0

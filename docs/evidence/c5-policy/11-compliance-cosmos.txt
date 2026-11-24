@@ -1,0 +1,1 @@
+ga-ai-labv3docosmosdb	state=Compliant	timestamp=2026-10-29T21:21:54.244436+00:00	definitionVersion=1.2.0

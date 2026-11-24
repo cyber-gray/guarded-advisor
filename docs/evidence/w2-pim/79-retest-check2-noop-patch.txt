@@ -1,0 +1,12 @@
+# Retest check 2, as T, Reader only. No-op PATCH to Protected.
+signed in: 6d4c...2a4d
+now: 2026-11-05T02:03:18Z
+T's activated instances: 0
+before: level=Protected retentionInDays=90 totalRetentionInDays=90
+--- T's roles at or above the table, tested against Microsoft.OperationalInsights/workspaces/tables/write
+Reader | level=subscription | grants=no
+expected result: denied
+RESULT: denied, AuthorizationFailed
+action named in the error: Microsoft.OperationalInsights/workspaces/tables/write 
+after: level=Protected retentionInDays=90 totalRetentionInDays=90
+properties changed: none

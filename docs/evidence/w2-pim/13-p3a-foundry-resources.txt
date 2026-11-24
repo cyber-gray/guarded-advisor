@@ -1,0 +1,6 @@
+# P3a, 2026-11-03 Toronto, as T. Foundry and Machine Learning resources, plus the subscription's total resource count.
+type                                           name                           group                  location    kind
+Microsoft.CognitiveServices/accounts           ga-ai-labv3do                  rg-guardedadvisor-lab  canadaeast  AIServices
+Microsoft.CognitiveServices/accounts/projects  ga-ai-labv3do/ga-proj-labv3do  rg-guardedadvisor-lab  canadaeast  AIServices
+Microsoft.CognitiveServices/accounts           ga-cs-labv3do                  rg-guardedadvisor-lab  canadaeast  ContentSafety
+resources in subscription: 78

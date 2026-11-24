@@ -1,0 +1,7 @@
+date,category,provider,amount_cad,receipt_ref,member_comment
+2026-08-12,physiotherapy,Brambleton Fictional Physiotherapy,71.50,RCPT-0027-01,
+2026-08-17,physiotherapy,Brambleton Fictional Physiotherapy,69.50,RCPT-0027-02,
+2026-08-22,physiotherapy,Brambleton Fictional Physiotherapy,91.00,RCPT-0027-03,
+2026-08-27,prescription,Lantern Hill Fictional Clinic,37.50,RCPT-0027-04,
+2026-09-01,counselling,Copperleaf Fictional Family Practice,146.00,RCPT-0027-05,
+2026-09-06,prescription,Lantern Hill Fictional Clinic,51.00,RCPT-0027-06,

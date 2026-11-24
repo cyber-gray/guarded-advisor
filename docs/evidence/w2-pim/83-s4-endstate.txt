@@ -1,0 +1,28 @@
+read_at=2026-11-05T15:12:50Z tag=s4-endstate
+OK    T activated instances: 0
+OK    T assigned instances: 6
+OK    T Reader at subscription, no condition: 1
+OK    T Owner instances: 0
+OK    T active scopes outside the lab: 0
+--- T active
+Assigned | Foundry User | ga-proj-labv3do | condition=false
+Assigned | Monitoring Metrics Publisher | ga-dcr-redteam-shared | condition=false
+Assigned | Reader | ga-jump-lab | condition=false
+Assigned | Reader | ga-jump-lab-nic | condition=false
+Assigned | Reader | subscription | condition=false
+Assigned | Virtual Machine Administrator Login | ga-jump-lab | condition=false
+OK    T eligible instances: 3
+OK    Eligible Owner at subscription, no condition: 1
+OK    Eligible Owner end: 2026-11-19T02:21
+OK    Eligible PMDR on rg-guardedadvisor-shared: 1
+OK    Eligible R10 on ga-sbx-lab: 1
+--- T eligible
+Container Apps SandboxGroup Data Owner | ga-sbx-lab | condition=false | end=2026-11-19T14:39:49Z
+Owner | subscription | condition=false | end=2026-11-19T02:21:58Z
+Privileged Monitoring Data Reader | rg-guardedadvisor-shared | condition=false | end=2026-11-19T23:25:23Z
+OK    G assignments: 1
+OK    G Owner at subscription, no condition: 1
+OK    G assignment ID: 40ae...a03b
+--- G
+Owner | subscription | condition=false
+RESULT: all match

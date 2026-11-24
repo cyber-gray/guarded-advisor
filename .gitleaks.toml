@@ -1,0 +1,23 @@
+# gitleaks configuration: the default rules plus lab-specific identity rules.
+# The pre-commit hook (.githooks/pre-commit) picks this file up from the repo root.
+#
+# The rules match the shape of the identifiers, not their literal values: a literal tenant domain or Gmail handle in
+# this file would put that identifier in the repo (and in any published copy). Placeholders such as
+# <tenant>.onmicrosoft.com and the bare words onmicrosoft.com or gmail.com don't match.
+
+title = "guarded-advisor"
+
+[extend]
+useDefault = true
+
+[[rules]]
+id = "entra-tenant-domain"
+description = "An Entra tenant domain (<name>.onmicrosoft.com), including guest UPNs (..._gmail.com#EXT#@<name>.onmicrosoft.com)"
+regex = '''(?i)[a-z0-9][a-z0-9-]*\.onmicrosoft\.com'''
+keywords = ["onmicrosoft"]
+
+[[rules]]
+id = "gmail-handle"
+description = "A Gmail address or a Gmail handle in guest-UPN form (<handle>@gmail.com or <handle>_gmail.com)"
+regex = '''(?i)[a-z0-9][a-z0-9._%+-]*[@_]gmail\.com'''
+keywords = ["gmail"]

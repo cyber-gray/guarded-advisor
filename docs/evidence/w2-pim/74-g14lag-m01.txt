@@ -1,0 +1,13 @@
+# G14-lag m01, as T. Count queries after deactivation and a fresh sign-in.
+signed in: 6d4c...2a4d
+now: 2026-11-05T01:28:47Z
+activated roles: none
+PMDR deactivation requested: 2026-11-05T01:26:50.887Z, status Revoked
+seconds since deactivation request: 117
+data action tables/data/read in permissions: yes
+expectation set before this query: AppDependencies 144, AgentToolAudit_CL 2; Protected tables may still show 90 and 2 during the lag, and should show 0 and 0 by +30
+AppDependencies, last 7 days | General | 144
+AppGenAIContent | Protected | 90
+AdjudicationLog_CL | Protected | 2
+AgentToolAudit_CL | General | 2
+Protected rows visible: yes

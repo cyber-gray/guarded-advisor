@@ -1,0 +1,21 @@
+# G7-read, 2026-11-04, as T. Owner policy before the portal edit, then the Reader policy's assignment expiration.
+rules in policy: 17
+Expiration_Admin_Eligibility               expirationRequired=true  max=P365D
+Expiration_Admin_Assignment                expirationRequired=true  max=P180D
+Expiration_EndUser_Assignment              expirationRequired=true  max=PT8H
+Enablement_Admin_Eligibility               enabled=
+Enablement_Admin_Assignment                enabled=Justification
+Enablement_EndUser_Assignment              enabled=Justification
+Approval_EndUser_Assignment                approvalRequired=false   stages=1
+AuthenticationContext_EndUser_Assignment   enabled=false
+Notification_Admin_Admin_Eligibility       level=All                defaultRecipients=true  extraRecipients=0
+Notification_Requestor_Admin_Eligibility   level=All                defaultRecipients=true  extraRecipients=0
+Notification_Approver_Admin_Eligibility    level=All                defaultRecipients=true  extraRecipients=0
+Notification_Admin_Admin_Assignment        level=All                defaultRecipients=true  extraRecipients=0
+Notification_Requestor_Admin_Assignment    level=All                defaultRecipients=true  extraRecipients=0
+Notification_Approver_Admin_Assignment     level=All                defaultRecipients=true  extraRecipients=0
+Notification_Admin_EndUser_Assignment      level=All                defaultRecipients=true  extraRecipients=0
+Notification_Requestor_EndUser_Assignment  level=All                defaultRecipients=true  extraRecipients=0
+Notification_Approver_EndUser_Assignment   level=All                defaultRecipients=true  extraRecipients=0
+Reader policy, subscription scope:
+Expiration_Admin_Assignment         expirationRequired=true  max=P180D

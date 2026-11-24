@@ -1,0 +1,8 @@
+# G12 check 3, 2026-11-04, as T, Reader only. Count queries, no row contents.
+signed in: 6d4c...2a4d
+now: 2026-11-04T22:59:37Z
+T's activated instances: 0
+AppDependencies, last 7 days | General | 144
+AppGenAIContent | Protected | 0
+AdjudicationLog_CL | Protected | 0
+AgentToolAudit_CL | General | 2

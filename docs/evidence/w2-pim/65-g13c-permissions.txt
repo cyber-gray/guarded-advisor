@@ -1,0 +1,15 @@
+# G13c, 2026-11-04, as T, activated. Permissions API, the positive control for 58.
+signed in: 6d4c...2a4d
+now: 2026-11-04T23:22:19Z
+T's activated roles: Owner
+--- ga-law-shared
+dataAuthorizationMode: false
+workspaces/write survives: yes
+--- T's scopes, tested against Microsoft.Authorization/roleAssignments/write
+subscription | Owner, Reader | roleAssignments/write=yes | wildcard write=yes
+ga-proj-labv3do | Foundry User | roleAssignments/write=yes | wildcard write=yes
+ga-jump-lab | Reader, Virtual Machine Administrator Login | roleAssignments/write=yes | wildcard write=yes
+ga-jump-lab-nic | Reader | roleAssignments/write=yes | wildcard write=yes
+ga-dcr-redteam-shared | Monitoring Metrics Publisher | roleAssignments/write=yes | wildcard write=yes
+scopes checked: 5, with a write hit: 5, read errors: 0
+positive control: roleAssignments/write=yes at subscription scope, so the check can say yes

@@ -1,0 +1,8 @@
+B-2, T after activating Privileged Monitoring Data Reader in PIM (19:11:40Z to 20:11:40Z). Same command as 11, output as printed.
+The eligible assignment is on the resource group, not on the workspace.
+
+2026-11-01T19:15:30Z
+Role                               Scope
+---------------------------------  -------------------------------------------------------------------------------------------
+Owner                              /subscriptions/<sub>
+Privileged Monitoring Data Reader  /subscriptions/<sub>/resourceGroups/rg-guardedadvisor-shared

@@ -1,0 +1,7 @@
+# G11-pre, 2026-11-04, as T. Nothing saved in the portal. Condition compared by role, not printed.
+Owner   condition=yes  b3f4...4ac1
+Reader  condition=no   c502...83bb
+condition hash now: 7fc5ba2223c9f0eeeddbae772fc51032e8653480abeed22f5af3caf51039771c
+write: 3 raw GUIDs, 3 distinct roles: Owner, Role Based Access Control Administrator, User Access Administrator
+delete: 3 raw GUIDs, 3 distinct roles: Owner, Role Based Access Control Administrator, User Access Administrator
+RESULT: matches the preset's three roles

@@ -1,0 +1,34 @@
+capture-20261116T1952Z | read 2026-11-16T19:52:31Z | as T (6d4c...2a4d), standing Reader | workspace ga-law-shared | script scripts/w3_evidence_capture.sh at f1bb0ee
+timespan: P31D
+query (GUIDs masked):
+  Usage
+  | where IsBillable == true
+  | summarize GB = round(sum(Quantity) / 1024.0, 3) by DataType
+  | order by GB desc
+rows: 25
+---
+AzureDiagnostics | 0.113 GB billable
+CDBPartitionKeyStatistics | 0.021 GB billable
+AADNonInteractiveUserSignInLogs | 0.006 GB billable
+AppGenAIContent | 0.004 GB billable
+CDBDataPlaneRequests | 0.004 GB billable
+AppDependencies | 0.002 GB billable
+CDBPartitionKeyRUConsumption | 0.001 GB billable
+AppMetrics | 0.001 GB billable
+AZKVAuditLogs | 0 GB billable
+StorageBlobLogs | 0 GB billable
+AgentToolAudit_CL | 0 GB billable
+ContainerRegistryLoginEvents | 0 GB billable
+MicrosoftAzureBastionAuditLogs | 0 GB billable
+ApiManagementGatewayLogs | 0 GB billable
+CDBQueryRuntimeStatistics | 0 GB billable
+AuditLogs | 0 GB billable
+SigninLogs | 0 GB billable
+AppTraces | 0 GB billable
+AppPerformanceCounters | 0 GB billable
+AdjudicationLog_CL | 0 GB billable
+ContainerRegistryRepositoryEvents | 0 GB billable
+AADManagedIdentitySignInLogs | 0 GB billable
+CDBControlPlaneRequests | 0 GB billable
+RedTeamRun_CL | 0 GB billable
+ApiManagementGatewayLlmLog | 0 GB billable

@@ -1,0 +1,18 @@
+Output as printed. T = default CLI profile (.azure); reader = ga-reader-test2 (.azure-readertest2). Subscription IDs replaced by <sub>; object and assignment IDs cut to first 4 and last 4.
+
+== Step 1: roles reaching ga-law-shared for T
+2026-11-02T21:16:35Z
+Role    Scope
+------  ---------------------------------------------------
+Owner   /subscriptions/<sub>
+
+== Step 1b: features at api-version 2026-03-01, diffed against 01
+2026-11-02T21:21:57Z
+matches baseline 01
+
+(saved copy of the read-back)
+{
+  "enableLogAccessUsingOnlyResourcePermissions": true,
+  "legacy": 0,
+  "searchVersion": 1
+}

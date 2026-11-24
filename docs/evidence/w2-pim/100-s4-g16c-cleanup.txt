@@ -1,0 +1,6 @@
+read_at=2026-11-05T16:45:19Z tag=s4-g16c-cleanup
+T activated Owner at subscription: 1
+G Reader at exactly ga-ag-ops-shared: 1
+assignment to delete: bb96...f476
+delete accepted: bb96...f476
+RESULT: one delete sent; read back with s4-g16c-read

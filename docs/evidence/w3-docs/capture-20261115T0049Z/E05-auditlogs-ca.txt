@@ -1,0 +1,13 @@
+capture-20261115T0049Z | read 2026-11-15T00:49:55Z | as T (6d4c...2a4d), standing Reader | workspace ga-law-shared | script scripts/w3_evidence_capture.sh at aaa2660
+timespan: P30D
+query (GUIDs masked):
+  AuditLogs
+  | extend TR = tostring(TargetResources)
+  | where TR has "GA-CA-" or LoggedByService =~ "Conditional Access"
+  | extend Policy = case(TR has "GA-CA-01", "GA-CA-01", TR has "GA-CA-02", "GA-CA-02", "other")
+  | project TimeGenerated, OperationName, Policy, Result, LatencyS = datetime_diff("second", ingestion_time(), TimeGenerated)
+  | order by TimeGenerated asc
+rows: 2
+---
+2026-11-13T02:02:07Z | GA-CA-02 | Add policy | success | ingestion latency 327 s
+2026-11-13T02:02:07Z | GA-CA-02 | Add conditional access policy | success | ingestion latency 187 s

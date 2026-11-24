@@ -1,0 +1,10 @@
+NEAR-1, "What is the waiting period under Plan D?":
+AI-generated draft for case manager review. Not a decision.
+The waiting period under Plan D is not explicitly detailed in the documents retrieved. The search across plan wordings for Plans A, B, and C showed their respective waiting periods, but Plan D's waiting period information is not present in the available documents. If you need details for Plan D's waiting period, please check if there are any additional plan wording files or internal resources specific to Plan D.
+Retrieved from (best match first): 02-plan-wording-plan-b-std.md (1 passage), 03-plan-wording-plan-c-ltd.md (1 passage), 01-plan-wording-plan-a-std.md (1 passage), 04-claims-guideline-definitions.md (1 passage), 06-return-to-work-procedure.md (1 passage)
+
+NEAR-2, "How does a provincial workers' compensation board calculate loss-of-earnings benefits for a workplace injury?":
+AI-generated draft for case manager review. Not a decision.
+The documents you provided do not specifically explain how a provincial workers' compensation board calculates loss-of-earnings benefits for a workplace injury. The internal plan wordings and guidelines focus on Larkfield Mutual's own short- and long-term disability plans, their benefit percentages, waiting periods, maximums, and coordination with workers' compensation but do not detail the provincial board's calculation method. For example, Plan B STD benefits are 66.7% of weekly insurable earnings up to CAD 1,300/week and reduce by amounts from workers' compensation, but this is Larkfield's approach, not the provincial board's formula.
+If you need specific details about the provincial workers' compensation board calculation, it is typically found on the board's own official documentation or website rather than in Larkfield Mutual's internal plan documents.
+Retrieved from (best match first): 02-plan-wording-plan-b-std.md (1 passage), 03-plan-wording-plan-c-ltd.md (1 passage), 01-plan-wording-plan-a-std.md (1 passage), 05-claims-guideline-documentation.md (1 passage), 07-graduated-rtw-plan-template.md (1 passage)

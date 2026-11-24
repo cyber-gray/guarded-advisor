@@ -1,0 +1,42 @@
+capture-20261115T0049Z | read 2026-11-15T00:49:55Z | as T (6d4c...2a4d), standing Reader | workspace ga-law-shared | script scripts/w3_evidence_capture.sh at aaa2660
+timespan: P90D
+query (GUIDs masked):
+  AzureActivity
+  | where ResourceGroup =~ "rg-guardedadvisor-lab" and ActivityStatusValue in~ ("Success", "Succeeded")
+  | where ResourceProviderValue in~ ("MICROSOFT.APIMANAGEMENT", "MICROSOFT.NETWORK", "MICROSOFT.COMPUTE")
+  | extend O = replace_string(tolower(OperationNameValue), "/action", "")
+  | extend Res = tostring(split(_ResourceId, "/")[-1]), Op = tostring(split(O, "/")[-1]), Kind = tostring(split(O, "/")[-2])
+  | where Kind in~ ("service", "bastionHosts", "publicIPAddresses", "virtualMachines", "privateEndpoints")
+  | where Op in~ ("write", "delete", "start", "deallocate", "powerOff")
+  | where Kind !~ "privateEndpoints" or Res startswith "ga-apim"
+  | summarize FirstT = min(TimeGenerated), LastT = max(TimeGenerated), Events = count()
+      by Day = format_datetime(TimeGenerated, "yyyy-MM-dd"), Kind, Res, Op
+  | order by Day asc, FirstT asc
+rows: 26
+---
+2026-11-11 | publicipaddresses | ga-pip-bas-lab | write | 19:26:54Z to 19:26:54Z | events 1
+2026-11-11 | bastionhosts | ga-bas-lab | write | 19:36:39Z to 19:36:39Z | events 1
+2026-11-11 | virtualmachines | ga-jump-lab | start | 19:38:11Z to 19:38:11Z | events 1
+2026-11-11 | bastionhosts | ga-bas-lab | delete | 20:49:15Z to 20:49:15Z | events 1
+2026-11-11 | publicipaddresses | ga-pip-bas-lab | delete | 20:50:26Z to 20:50:26Z | events 1
+2026-11-11 | virtualmachines | ga-jump-lab | deallocate | 20:50:51Z to 20:50:51Z | events 1
+2026-11-12 | service | ga-apim-lab-v3doqe | write | 16:14:27Z to 19:14:06Z | events 6
+2026-11-12 | privateendpoints | ga-apim-lab-v3doqe-private-endpoint | write | 16:15:06Z to 16:50:56Z | events 3
+2026-11-12 | publicipaddresses | ga-pip-bas-lab | write | 16:20:48Z to 16:30:45Z | events 2
+2026-11-12 | bastionhosts | ga-bas-lab | write | 16:30:35Z to 16:30:35Z | events 1
+2026-11-12 | virtualmachines | ga-jump-lab | start | 16:32:05Z to 16:32:05Z | events 1
+2026-11-12 | privateendpoints | ga-apim-lab-v3doqe-private-endpoint | delete | 19:14:33Z to 19:14:33Z | events 1
+2026-11-12 | service | ga-apim-lab-v3doqe | delete | 19:16:50Z to 19:18:19Z | events 3
+2026-11-12 | bastionhosts | ga-bas-lab | delete | 19:29:53Z to 19:29:53Z | events 1
+2026-11-12 | publicipaddresses | ga-pip-bas-lab | delete | 19:30:02Z to 19:30:02Z | events 1
+2026-11-12 | virtualmachines | ga-jump-lab | deallocate | 19:35:04Z to 19:35:04Z | events 1
+2026-11-13 | service | ga-apim-lab-v3doqe | write | 18:08:41Z to 20:26:13Z | events 4
+2026-11-13 | privateendpoints | ga-apim-lab-v3doqe-private-endpoint | write | 18:09:03Z to 18:18:46Z | events 2
+2026-11-13 | publicipaddresses | ga-pip-bas-lab | write | 18:43:10Z to 18:43:10Z | events 1
+2026-11-13 | bastionhosts | ga-bas-lab | write | 18:52:57Z to 18:53:10Z | events 2
+2026-11-13 | virtualmachines | ga-jump-lab | start | 18:54:35Z to 18:54:35Z | events 1
+2026-11-13 | privateendpoints | ga-apim-lab-v3doqe-private-endpoint | delete | 20:26:38Z to 20:26:38Z | events 1
+2026-11-13 | service | ga-apim-lab-v3doqe | delete | 20:28:57Z to 20:30:14Z | events 3
+2026-11-13 | bastionhosts | ga-bas-lab | delete | 20:38:55Z to 20:38:55Z | events 1
+2026-11-13 | publicipaddresses | ga-pip-bas-lab | delete | 20:39:07Z to 20:39:07Z | events 1
+2026-11-13 | virtualmachines | ga-jump-lab | deallocate | 20:40:09Z to 20:40:09Z | events 1

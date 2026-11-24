@@ -1,0 +1,6 @@
+After Tooni deactivated Privileged Monitoring Data Reader (just before 19:40Z) and signed out and back in to the portal. Same command as 11, output as printed.
+
+2026-11-01T19:40:46Z
+Role    Scope
+------  ---------------------------------------------------
+Owner   /subscriptions/<sub>

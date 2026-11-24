@@ -1,0 +1,9 @@
+read_at=2026-11-05T16:20:53Z tag=s4-g16b-read
+OK    T activated instances: 0
+OK    G Reader on ga-ag-ops-shared: 1
+OK    G Reader with no condition: 1
+OK    G Reader schedule instance (Assigned means active): Assigned|end=none
+--- G, all visible to T: role | scope
+Reader | ga-ag-ops-shared
+User Access Administrator | root
+RESULT: all match

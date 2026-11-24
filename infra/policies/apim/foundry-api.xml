@@ -1,0 +1,22 @@
+<!--
+  API-level policy for ga-foundry-openai-v1 (infra/apim.bicep). <base /> runs the global policy first (ip-filter, token
+  validation, caller authorization, llm-token-limit, llm-content-safety), then requests go to the ga-foundry backend,
+  which authenticates with APIM's managed identity. On 2026-11-12 the portal-created API had no set-backend-service and
+  every allowed call failed with "Backend service URL is not defined" (findings); this makes the routing part of the
+  template. https://learn.microsoft.com/azure/api-management/set-backend-service-policy
+-->
+<policies>
+    <inbound>
+        <base />
+        <set-backend-service backend-id="ga-foundry" />
+    </inbound>
+    <backend>
+        <base />
+    </backend>
+    <outbound>
+        <base />
+    </outbound>
+    <on-error>
+        <base />
+    </on-error>
+</policies>

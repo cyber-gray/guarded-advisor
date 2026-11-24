@@ -1,0 +1,7 @@
+date,category,provider,amount_cad,receipt_ref,member_comment
+2026-09-19,physiotherapy,Brambleton Fictional Physiotherapy,71.00,RCPT-0019-01,
+2026-09-24,physiotherapy,Brambleton Fictional Physiotherapy,78.00,RCPT-0019-02,
+2026-09-29,physiotherapy,Brambleton Fictional Physiotherapy,72.00,RCPT-0019-03,
+2026-10-04,mileage,Member travel to appointments,22.00,RCPT-0019-04,
+2026-10-09,mileage,Member travel to appointments,22.00,RCPT-0019-05,
+2026-10-14,physiotherapy,Brambleton Fictional Physiotherapy,86.50,RCPT-0019-06,

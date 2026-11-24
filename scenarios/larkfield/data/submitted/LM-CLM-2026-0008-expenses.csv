@@ -1,0 +1,9 @@
+date,category,provider,amount_cad,receipt_ref,member_comment
+2026-09-10,physiotherapy,Brambleton Fictional Physiotherapy,71.00,RCPT-0008-01,
+2026-09-15,mileage,Member travel to appointments,9.50,RCPT-0008-02,
+2026-09-20,prescription,Lantern Hill Fictional Clinic,39.50,RCPT-0008-03,
+2026-09-25,mileage,Member travel to appointments,24.00,RCPT-0008-04,
+2026-09-30,prescription,Lantern Hill Fictional Clinic,76.00,RCPT-0008-05,
+2026-10-05,prescription,Lantern Hill Fictional Clinic,23.50,RCPT-0008-06,
+2026-10-10,physiotherapy,Brambleton Fictional Physiotherapy,91.00,RCPT-0008-07,
+2026-10-15,counselling,Copperleaf Fictional Family Practice,157.00,RCPT-0008-08,

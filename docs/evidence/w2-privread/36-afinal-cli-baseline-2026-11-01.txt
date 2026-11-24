@@ -1,0 +1,18 @@
+A-final, CLI, T, window A, 5 min 55 s before the activation at 19:11:40Z. Same loop, output as printed.
+
+2026-11-01T19:05:45Z
+== AppDependencies | where TimeGenerated > ago(7d) | count
+Count    TableName
+-------  -------------
+144      PrimaryResult
+exit=0
+== AppGenAIContent | count
+Count    TableName
+-------  -------------
+0        PrimaryResult
+exit=0
+== AdjudicationLog_CL | count
+Count    TableName
+-------  -------------
+0        PrimaryResult
+exit=0

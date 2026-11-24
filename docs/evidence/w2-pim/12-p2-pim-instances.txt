@@ -1,0 +1,21 @@
+# P2, 2026-11-03 Toronto, as T. Masked.
+principalId filter form: eligible=quoted active=quoted
+asTarget query: eligible=ok active=ok
+ELIGIBLE (T, principalId query)
+role                                    scope                     type  member  status       start             end
+Container Apps SandboxGroup Data Owner  ga-sbx-lab                -     Direct  Provisioned  2026-10-27T13:41  2026-11-19T14:39
+Privileged Monitoring Data Reader       rg-guardedadvisor-shared  -     Direct  Provisioned  2026-10-26T22:26  2026-11-19T23:25
+ACTIVE (T, principalId query)
+role                                 scope                  type      member  status       start             end
+Foundry User                         ga-proj-labv3do        Assigned  Direct  Provisioned  2026-10-21T13:36  permanent
+Monitoring Metrics Publisher         ga-dcr-redteam-shared  Assigned  Direct  Provisioned  2026-10-22T20:04  permanent
+Owner                                Azure subscription 1   Assigned  Direct  Provisioned  2026-10-04T03:13  permanent
+Reader                               ga-jump-lab-nic        Assigned  Direct  Provisioned  2026-10-16T21:39  permanent
+Reader                               ga-jump-lab            Assigned  Direct  Provisioned  2026-10-16T21:41  permanent
+Virtual Machine Administrator Login  ga-jump-lab            Assigned  Direct  Provisioned  2026-10-16T21:41  permanent
+eligible counts: principalId=2 asTarget=2; same instances: yes; nextLink: principalId=false asTarget=false
+active counts: principalId=6 asTarget=6; same instances: yes; nextLink: principalId=false asTarget=false
+activated instances: 0
+eligible Privileged Monitoring Data Reader on rg-guardedadvisor-shared: 1
+eligible R10 on ga-sbx-lab: 1
+RESULT: stop conditions clear

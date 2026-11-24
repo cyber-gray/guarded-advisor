@@ -1,0 +1,38 @@
+capture-20261115T0049Z | read 2026-11-15T00:49:55Z | as T (6d4c...2a4d), standing Reader | workspace ga-law-shared | script scripts/w3_evidence_capture.sh at aaa2660
+timespan: P30D
+query (GUIDs masked):
+  let ids = @"((?:c2(?:live|model)|d5smoke|A6|C8|DF1)-[A-Za-z0-9-]+)";
+  let alerts = SecurityAlert | where AlertName startswith "D5"
+    | summarize arg_max(TimeGenerated, ExtendedProperties) by SystemAlertId
+    | extend rids = extract_all(ids, ExtendedProperties)
+    | extend rids = iff(isnull(rids) or array_length(rids) == 0, dynamic(["other"]), rids)
+    | mv-expand rid = rids to typeof(string) | distinct SystemAlertId, rid, TimeGenerated;
+  let inc = SecurityIncident | summarize arg_max(TimeGenerated, AlertIds) by IncidentName
+    | mv-expand AlertId = AlertIds to typeof(string)
+    | join kind=inner alerts on $left.AlertId == $right.SystemAlertId | distinct IncidentName, rid;
+  union
+    (alerts | summarize n = dcount(SystemAlertId), Day = format_datetime(min(TimeGenerated), "yyyy-MM-dd") by rid | extend k = "D5 alerts"),
+    (inc | summarize n = dcount(IncidentName) by rid | extend k = "incidents holding a D5 alert", Day = ""),
+    (alerts | summarize n = dcount(SystemAlertId) | extend k = "D5 alerts total", rid = "", Day = ""),
+    (SecurityIncident | summarize n = dcount(IncidentName) | extend k = "incidents total (all rules)", rid = "", Day = "")
+  | order by k asc, rid asc
+rows: 18
+---
+D5 alerts | c2live-20261110-alder | 2 | first 2026-11-10
+D5 alerts | c2live-20261110-birch | 1 | first 2026-11-10
+D5 alerts | c2live-20261110-cedar | 1 | first 2026-11-10
+D5 alerts | c2model-20261111-M4 | 1 | first 2026-11-11
+D5 alerts | c2model-20261112-M4 | 1 | first 2026-11-12
+D5 alerts | c2model-20261113-M4 | 1 | first 2026-11-13
+D5 alerts | d5smoke-20261110T014551Z | 2 | first 2026-11-10
+D5 alerts | d5smoke-20261110T014551Z-pos | 2 | first 2026-11-10
+D5 alerts total | - | 9
+incidents holding a D5 alert | c2live-20261110-alder | 1
+incidents holding a D5 alert | c2live-20261110-birch | 1
+incidents holding a D5 alert | c2live-20261110-cedar | 1
+incidents holding a D5 alert | c2model-20261111-M4 | 1
+incidents holding a D5 alert | c2model-20261112-M4 | 1
+incidents holding a D5 alert | c2model-20261113-M4 | 1
+incidents holding a D5 alert | d5smoke-20261110T014551Z | 1
+incidents holding a D5 alert | d5smoke-20261110T014551Z-pos | 1
+incidents total (all rules) | - | 7

@@ -1,0 +1,8 @@
+capture-20261115T0049Z | read 2026-11-15T00:49:55Z | as T (6d4c...2a4d), standing Reader | workspace ga-law-shared | script scripts/w3_evidence_capture.sh at aaa2660
+timespan: P90D
+query (GUIDs masked):
+  RedTeamRun_CL
+  | summarize Rows = count(), FirstT = min(TimeGenerated), LastT = max(TimeGenerated) by rid = tostring(column_ifexists("redteam_id", ""))
+rows: 1
+---
+9532...6563 | 1 | 2026-10-22T20:06Z to 2026-10-22T20:06Z

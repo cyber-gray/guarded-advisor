@@ -1,0 +1,15 @@
+# Analysis image packages (w2-sbx-image, D-025 option A). Installed with:
+#   pip install --require-hashes --only-binary=:all: --no-deps -r requirements.txt
+# Every package, including dependencies, is pinned with the sha256 of the exact wheel for CPython 3.12 on
+# linux/amd64 (manylinux), from the PyPI JSON API on 2026-10-23. Newest release at least 14 days old:
+#   numpy 2.5.3 (2026-09-06), pandas 3.0.6 (2026-09-17), python-dateutil 2.9.0.post0 (2024-03-01; 3.0.0 is from
+#   2026-10-21, too new), six 1.17.0 (2024-12-04). On Linux, pandas 3.0.6 needs only numpy and python-dateutil
+#   (tzdata is required only on Windows and Emscripten); python-dateutil needs six.
+numpy==2.5.3 \
+    --hash=sha256:b7e18c623bb5c95acb3b3328861272816ba199fb531921c5d6d0b675f1fde9e3
+pandas==3.0.6 \
+    --hash=sha256:0704044b676496b8350e023b09f174a26772456c974a2b11c36bebb558c9490d
+python-dateutil==2.9.0.post0 \
+    --hash=sha256:a8b2bc7bffae282281c8140a97d3aa9c14da0b136dfe83f850eea9a5f7470427
+six==1.17.0 \
+    --hash=sha256:4721f391ed90541fddacab5acf947aa0d3dc7d27b2e1e8eda2be8970586c3274

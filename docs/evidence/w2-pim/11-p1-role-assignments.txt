@@ -1,0 +1,14 @@
+# P1, 2026-11-03 Toronto, as T. Masked. One scope outside the lab is generalized.
+who  principal    role                                 scope                                                                                                                                            cond  ver  created     assignment
+G    2d99...a273  Contributor                          a resource outside the lab                          no    -    2026-04-05  9fc8...b2df
+G    2d99...a273  Foundry User                         /subscriptions/<sub>                                                                                                                             no    -    2025-05-20  9dd7...d428
+G    2d99...a273  Owner                                /subscriptions/<sub>                                                                                                                             no    -    2025-02-10  40ae...a03b
+T    6d4c...2a4d  Foundry User                         /subscriptions/<sub>/resourceGroups/rg-guardedadvisor-lab/providers/Microsoft.CognitiveServices/accounts/ga-ai-labv3do/projects/ga-proj-labv3do  no    -    2026-10-21  4bad...f8b1
+T    6d4c...2a4d  Monitoring Metrics Publisher         /subscriptions/<sub>/resourcegroups/rg-guardedadvisor-shared/providers/Microsoft.Insights/dataCollectionRules/ga-dcr-redteam-shared              no    -    2026-10-22  6222...ae49
+T    6d4c...2a4d  Owner                                /subscriptions/<sub>                                                                                                                             yes   2.0  2026-10-04  b3f4...4ac1
+T    6d4c...2a4d  Reader                               /subscriptions/<sub>/resourcegroups/rg-guardedadvisor-lab/providers/Microsoft.Compute/virtualMachines/ga-jump-lab                                no    -    2026-10-16  01cb...8ca0
+T    6d4c...2a4d  Reader                               /subscriptions/<sub>/resourcegroups/rg-guardedadvisor-lab/providers/Microsoft.Network/networkInterfaces/ga-jump-lab-nic                          no    -    2026-10-16  e622...abce
+T    6d4c...2a4d  Virtual Machine Administrator Login  /subscriptions/<sub>/resourcegroups/rg-guardedadvisor-lab/providers/Microsoft.Compute/virtualMachines/ga-jump-lab                                no    -    2026-10-16  9717...0308
+all assignments listed: 19
+assignments at root (/): 0
+T Owner condition sha256: 7fc5ba2223c9f0eeeddbae772fc51032e8653480abeed22f5af3caf51039771c

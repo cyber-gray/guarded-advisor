@@ -1,0 +1,10 @@
+{
+  "note": "Synthetic case manager identities for the Guarded Advisor lab (w1-data Part A, C2). Read by agent/create_case_managers.sh and agent/build_entitlements.sh. Aliases come from data/claims.json. No UPNs or tenant domain here: the domain is read at run time.",
+  "upn_prefix": "cm-",
+  "group": "grp-larkfield-cm",
+  "group_description": "Synthetic Larkfield case managers (Guarded Advisor lab, w1-data). Used for RBAC and Conditional Access scoping.",
+  "display_name_template": "Case Manager {Alias} (synthetic)",
+  "company": "Larkfield Mutual (fictional)",
+  "department": "Disability Case Management (synthetic)",
+  "job_title": "Case Manager (synthetic)"
+}

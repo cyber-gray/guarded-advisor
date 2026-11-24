@@ -1,0 +1,124 @@
+Output as printed. T = default CLI profile (.azure); reader = ga-reader-test2 (.azure-readertest2). Subscription IDs replaced by <sub>; object and assignment IDs cut to first 4 and last 4.
+
+R-4 and the lag runs. Tooni deactivated the data role at 23:02Z.
+
+== 23:00:09Z run: before the deactivation, so a with-role result
+2026-11-02T23:00:09Z
+Role                               Scope
+---------------------------------  -------------------------------------------------------------------------------------------
+Owner                              /subscriptions/<sub>
+Privileged Monitoring Data Reader  /subscriptions/<sub>/resourceGroups/rg-guardedadvisor-shared
+##### profile .azure-readertest2  2026-11-02T23:00:12Z
+== AppDependencies | where TimeGenerated > ago(7d) | count
+Count    TableName
+-------  -------------
+144      PrimaryResult
+exit=0
+== AppGenAIContent | count
+Count    TableName
+-------  -------------
+0        PrimaryResult
+exit=0
+== AdjudicationLog_CL | count
+Count    TableName
+-------  -------------
+0        PrimaryResult
+exit=0
+##### profile .azure  2026-11-02T23:00:14Z
+== AppDependencies | where TimeGenerated > ago(7d) | count
+Count    TableName
+-------  -------------
+144      PrimaryResult
+exit=0
+== AppGenAIContent | count
+Count    TableName
+-------  -------------
+90       PrimaryResult
+exit=0
+== AdjudicationLog_CL | count
+Count    TableName
+-------  -------------
+2        PrimaryResult
+exit=0
+
+== 23:05:10Z run: 3 minutes after the deactivation; ARM shows Owner only, the data plane still reads Protected rows
+2026-11-02T23:05:10Z
+Role    Scope
+------  ---------------------------------------------------
+Owner   /subscriptions/<sub>
+##### profile .azure-readertest2  2026-11-02T23:05:13Z
+== AppDependencies | where TimeGenerated > ago(7d) | count
+Count    TableName
+-------  -------------
+144      PrimaryResult
+exit=0
+== AppGenAIContent | count
+Count    TableName
+-------  -------------
+0        PrimaryResult
+exit=0
+== AdjudicationLog_CL | count
+Count    TableName
+-------  -------------
+0        PrimaryResult
+exit=0
+##### profile .azure  2026-11-02T23:05:16Z
+== AppDependencies | where TimeGenerated > ago(7d) | count
+Count    TableName
+-------  -------------
+144      PrimaryResult
+exit=0
+== AppGenAIContent | count
+Count    TableName
+-------  -------------
+90       PrimaryResult
+exit=0
+== AdjudicationLog_CL | count
+Count    TableName
+-------  -------------
+2        PrimaryResult
+exit=0
+
+== Lag run 1, T only (about 6 minutes after)
+2026-11-02T23:07:57Z
+Role    Scope
+------  ---------------------------------------------------
+Owner   /subscriptions/<sub>
+##### profile .azure  2026-11-02T23:08:00Z
+== AppDependencies | where TimeGenerated > ago(7d) | count
+Count    TableName
+-------  -------------
+144      PrimaryResult
+exit=0
+== AppGenAIContent | count
+Count    TableName
+-------  -------------
+90       PrimaryResult
+exit=0
+== AdjudicationLog_CL | count
+Count    TableName
+-------  -------------
+2        PrimaryResult
+exit=0
+
+== Lag run 2, T only (about 24 minutes after; the 23:15Z and 23:20Z runs didn't happen)
+2026-11-02T23:26:08Z
+Role    Scope
+------  ---------------------------------------------------
+Owner   /subscriptions/<sub>
+##### profile .azure  2026-11-02T23:26:12Z
+== AppDependencies | where TimeGenerated > ago(7d) | count
+Count    TableName
+-------  -------------
+144      PrimaryResult
+exit=0
+== AppGenAIContent | count
+Count    TableName
+-------  -------------
+0        PrimaryResult
+exit=0
+== AdjudicationLog_CL | count
+Count    TableName
+-------  -------------
+0        PrimaryResult
+exit=0

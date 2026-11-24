@@ -1,0 +1,9 @@
+capture-20261116T1952Z | read 2026-11-16T19:52:31Z | as T (6d4c...2a4d), standing Reader | workspace ga-law-shared | script scripts/w3_evidence_capture.sh at f1bb0ee
+timespan: P30D
+query (GUIDs masked):
+  SecurityAlert
+  | summarize Alerts = dcount(SystemAlertId), FirstT = min(TimeGenerated) by ProductName, AlertType
+  | order by FirstT asc
+rows: 1
+---
+Azure Sentinel | 29f3...8317_09de...6063 | 9 | first 2026-11-10T01:52Z

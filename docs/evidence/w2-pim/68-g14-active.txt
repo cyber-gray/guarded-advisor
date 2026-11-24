@@ -1,0 +1,8 @@
+# G14, 2026-11-04, as T. First Privileged Monitoring Data Reader activation, 1 hour.
+signed in: 6d4c...2a4d
+now: 2026-11-04T23:34:47Z
+--- T's active instances by type
+Activated: 1
+Assigned: 6
+--- T's activated instances
+Privileged Monitoring Data Reader  rg-guardedadvisor-shared  resourcegroup  start=2026-11-04T23:31:31Z  end=2026-11-05T00:31:29Z  minutes=60

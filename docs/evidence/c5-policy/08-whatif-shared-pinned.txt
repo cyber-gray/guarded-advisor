@@ -1,0 +1,21 @@
+Note: The result may contain false positive predictions (noise).
+You can help us improve the accuracy of the result by opening an issue here: https://aka.ms/WhatIfIssues
+NOTICE! - Want to get What-if without noise? Move to Deployment Stacks What-If https://aka.ms/stackswhatifGA
+
+Resource and property changes are indicated with these symbols:
+  = Nochange
+  * Ignore
+
+The deployment will update the following scope:
+
+Scope: /subscriptions/<sub>/resourceGroups/rg-guardedadvisor-shared
+
+  = Microsoft.Authorization/policyAssignments/ga-allowed-locations [2025-11-01]
+  * Microsoft.Insights/actiongroups/ga-ag-ops-shared
+  * Microsoft.Insights/dataCollectionEndpoints/ga-dce-shared
+  * Microsoft.Insights/dataCollectionRules/ga-dcr-agent-shared
+  * Microsoft.Insights/dataCollectionRules/ga-dcr-redteam-shared
+  * Microsoft.Insights/scheduledqueryrules/ga-alert-daily-cap-reached
+  * Microsoft.OperationalInsights/workspaces/ga-law-shared
+
+Resource changes: 1 no change, 6 to ignore.

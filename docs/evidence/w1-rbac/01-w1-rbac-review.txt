@@ -1,0 +1,44 @@
+# w1-rbac-review, as T. Read-only. Outside-lab scopes are counted, not named.
+now: 2026-11-05T18:22:17Z
+OK    T activated instances: 0
+--- totals
+assignments visible to T: 16
+by zone: lab=12, outside=3, subscription=1
+outside-lab scopes by principal kind, counted only: identity=3
+--- users: who | role | scope | condition
+T | Foundry User | ga-proj-labv3do | no
+T | Monitoring Metrics Publisher | ga-dcr-redteam-shared | no
+T | Reader | ga-jump-lab | no
+T | Reader | ga-jump-lab-nic | no
+T | Reader | subscription | no
+T | Virtual Machine Administrator Login | ga-jump-lab | no
+--- identities: who | role | scope | condition | R
+ga-ai-labv3do/ga-proj-labv3do | Cosmos DB Operator | ga-ai-labv3docosmosdb | no | none
+ga-ai-labv3do/ga-proj-labv3do | Search Index Data Contributor | ga-ai-labv3dosearch | no | none
+ga-ai-labv3do/ga-proj-labv3do | Search Service Contributor | ga-ai-labv3dosearch | no | none
+ga-ai-labv3do/ga-proj-labv3do | Storage Blob Data Contributor | gaailabv3dost | no | none
+ga-ai-labv3do/ga-proj-labv3do | Storage Blob Data Owner | gaailabv3dost | yes | none
+ga-id-sbx-pull-lab | AcrPull | gaacrlabv3doqebnffszc | no | R11
+ga-jump-lab | Monitoring Metrics Publisher | ga-dcr-agent-shared | no | R6
+--- groups or other: who | role | scope | condition
+--- Cosmos DB data-plane roles: who | role | scope inside the account | R
+ga-ai-labv3do/ga-proj-labv3do | Cosmos DB Built-in Data Contributor | dbs/enterprise_memory | none
+ga-jump-lab | Cosmos DB Built-in Data Reader | dbs/larkfield/colls/claims | R2/R3
+--- T4: log roles for the project identity, and anything on appi-tracing-v3do: who | role | scope | condition
+T4 rows: 0
+--- checks
+OK    Owner held by any principal: 0
+OK    Contributor held by any principal: 0
+OK    User Access Administrator held by any principal: 0
+hits, Owner, Contributor or User Access Administrator: who | role | scope
+--- listed, no check: Administrator or Owner in role name, held by an identity: who | role | scope | condition
+ga-ai-labv3do/ga-proj-labv3do | Storage Blob Data Owner | gaailabv3dost | yes
+--- listed, no check: lab identity assignments with no R number: who | role | scope
+ga-ai-labv3do/ga-proj-labv3do | Cosmos DB Operator | ga-ai-labv3docosmosdb
+ga-ai-labv3do/ga-proj-labv3do | Search Index Data Contributor | ga-ai-labv3dosearch
+ga-ai-labv3do/ga-proj-labv3do | Search Service Contributor | ga-ai-labv3dosearch
+ga-ai-labv3do/ga-proj-labv3do | Storage Blob Data Contributor | gaailabv3dost
+ga-ai-labv3do/ga-proj-labv3do | Storage Blob Data Owner | gaailabv3dost
+OK    positive control, T's assignments: 6
+G assignments: 0; E assignments: 0
+RESULT: all match

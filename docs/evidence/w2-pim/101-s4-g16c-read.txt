@@ -1,0 +1,4 @@
+read_at=2026-11-05T16:47:09Z tag=s4-g16c-read
+OK    T activated instances (cleanup gate): 1
+OK    G Reader on ga-ag-ops-shared: 0
+RESULT: all match

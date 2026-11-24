@@ -1,0 +1,81 @@
+# G7 read-back, 2026-11-04, as T, after the guest saved the Owner settings in the portal (16:05:33Z).
+rules: before 17, after 19
+--- rules that differ
+Approval_EndUser_Assignment
+AuthenticationContext_EndUser_Assignment
+Enablement_EndUser_Assignment
+Expiration_EndUser_Assignment
+Notification_Admin_Admin_Assignment
+Notification_Admin_Admin_Eligibility
+Notification_Admin_EndUser_Assignment
+Notification_Approver_Admin_Assignment
+Notification_Approver_Admin_Eligibility
+Notification_Approver_EndUser_Assignment
+Notification_Requestor_Admin_Assignment
+Notification_Requestor_Admin_Eligibility
+Notification_Requestor_EndUser_Assignment
+--- values now
+Expiration_EndUser_Assignment max=PT4H
+Enablement_EndUser_Assignment enabled=MultiFactorAuthentication,Justification
+Approval_EndUser_Assignment approvalRequired=false
+--- field diff, before against after
+DIFF Approval_EndUser_Assignment
+  setting.approvalStages.0.primaryApprovers: (absent) -> []
+DIFF AuthenticationContext_EndUser_Assignment
+  claimValue: (absent) -> ""
+NEW RULE CustomExtension_PostApproval_EndUser_Assignment
+  customExtensionId = ""
+  enabled = false
+  id = "CustomExtension_PostApproval_EndUser_Assignment"
+  ruleType = "RoleManagementPolicyCustomExtensionRule"
+  target.caller = "EndUser"
+  target.enforcedSettings = []
+  target.inheritableSettings = []
+  target.level = "Assignment"
+  target.operations.0 = "All"
+  target.targetObjects = []
+NEW RULE CustomExtension_PreApproval_EndUser_Assignment
+  customExtensionId = ""
+  enabled = false
+  id = "CustomExtension_PreApproval_EndUser_Assignment"
+  ruleType = "RoleManagementPolicyCustomExtensionRule"
+  target.caller = "EndUser"
+  target.enforcedSettings = []
+  target.inheritableSettings = []
+  target.level = "Assignment"
+  target.operations.0 = "All"
+  target.targetObjects = []
+DIFF Enablement_EndUser_Assignment
+  enabledRules.0: "Justification" -> "MultiFactorAuthentication"
+  enabledRules.1: (absent) -> "Justification"
+DIFF Expiration_EndUser_Assignment
+  isExpirationRequired: true -> false
+  maximumDuration: "PT8H" -> "PT4H"
+DIFF Notification_Admin_Admin_Assignment
+  notificationRecipients: (absent) -> []
+DIFF Notification_Admin_Admin_Eligibility
+  notificationRecipients: (absent) -> []
+DIFF Notification_Admin_EndUser_Assignment
+  notificationRecipients: (absent) -> []
+DIFF Notification_Approver_Admin_Assignment
+  notificationRecipients: (absent) -> []
+DIFF Notification_Approver_Admin_Eligibility
+  notificationRecipients: (absent) -> []
+DIFF Notification_Approver_EndUser_Assignment
+  notificationRecipients: (absent) -> []
+DIFF Notification_Requestor_Admin_Assignment
+  notificationRecipients: (absent) -> []
+DIFF Notification_Requestor_Admin_Eligibility
+  notificationRecipients: (absent) -> []
+DIFF Notification_Requestor_EndUser_Assignment
+  notificationRecipients: (absent) -> []
+--- PATCH to restore isExpirationRequired, as T with conditioned Owner, about 16:12Z: refused
+ERROR: Bad Request({"error":{"code":"InsufficientPermissions","message":"The requestor <id> does not have permissions for this request. Please use $filter=asTarget() to filter on the requestor's assignments."}})
+--- read-back after the refused PATCH
+rules: 19
+--- rules that differ from the portal's save
+none
+--- values now
+Expiration_EndUser_Assignment required=false max=PT4H
+Enablement_EndUser_Assignment enabled=MultiFactorAuthentication,Justification
+Approval_EndUser_Assignment approvalRequired=false

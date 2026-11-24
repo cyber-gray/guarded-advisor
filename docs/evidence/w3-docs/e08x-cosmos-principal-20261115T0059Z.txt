@@ -1,0 +1,102 @@
+e08x | read 20261115T0059Z | as T (6d4c...2a4d), standing Reader | workspace ga-law-shared | timespan P30D | read-only, approved by Tooni 2026-11-14
+query: CDBDataPlaneRequests where AadPrincipalId is T or empty; summarised by Who (T or empty), day, operation, status, AuthTokenType/KeyType, ConnectionMode, RequestResourceType, database/collection, IP class (RFC 1918 private or not; addresses not kept), first 40 characters of UserAgent
+rows: 87
+--- Who | day first-last | operation status | auth | mode | resource type | db/collection | ip class | user agent | requests
+T | 2026-10-22 15:37-15:37Z | Read 200 | auth AadToken/AadToken | Gateway | DatabaseAccount | -/- | ip private | ua azsdk-python-cosmos/4.17.1 Python/3.12.1 | 2
+T | 2026-10-22 15:37-15:37Z | Read 200 | auth AadToken/AadToken | Gateway | Collection | larkfield/claims | ip private | ua azsdk-python-cosmos/4.17.1 Python/3.12.1 | 1
+T | 2026-10-22 15:37-15:37Z | Create 201 | auth AadToken/AadToken | Gateway | Document | larkfield/claims | ip private | ua azsdk-python-cosmos/4.17.1 Python/3.12.1 | 30
+empty | 2026-10-16 15:37-15:37Z | Read 403 | auth Invalid/Invalid | Gateway | Database | -/- | ip public-or-other | ua curl/8.7.1 | 1
+empty | 2026-10-19 15:38-15:38Z | Read 401 | auth Invalid/Invalid | Gateway | Database | -/- | ip private | ua curl/8.21.0 | 1
+empty | 2026-10-22 15:43-15:52Z | Read 200 | auth AadToken/AadToken | Gateway | Collection | enterprise_memory/6763...9501-agent-definitions-v1 | ip public-or-other | ua cosmos-netstandard-sdk/3.62.0|10|X64|Deb | 3
+empty | 2026-10-22 15:43-15:54Z | Read 200 | auth AadToken/AadToken | Gateway | PartitionKeyRange | -/- | ip public-or-other | ua cosmos-netstandard-sdk/3.62.0|10|X64|Deb | 8
+empty | 2026-10-22 15:43-15:54Z | Read 304 | auth AadToken/AadToken | Gateway | PartitionKeyRange | -/- | ip public-or-other | ua cosmos-netstandard-sdk/3.62.0|10|X64|Deb | 8
+empty | 2026-10-22 15:43-15:43Z | Read 404 | auth AadToken/AadToken | Gateway | Document | enterprise_memory/6763...9501-agent-definitions-v1 | ip public-or-other | ua cosmos-netstandard-sdk/3.62.0|10|X64|Deb | 3
+empty | 2026-10-22 15:43-15:52Z | Query 200 | auth AadToken/AadToken | Gateway | Document | enterprise_memory/6763...9501-agent-definitions-v1 | ip public-or-other | ua cosmos-netstandard-sdk/3.62.0|10|X64|Deb | 3
+empty | 2026-10-22 15:43-15:43Z | Batch 200 | auth AadToken/AadToken | Gateway | Document | enterprise_memory/6763...9501-agent-definitions-v1 | ip public-or-other | ua cosmos-netstandard-sdk/3.62.0|10|X64|Deb | 1
+empty | 2026-10-22 15:43-15:52Z | Read 200 | auth AadToken/AadToken | Gateway | Document | enterprise_memory/6763...9501-agent-definitions-v1 | ip public-or-other | ua cosmos-netstandard-sdk/3.62.0|10|X64|Deb | 4
+empty | 2026-10-22 15:52-15:54Z | Read 200 | auth AadToken/AadToken | Gateway | Collection | enterprise_memory/6763...9501-run-state-v1 | ip public-or-other | ua cosmos-netstandard-sdk/3.62.0|10|X64|Deb | 11
+empty | 2026-10-22 15:52-15:54Z | Batch 200 | auth AadToken/AadToken | Gateway | Document | enterprise_memory/6763...9501-run-state-v1 | ip public-or-other | ua cosmos-netstandard-sdk/3.62.0|10|X64|Deb | 3
+empty | 2026-10-22 15:52-15:54Z | Read 200 | auth AadToken/AadToken | Gateway | Document | enterprise_memory/6763...9501-run-state-v1 | ip public-or-other | ua cosmos-netstandard-sdk/3.62.0|10|X64|Deb | 12
+empty | 2026-10-22 15:52-15:54Z | Create 201 | auth AadToken/AadToken | Gateway | Document | enterprise_memory/6763...9501-run-state-v1 | ip public-or-other | ua cosmos-netstandard-sdk/3.62.0|10|X64|Deb | 3
+empty | 2026-10-22 15:54-15:54Z | Create 409 | auth AadToken/AadToken | Gateway | Document | enterprise_memory/6763...9501-run-state-v1 | ip public-or-other | ua cosmos-netstandard-sdk/3.62.0|10|X64|Deb | 1
+empty | 2026-10-23 14:22-14:42Z | Read 200 | auth AadToken/AadToken | Gateway | Collection | enterprise_memory/6763...9501-agent-definitions-v1 | ip public-or-other | ua cosmos-netstandard-sdk/3.62.0|10|X64|Deb | 8
+empty | 2026-10-23 14:22-14:42Z | Read 200 | auth AadToken/AadToken | Gateway | PartitionKeyRange | -/- | ip public-or-other | ua cosmos-netstandard-sdk/3.62.0|10|X64|Deb | 12
+empty | 2026-10-23 14:22-14:42Z | Read 304 | auth AadToken/AadToken | Gateway | PartitionKeyRange | -/- | ip public-or-other | ua cosmos-netstandard-sdk/3.62.0|10|X64|Deb | 12
+empty | 2026-10-23 14:22-14:42Z | Query 200 | auth AadToken/AadToken | Gateway | Document | enterprise_memory/6763...9501-agent-definitions-v1 | ip public-or-other | ua cosmos-netstandard-sdk/3.62.0|10|X64|Deb | 4
+empty | 2026-10-23 14:22-14:42Z | Read 200 | auth AadToken/AadToken | Gateway | Document | enterprise_memory/6763...9501-agent-definitions-v1 | ip public-or-other | ua cosmos-netstandard-sdk/3.62.0|10|X64|Deb | 4
+empty | 2026-10-23 14:22-14:42Z | Read 200 | auth AadToken/AadToken | Gateway | Collection | enterprise_memory/6763...9501-run-state-v1 | ip public-or-other | ua cosmos-netstandard-sdk/3.62.0|10|X64|Deb | 16
+empty | 2026-10-23 14:22-14:42Z | Read 200 | auth AadToken/AadToken | Gateway | Document | enterprise_memory/6763...9501-run-state-v1 | ip public-or-other | ua cosmos-netstandard-sdk/3.62.0|10|X64|Deb | 27
+empty | 2026-10-23 14:22-14:42Z | Batch 200 | auth AadToken/AadToken | Gateway | Document | enterprise_memory/6763...9501-run-state-v1 | ip public-or-other | ua cosmos-netstandard-sdk/3.62.0|10|X64|Deb | 6
+empty | 2026-10-23 14:22-14:42Z | Create 201 | auth AadToken/AadToken | Gateway | Document | enterprise_memory/6763...9501-run-state-v1 | ip public-or-other | ua cosmos-netstandard-sdk/3.62.0|10|X64|Deb | 6
+empty | 2026-10-23 14:22-14:42Z | Create 409 | auth AadToken/AadToken | Gateway | Document | enterprise_memory/6763...9501-run-state-v1 | ip public-or-other | ua cosmos-netstandard-sdk/3.62.0|10|X64|Deb | 2
+empty | 2026-10-30 22:43-22:45Z | Read 200 | auth AadToken/AadToken | Gateway | Collection | enterprise_memory/6763...9501-run-state-v1 | ip public-or-other | ua cosmos-netstandard-sdk/3.62.0|10|X64|Deb | 37
+empty | 2026-10-30 22:43-22:45Z | Read 200 | auth AadToken/AadToken | Gateway | PartitionKeyRange | -/- | ip public-or-other | ua cosmos-netstandard-sdk/3.62.0|10|X64|Deb | 27
+empty | 2026-10-30 22:43-22:45Z | Read 304 | auth AadToken/AadToken | Gateway | PartitionKeyRange | -/- | ip public-or-other | ua cosmos-netstandard-sdk/3.62.0|10|X64|Deb | 26
+empty | 2026-10-30 22:43-22:45Z | Read 200 | auth AadToken/AadToken | Gateway | Document | enterprise_memory/6763...9501-run-state-v1 | ip public-or-other | ua cosmos-netstandard-sdk/3.62.0|10|X64|Deb | 63
+empty | 2026-10-30 22:43-22:45Z | Batch 200 | auth AadToken/AadToken | Gateway | Document | enterprise_memory/6763...9501-run-state-v1 | ip public-or-other | ua cosmos-netstandard-sdk/3.62.0|10|X64|Deb | 18
+empty | 2026-10-30 22:43-22:45Z | Create 201 | auth AadToken/AadToken | Gateway | Document | enterprise_memory/6763...9501-run-state-v1 | ip public-or-other | ua cosmos-netstandard-sdk/3.62.0|10|X64|Deb | 19
+empty | 2026-10-30 22:43-22:45Z | Read 200 | auth AadToken/AadToken | Gateway | Collection | enterprise_memory/6763...9501-agent-definitions-v1 | ip public-or-other | ua cosmos-netstandard-sdk/3.62.0|10|X64|Deb | 16
+empty | 2026-10-30 22:43-22:45Z | Query 200 | auth AadToken/AadToken | Gateway | Document | enterprise_memory/6763...9501-agent-definitions-v1 | ip public-or-other | ua cosmos-netstandard-sdk/3.62.0|10|X64|Deb | 9
+empty | 2026-10-30 22:43-22:45Z | Read 200 | auth AadToken/AadToken | Gateway | Document | enterprise_memory/6763...9501-agent-definitions-v1 | ip public-or-other | ua cosmos-netstandard-sdk/3.62.0|10|X64|Deb | 9
+empty | 2026-10-31 00:58-01:09Z | Read 200 | auth AadToken/AadToken | Gateway | Collection | enterprise_memory/6763...9501-agent-definitions-v1 | ip public-or-other | ua cosmos-netstandard-sdk/3.62.0|10|X64|Deb | 14
+empty | 2026-10-31 00:58-01:09Z | Read 200 | auth AadToken/AadToken | Gateway | PartitionKeyRange | -/- | ip public-or-other | ua cosmos-netstandard-sdk/3.62.0|10|X64|Deb | 26
+empty | 2026-10-31 00:58-01:09Z | Read 304 | auth AadToken/AadToken | Gateway | PartitionKeyRange | -/- | ip public-or-other | ua cosmos-netstandard-sdk/3.62.0|10|X64|Deb | 26
+empty | 2026-10-31 00:58-01:09Z | Read 200 | auth AadToken/AadToken | Gateway | Document | enterprise_memory/6763...9501-agent-definitions-v1 | ip public-or-other | ua cosmos-netstandard-sdk/3.62.0|10|X64|Deb | 11
+empty | 2026-10-31 01:03-01:09Z | Read 200 | auth AadToken/AadToken | Gateway | Collection | enterprise_memory/6763...9501-run-state-v1 | ip public-or-other | ua cosmos-netstandard-sdk/3.62.0|10|X64|Deb | 40
+empty | 2026-10-31 01:03-01:09Z | Batch 200 | auth AadToken/AadToken | Gateway | Document | enterprise_memory/6763...9501-run-state-v1 | ip public-or-other | ua cosmos-netstandard-sdk/3.62.0|10|X64|Deb | 19
+empty | 2026-10-31 01:03-01:09Z | Query 200 | auth AadToken/AadToken | Gateway | Document | enterprise_memory/6763...9501-agent-definitions-v1 | ip public-or-other | ua cosmos-netstandard-sdk/3.62.0|10|X64|Deb | 10
+empty | 2026-10-31 01:03-01:09Z | Read 200 | auth AadToken/AadToken | Gateway | Document | enterprise_memory/6763...9501-run-state-v1 | ip public-or-other | ua cosmos-netstandard-sdk/3.62.0|10|X64|Deb | 66
+empty | 2026-10-31 01:03-01:09Z | Create 201 | auth AadToken/AadToken | Gateway | Document | enterprise_memory/6763...9501-run-state-v1 | ip public-or-other | ua cosmos-netstandard-sdk/3.62.0|10|X64|Deb | 17
+empty | 2026-11-11 20:18-20:32Z | Read 200 | auth AadToken/AadToken | Gateway | Collection | enterprise_memory/6763...9501-run-state-v1 | ip public-or-other | ua cosmos-netstandard-sdk/3.62.0|10|X64|Deb | 15
+empty | 2026-11-11 20:18-20:32Z | Read 200 | auth AadToken/AadToken | Gateway | PartitionKeyRange | -/- | ip public-or-other | ua cosmos-netstandard-sdk/3.62.0|10|X64|Deb | 13
+empty | 2026-11-11 20:18-20:32Z | Read 304 | auth AadToken/AadToken | Gateway | PartitionKeyRange | -/- | ip public-or-other | ua cosmos-netstandard-sdk/3.62.0|10|X64|Deb | 15
+empty | 2026-11-11 20:18-20:32Z | Read 200 | auth AadToken/AadToken | Gateway | Document | enterprise_memory/6763...9501-run-state-v1 | ip public-or-other | ua cosmos-netstandard-sdk/3.62.0|10|X64|Deb | 45
+empty | 2026-11-11 20:18-20:32Z | Batch 200 | auth AadToken/AadToken | Gateway | Document | enterprise_memory/6763...9501-run-state-v1 | ip public-or-other | ua cosmos-netstandard-sdk/3.62.0|10|X64|Deb | 11
+empty | 2026-11-11 20:18-20:32Z | Create 201 | auth AadToken/AadToken | Gateway | Document | enterprise_memory/6763...9501-run-state-v1 | ip public-or-other | ua cosmos-netstandard-sdk/3.62.0|10|X64|Deb | 10
+empty | 2026-11-11 20:23-20:32Z | Read 200 | auth AadToken/AadToken | Gateway | Collection | enterprise_memory/6763...9501-agent-definitions-v1 | ip public-or-other | ua cosmos-netstandard-sdk/3.62.0|10|X64|Deb | 11
+empty | 2026-11-11 20:24-20:32Z | Read 200 | auth AadToken/AadToken | Gateway | Document | enterprise_memory/6763...9501-agent-definitions-v1 | ip public-or-other | ua cosmos-netstandard-sdk/3.62.0|10|X64|Deb | 6
+empty | 2026-11-11 20:24-20:32Z | Query 200 | auth AadToken/AadToken | Gateway | Document | enterprise_memory/6763...9501-agent-definitions-v1 | ip public-or-other | ua cosmos-netstandard-sdk/3.62.0|10|X64|Deb | 6
+empty | 2026-11-11 20:25-20:31Z | Read 200 | auth AadToken/AadToken | Gateway | Collection | larkfield/claims | ip private | ua azsdk-python-cosmos/4.17.1 Python/3.12.1 | 2
+empty | 2026-11-11 20:25-20:31Z | Read 200 | auth AadToken/AadToken | Gateway | Document | larkfield/claims | ip private | ua azsdk-python-cosmos/4.17.1 Python/3.12.1 | 2
+empty | 2026-11-11 20:25-20:32Z | Create 409 | auth AadToken/AadToken | Gateway | Document | enterprise_memory/6763...9501-run-state-v1 | ip public-or-other | ua cosmos-netstandard-sdk/3.62.0|10|X64|Deb | 4
+empty | 2026-11-12 17:37-18:35Z | Read 200 | auth AadToken/AadToken | Gateway | Collection | enterprise_memory/6763...9501-agent-definitions-v1 | ip public-or-other | ua cosmos-netstandard-sdk/3.62.0|10|X64|Deb | 10
+empty | 2026-11-12 17:37-18:35Z | Read 200 | auth AadToken/AadToken | Gateway | PartitionKeyRange | -/- | ip public-or-other | ua cosmos-netstandard-sdk/3.62.0|10|X64|Deb | 10
+empty | 2026-11-12 17:37-18:35Z | Read 304 | auth AadToken/AadToken | Gateway | PartitionKeyRange | -/- | ip public-or-other | ua cosmos-netstandard-sdk/3.62.0|10|X64|Deb | 10
+empty | 2026-11-12 17:37-18:46Z | Read 200 | auth AadToken/AadToken | Gateway | Document | enterprise_memory/6763...9501-agent-definitions-v1 | ip public-or-other | ua cosmos-netstandard-sdk/3.62.0|10|X64|Deb | 21
+empty | 2026-11-12 17:37-18:46Z | Read 404 | auth AadToken/AadToken | Gateway | Document | enterprise_memory/6763...9501-agent-definitions-v1 | ip public-or-other | ua cosmos-netstandard-sdk/3.62.0|10|X64|Deb | 17
+empty | 2026-11-12 17:37-18:35Z | Read 200 | auth AadToken/AadToken | Gateway | Collection | enterprise_memory/6763...9501-run-state-v1 | ip public-or-other | ua cosmos-netstandard-sdk/3.62.0|10|X64|Deb | 10
+empty | 2026-11-12 17:37-18:46Z | Read 200 | auth AadToken/AadToken | Gateway | Document | enterprise_memory/6763...9501-run-state-v1 | ip public-or-other | ua cosmos-netstandard-sdk/3.62.0|10|X64|Deb | 34
+empty | 2026-11-12 17:37-18:46Z | Batch 200 | auth AadToken/AadToken | Gateway | Document | enterprise_memory/6763...9501-run-state-v1 | ip public-or-other | ua cosmos-netstandard-sdk/3.62.0|10|X64|Deb | 6
+empty | 2026-11-12 17:37-18:46Z | Create 201 | auth AadToken/AadToken | Gateway | Document | enterprise_memory/6763...9501-run-state-v1 | ip public-or-other | ua cosmos-netstandard-sdk/3.62.0|10|X64|Deb | 7
+empty | 2026-11-12 18:32-18:46Z | Read 200 | auth AadToken/AadToken | Gateway | Collection | larkfield/claims | ip private | ua azsdk-python-cosmos/4.17.1 Python/3.12.1 | 3
+empty | 2026-11-12 18:32-18:46Z | Read 200 | auth AadToken/AadToken | Gateway | Document | larkfield/claims | ip private | ua azsdk-python-cosmos/4.17.1 Python/3.12.1 | 3
+empty | 2026-11-12 18:32-18:46Z | Create 409 | auth AadToken/AadToken | Gateway | Document | enterprise_memory/6763...9501-run-state-v1 | ip public-or-other | ua cosmos-netstandard-sdk/3.62.0|10|X64|Deb | 5
+empty | 2026-11-13 19:09-19:44Z | Read 200 | auth AadToken/AadToken | Gateway | Collection | enterprise_memory/6763...9501-agent-definitions-v1 | ip public-or-other | ua cosmos-netstandard-sdk/3.62.0|10|X64|Deb | 49
+empty | 2026-11-13 19:09-19:44Z | Read 200 | auth AadToken/AadToken | Gateway | PartitionKeyRange | -/- | ip public-or-other | ua cosmos-netstandard-sdk/3.62.0|10|X64|Deb | 49
+empty | 2026-11-13 19:09-19:44Z | Read 304 | auth AadToken/AadToken | Gateway | PartitionKeyRange | -/- | ip public-or-other | ua cosmos-netstandard-sdk/3.62.0|10|X64|Deb | 51
+empty | 2026-11-13 19:09-20:11Z | Read 404 | auth AadToken/AadToken | Gateway | Document | enterprise_memory/6763...9501-agent-definitions-v1 | ip public-or-other | ua cosmos-netstandard-sdk/3.62.0|10|X64|Deb | 212
+empty | 2026-11-13 19:09-20:11Z | Query 200 | auth AadToken/AadToken | Gateway | Document | enterprise_memory/6763...9501-agent-definitions-v1 | ip public-or-other | ua cosmos-netstandard-sdk/3.62.0|10|X64|Deb | 13
+empty | 2026-11-13 19:09-20:11Z | Batch 200 | auth AadToken/AadToken | Gateway | Document | enterprise_memory/6763...9501-agent-definitions-v1 | ip public-or-other | ua cosmos-netstandard-sdk/3.62.0|10|X64|Deb | 2
+empty | 2026-11-13 19:09-20:11Z | Read 200 | auth AadToken/AadToken | Gateway | Document | enterprise_memory/6763...9501-agent-definitions-v1 | ip public-or-other | ua cosmos-netstandard-sdk/3.62.0|10|X64|Deb | 353
+empty | 2026-11-13 19:43-19:43Z | Invalid 200 | auth AadToken/AadToken | Gateway | Document | enterprise_memory/6763...9501-agent-definitions-v1 | ip public-or-other | ua cosmos-netstandard-sdk/3.62.0|10|X64|Deb | 3
+empty | 2026-11-13 19:43-19:43Z | Invalid 449 | auth AadToken/AadToken | Gateway | Document | enterprise_memory/6763...9501-agent-definitions-v1 | ip public-or-other | ua cosmos-netstandard-sdk/3.62.0|10|X64|Deb | 1
+empty | 2026-11-13 19:43-20:11Z | Read 200 | auth AadToken/AadToken | Gateway | Collection | enterprise_memory/6763...9501-run-state-v1 | ip public-or-other | ua cosmos-netstandard-sdk/3.62.0|10|X64|Deb | 53
+empty | 2026-11-13 19:43-20:08Z | Batch 200 | auth AadToken/AadToken | Gateway | Document | enterprise_memory/6763...9501-run-state-v1 | ip public-or-other | ua cosmos-netstandard-sdk/3.62.0|10|X64|Deb | 71
+empty | 2026-11-13 19:43-20:08Z | Create 201 | auth AadToken/AadToken | Gateway | Document | enterprise_memory/6763...9501-run-state-v1 | ip public-or-other | ua cosmos-netstandard-sdk/3.62.0|10|X64|Deb | 69
+empty | 2026-11-13 19:43-20:08Z | Read 200 | auth AadToken/AadToken | Gateway | Document | enterprise_memory/6763...9501-run-state-v1 | ip public-or-other | ua cosmos-netstandard-sdk/3.62.0|10|X64|Deb | 93
+empty | 2026-11-13 19:55-20:07Z | Read 200 | auth AadToken/AadToken | Gateway | Collection | larkfield/claims | ip private | ua azsdk-python-cosmos/4.17.1 Python/3.12.1 | 3
+empty | 2026-11-13 19:55-20:07Z | Read 200 | auth AadToken/AadToken | Gateway | Document | larkfield/claims | ip private | ua azsdk-python-cosmos/4.17.1 Python/3.12.1 | 3
+empty | 2026-11-13 19:55-20:08Z | Create 409 | auth AadToken/AadToken | Gateway | Document | enterprise_memory/6763...9501-run-state-v1 | ip public-or-other | ua cosmos-netstandard-sdk/3.62.0|10|X64|Deb | 5
+empty | 2026-11-13 20:11-20:11Z | Read 404 | auth AadToken/AadToken | Gateway | Document | enterprise_memory/6763...9501-run-state-v1 | ip public-or-other | ua cosmos-netstandard-sdk/3.62.0|10|X64|Deb | 1
+empty | 2026-11-13 20:11-20:11Z | Query 200 | auth AadToken/AadToken | Gateway | Document | enterprise_memory/6763...9501-run-state-v1 | ip public-or-other | ua cosmos-netstandard-sdk/3.62.0|10|X64|Deb | 1
+--- totals by Who, auth and status
+T | auth AadToken/AadToken | 200 | 3
+T | auth AadToken/AadToken | 201 | 30
+empty | auth AadToken/AadToken | 200 | 1388
+empty | auth AadToken/AadToken | 201 | 131
+empty | auth AadToken/AadToken | 304 | 148
+empty | auth AadToken/AadToken | 404 | 233
+empty | auth AadToken/AadToken | 409 | 17
+empty | auth AadToken/AadToken | 449 | 1
+empty | auth Invalid/Invalid | 401 | 1
+empty | auth Invalid/Invalid | 403 | 1

@@ -1,0 +1,23 @@
+Metadata-only checks, T with Privileged Monitoring Data Reader active, output as printed. No content columns read.
+Shows every Protected row was ingested before the 19:05:45Z baseline, both AdjudicationLog_CL rows are SMOKE, and all AppGenAIContent rows belong to appi-tracing-v3do in rg-guardedadvisor-lab.
+
+2026-11-01T19:25:46Z
+== AppGenAIContent | summarize n=count(), firstGen=min(TimeGenerated), lastGen=max(TimeGenerated), lastIngest=max(ingestion_time())
+TableName      FirstGen                     LastGen                       LastIngest                    N
+-------------  ---------------------------  ----------------------------  ----------------------------  ---
+PrimaryResult  2026-10-30T22:43:30.827405Z  2026-10-31T01:12:25.9036125Z  2026-10-31T01:12:36.2494286Z  90
+exit=0
+== AdjudicationLog_CL | summarize n=count(), lastIngest=max(ingestion_time()) by record_id, scenario, bin(TimeGenerated, 1m)
+TableName      TimeGenerated         LastIngest                    N    Record_id    Scenario
+-------------  --------------------  ----------------------------  ---  -----------  ----------
+PrimaryResult  2026-10-30T23:54:00Z  2026-10-30T23:57:26.4467183Z  1    SMOKE        larkfield
+PrimaryResult  2026-10-31T00:51:00Z  2026-10-31T00:51:16.289252Z   1    SMOKE        larkfield
+exit=0
+== resource group of appi-tracing-v3do
+rg-guardedadvisor-lab
+exit=0
+== AppGenAIContent | extend rtype=extract(@"/providers/([^/]+/[^/]+)/", 1, _ResourceId), rname=extract(@"/([^/]+)$", 1, _ResourceId) | summarize n=count() by rtype, rname
+TableName      N    Rname              Rtype
+-------------  ---  -----------------  -----------------------------
+PrimaryResult  90   appi-tracing-v3do  microsoft.insights/components
+exit=0

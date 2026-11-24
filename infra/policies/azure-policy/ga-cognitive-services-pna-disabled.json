@@ -1,0 +1,45 @@
+{
+  "name": "ga-cognitive-services-pna-disabled",
+  "properties": {
+    "displayName": "Guarded Advisor: Cognitive Services accounts must have public network access disabled",
+    "description": "Strict check on publicNetworkAccess only. The built-in 'Azure AI Services resources should restrict network access' (037eea7a) denies only when publicNetworkAccess is not Disabled AND networkAcls.defaultAction is not Deny, so an account with public access Enabled behind an IP-allowlist firewall passes it. The built-in it replaced (0725b4dd) is deprecated. A missing value is also denied. D-017.",
+    "mode": "Indexed",
+    "metadata": {
+      "category": "Cognitive Services",
+      "version": "1.0.0",
+      "source": "guarded-advisor infra/policies/azure-policy"
+    },
+    "parameters": {
+      "effect": {
+        "type": "String",
+        "metadata": {
+          "displayName": "Effect",
+          "description": "Deny blocks the request; Audit only reports it"
+        },
+        "allowedValues": [
+          "Audit",
+          "Deny",
+          "Disabled"
+        ],
+        "defaultValue": "Deny"
+      }
+    },
+    "policyRule": {
+      "if": {
+        "allOf": [
+          {
+            "field": "type",
+            "equals": "Microsoft.CognitiveServices/accounts"
+          },
+          {
+            "field": "Microsoft.CognitiveServices/accounts/publicNetworkAccess",
+            "notEquals": "Disabled"
+          }
+        ]
+      },
+      "then": {
+        "effect": "[parameters('effect')]"
+      }
+    }
+  }
+}

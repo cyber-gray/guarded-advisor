@@ -1,0 +1,6 @@
+# G14 redo, as T. Second data role activation, 2 hours, after a fresh sign-in.
+signed in: 6d4c...2a4d
+now: 2026-11-05T01:11:38Z
+Assigned count: 6
+Activated count: 1
+Privileged Monitoring Data Reader | rg-guardedadvisor-shared | 2026-11-05T01:08:24.447Z | 2026-11-05T03:08:22.903Z

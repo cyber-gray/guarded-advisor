@@ -1,0 +1,98 @@
+# w1-residency, as T. Read-only. Resources outside the lab are counted, not named.
+now: 2026-11-05T18:08:32Z
+OK    T activated instances: 0
+--- lab resource groups: name | location
+rg-guardedadvisor-lab | canadaeast
+rg-guardedadvisor-shared | canadaeast
+OK    lab resource groups outside canadaeast: 0
+--- totals
+resources in the lab: 67
+resources outside the lab, counted only: 11
+lab by status: expected global=26, ok=41
+--- every lab resource: type | location | status
+Microsoft.App/sandboxGroups | canadaeast | ok
+Microsoft.CognitiveServices/accounts | canadaeast | ok
+Microsoft.CognitiveServices/accounts | canadaeast | ok
+Microsoft.CognitiveServices/accounts/projects | canadaeast | ok
+Microsoft.Compute/disks | canadaeast | ok
+Microsoft.Compute/virtualMachines | canadaeast | ok
+Microsoft.Compute/virtualMachines/extensions | canadaeast | ok
+Microsoft.Compute/virtualMachines/extensions | canadaeast | ok
+Microsoft.ContainerRegistry/registries | canadaeast | ok
+Microsoft.DevTestLab/schedules | canadaeast | ok
+Microsoft.DocumentDB/databaseAccounts | canadaeast | ok
+Microsoft.Insights/actiongroups | global | expected global
+Microsoft.Insights/components | canadaeast | ok
+Microsoft.Insights/dataCollectionEndpoints | canadaeast | ok
+Microsoft.Insights/dataCollectionRules | canadaeast | ok
+Microsoft.Insights/dataCollectionRules | canadaeast | ok
+Microsoft.Insights/scheduledqueryrules | canadaeast | ok
+Microsoft.KeyVault/vaults | canadaeast | ok
+Microsoft.ManagedIdentity/userAssignedIdentities | canadaeast | ok
+Microsoft.Network/networkInterfaces | canadaeast | ok
+Microsoft.Network/networkInterfaces | canadaeast | ok
+Microsoft.Network/networkInterfaces | canadaeast | ok
+Microsoft.Network/networkInterfaces | canadaeast | ok
+Microsoft.Network/networkInterfaces | canadaeast | ok
+Microsoft.Network/networkInterfaces | canadaeast | ok
+Microsoft.Network/networkInterfaces | canadaeast | ok
+Microsoft.Network/networkInterfaces | canadaeast | ok
+Microsoft.Network/networkSecurityGroups | canadaeast | ok
+Microsoft.Network/networkSecurityGroups | canadaeast | ok
+Microsoft.Network/networkSecurityGroups | canadaeast | ok
+Microsoft.Network/networkSecurityGroups | canadaeast | ok
+Microsoft.Network/privateDnsZones | global | expected global
+Microsoft.Network/privateDnsZones | global | expected global
+Microsoft.Network/privateDnsZones | global | expected global
+Microsoft.Network/privateDnsZones | global | expected global
+Microsoft.Network/privateDnsZones | global | expected global
+Microsoft.Network/privateDnsZones | global | expected global
+Microsoft.Network/privateDnsZones | global | expected global
+Microsoft.Network/privateDnsZones | global | expected global
+Microsoft.Network/privateDnsZones | global | expected global
+Microsoft.Network/privateDnsZones | global | expected global
+Microsoft.Network/privateDnsZones | global | expected global
+Microsoft.Network/privateDnsZones/virtualNetworkLinks | global | expected global
+Microsoft.Network/privateDnsZones/virtualNetworkLinks | global | expected global
+Microsoft.Network/privateDnsZones/virtualNetworkLinks | global | expected global
+Microsoft.Network/privateDnsZones/virtualNetworkLinks | global | expected global
+Microsoft.Network/privateDnsZones/virtualNetworkLinks | global | expected global
+Microsoft.Network/privateDnsZones/virtualNetworkLinks | global | expected global
+Microsoft.Network/privateDnsZones/virtualNetworkLinks | global | expected global
+Microsoft.Network/privateDnsZones/virtualNetworkLinks | global | expected global
+Microsoft.Network/privateDnsZones/virtualNetworkLinks | global | expected global
+Microsoft.Network/privateDnsZones/virtualNetworkLinks | global | expected global
+Microsoft.Network/privateDnsZones/virtualNetworkLinks | global | expected global
+Microsoft.Network/privateEndpoints | canadaeast | ok
+Microsoft.Network/privateEndpoints | canadaeast | ok
+Microsoft.Network/privateEndpoints | canadaeast | ok
+Microsoft.Network/privateEndpoints | canadaeast | ok
+Microsoft.Network/privateEndpoints | canadaeast | ok
+Microsoft.Network/privateEndpoints | canadaeast | ok
+Microsoft.Network/privateEndpoints | canadaeast | ok
+Microsoft.Network/virtualNetworks | canadaeast | ok
+Microsoft.OperationalInsights/workspaces | canadaeast | ok
+Microsoft.Search/searchServices | canadaeast | ok
+Microsoft.Storage/storageAccounts | canadaeast | ok
+microsoft.alertsmanagement/smartDetectorAlertRules | global | expected global
+microsoft.insights/actiongroups | global | expected global
+microsoft.insights/privateLinkScopes | global | expected global
+--- global types seen in the lab, named
+Microsoft.Insights/actiongroups
+Microsoft.Network/privateDnsZones
+Microsoft.Network/privateDnsZones/virtualNetworkLinks
+microsoft.alertsmanagement/smartDetectorAlertRules
+microsoft.insights/actiongroups
+microsoft.insights/privateLinkScopes
+--- flagged lab resources: name | type | location
+OK    flagged lab resources: 0
+--- model deployments: account | model name | model version | sku.name | status
+Cognitive Services accounts in the lab: 2
+ga-ai-labv3do: deployments 2
+ga-ai-labv3do | gpt-4.1-mini | 2025-04-14 | Standard | ok
+ga-ai-labv3do | text-embedding-3-small | 1 | Standard | ok
+ga-cs-labv3do: deployments 0
+OK    flagged model deployments: 0
+--- not read here
+Entra data location: United States datacenters, docs/evidence/w2-pim/97-g17-elevation-toggle-no.png
+RESULT: all match

@@ -1,0 +1,12 @@
+# G13c, 2026-11-04, as T, activated. Same no-op PATCH as G12 check 2.
+signed in: 6d4c...2a4d
+now: 2026-11-04T23:18:56Z
+T's activated roles: Owner
+before: level=Protected retentionInDays=90 totalRetentionInDays=90
+--- T's roles at or above the table, tested against Microsoft.OperationalInsights/workspaces/tables/write
+Owner | level=subscription | grants=yes
+Reader | level=subscription | grants=no
+expected result: accepted as a no-op
+RESULT: accepted, as expected under activated Owner
+after: level=Protected retentionInDays=90 totalRetentionInDays=90
+properties changed: none

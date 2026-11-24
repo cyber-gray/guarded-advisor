@@ -1,0 +1,32 @@
+capture-20261116T1952Z | read 2026-11-16T19:52:31Z | as T (6d4c...2a4d), standing Reader | workspace ga-law-shared | script scripts/w3_evidence_capture.sh at f1bb0ee
+timespan: P30D
+query (GUIDs masked):
+  let ids = dynamic(["35bb...6ee5","a162...e9c2","dc89...afd0"]);
+  let ca01 = "GA-CA-01 case managers block device code flow (report-only)";
+  let ca02 = "GA-CA-02 case managers require MFA (report-only)";
+  let i = SigninLogs | where UserId in~ (ids)
+    | where AuthenticationProtocol =~ "deviceCode" or OriginalTransferMethod =~ "deviceCodeFlow"
+    | extend Tbl = "interactive", CAP = todynamic(ConditionalAccessPolicies) | project TimeGenerated, Tbl, UserId, CAP;
+  let n = AADNonInteractiveUserSignInLogs | where UserId in~ (ids)
+    | where AuthenticationProtocol =~ "deviceCode" or OriginalTransferMethod =~ "deviceCodeFlow"
+    | extend Tbl = "non-interactive", CAP = todynamic(ConditionalAccessPolicies) | project TimeGenerated, Tbl, UserId, CAP;
+  union i, n
+  | mv-apply p = CAP on (summarize R01 = take_anyif(tostring(p.result), tostring(p.displayName) == ca01),
+                                  R02 = take_anyif(tostring(p.result), tostring(p.displayName) == ca02))
+  | summarize Rows = count() by Day = format_datetime(TimeGenerated, "yyyy-MM-dd"), Tbl, UserId,
+      GA_CA_01 = iff(R01 == "", "absent", R01), GA_CA_02 = iff(R02 == "", "absent", R02)
+  | order by Day asc, UserId asc
+rows: 12
+---
+2026-11-13 | birch | non-interactive | GA-CA-01 reportOnlyFailure | GA-CA-02 reportOnlySuccess | 3
+2026-11-13 | birch | non-interactive | GA-CA-01 reportOnlyFailure | GA-CA-02 absent | 2
+2026-11-13 | birch | interactive | GA-CA-01 reportOnlyFailure | GA-CA-02 reportOnlySuccess | 2
+2026-11-13 | alder | non-interactive | GA-CA-01 reportOnlyFailure | GA-CA-02 reportOnlySuccess | 2
+2026-11-13 | alder | non-interactive | GA-CA-01 reportOnlyFailure | GA-CA-02 absent | 2
+2026-11-13 | alder | interactive | GA-CA-01 reportOnlyFailure | GA-CA-02 reportOnlySuccess | 2
+2026-11-16 | cedar | non-interactive | GA-CA-01 reportOnlyFailure | GA-CA-02 reportOnlySuccess | 3
+2026-11-16 | cedar | interactive | GA-CA-01 reportOnlyFailure | GA-CA-02 reportOnlySuccess | 2
+2026-11-16 | birch | non-interactive | GA-CA-01 reportOnlyFailure | GA-CA-02 reportOnlySuccess | 3
+2026-11-16 | birch | interactive | GA-CA-01 reportOnlyFailure | GA-CA-02 reportOnlySuccess | 2
+2026-11-16 | alder | non-interactive | GA-CA-01 reportOnlyFailure | GA-CA-02 reportOnlySuccess | 3
+2026-11-16 | alder | interactive | GA-CA-01 reportOnlyFailure | GA-CA-02 reportOnlySuccess | 2

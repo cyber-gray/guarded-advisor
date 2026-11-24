@@ -1,0 +1,34 @@
+# w1-rbac-containers, as T. Read-only. Control plane; names only; no blob or key call.
+now: 2026-11-05T18:30:28Z
+OK    T activated instances: 0
+more pages: no
+--- container name | class
+6763...9501-azureml-blobstore | azureml-blobstore
+6763...9501-f0e1...bcde-azureml-agent | azureml-agent
+ga-ai-labv-057e...2fab | neither
+ga-ai-labv-12e0...3e50 | neither
+ga-ai-labv-14f2...e63d | neither
+ga-ai-labv-2097...bf5a | neither
+ga-ai-labv-49f4...1e64 | neither
+ga-ai-labv-75c4...9823 | neither
+ga-ai-labv-8dc7...8fc9 | neither
+ga-ai-labv-9a53...3934 | neither
+ga-ai-labv-9b86...72ac | neither
+ga-ai-labv-a049...e37b | neither
+ga-ai-labv-b967...81de | neither
+ga-ai-labv-b9cf...8175 | neither
+ga-ai-labv-bf44...6990 | neither
+ga-ai-labv-c161...6f92 | neither
+ga-ai-labv-c638...68b5 | neither
+ga-ai-labv-cb8b...6068 | neither
+ga-ai-labv-d988...1df2 | neither
+ga-ai-labv-ddb2...2441 | neither
+ga-ai-labv-f4a4...ccee | neither
+ga-ai-labv-f64c...77d8 | neither
+--- counts
+containers: 22
+azureml-agent: 1
+azureml-blobstore: 1
+neither (blast-radius number): 20
+RESULT: guards match; read the counts above
+# Labelled edit, 2026-11-05: a 12-hex segment in the azureml-agent container name was masked after capture.

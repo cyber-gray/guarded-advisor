@@ -1,0 +1,55 @@
+{
+  "name": "ga-allowed-deployment-skus",
+  "properties": {
+    "displayName": "Guarded Advisor: model deployments must use an allowed SKU",
+    "description": "Allowlist for Microsoft.CognitiveServices/accounts/deployments sku.name. The default allows only Standard, which keeps inference in the resource's geography; GlobalStandard, DataZoneStandard and Global batch types may process data outside Canada (C5, D-006). Allowlist rather than denylist, so new deployment types are denied until reviewed. https://learn.microsoft.com/azure/foundry/foundry-models/concepts/deployment-types",
+    "mode": "All",
+    "metadata": {
+      "category": "Cognitive Services",
+      "version": "1.0.0",
+      "source": "guarded-advisor infra/policies/azure-policy"
+    },
+    "parameters": {
+      "allowedSkus": {
+        "type": "Array",
+        "metadata": {
+          "displayName": "Allowed deployment SKUs",
+          "description": "Deployment sku.name values that are allowed"
+        },
+        "defaultValue": [
+          "Standard"
+        ]
+      },
+      "effect": {
+        "type": "String",
+        "metadata": {
+          "displayName": "Effect",
+          "description": "Deny blocks the request; Audit only reports it"
+        },
+        "allowedValues": [
+          "Audit",
+          "Deny",
+          "Disabled"
+        ],
+        "defaultValue": "Deny"
+      }
+    },
+    "policyRule": {
+      "if": {
+        "allOf": [
+          {
+            "field": "type",
+            "equals": "Microsoft.CognitiveServices/accounts/deployments"
+          },
+          {
+            "field": "Microsoft.CognitiveServices/accounts/deployments/sku.name",
+            "notIn": "[parameters('allowedSkus')]"
+          }
+        ]
+      },
+      "then": {
+        "effect": "[parameters('effect')]"
+      }
+    }
+  }
+}

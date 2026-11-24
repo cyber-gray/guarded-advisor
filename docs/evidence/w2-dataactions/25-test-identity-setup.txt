@@ -1,0 +1,32 @@
+Output as printed. T = default CLI profile (.azure); reader = ga-reader-test2 (.azure-readertest2). Subscription IDs replaced by <sub>; object and assignment IDs cut to first 4 and last 4.
+
+== Graph read-back after the guest created the user
+users matched: 1
+id f1b2...dfb1  accountEnabled true  userType Member
+
+== Log Analytics Reader on ga-law-shared (T; guarded on the user ID)
+create exit=0
+Log Analytics Reader  /subscriptions/<sub>/resourceGroups/rg-guardedadvisor-shared/providers/Microsoft.OperationalInsights/workspaces/ga-law-shared  assignment 980c...f09e
+wait starts: 2026-11-02T21:35:18Z
+
+== TAP (Tooni, from the portal): multi-use, 150 minutes asked, 180 applied, valid 21:39:16Z to 00:39:16Z (11-03). Never recorded or shown here.
+
+== Extension check in the new profile
+2026-11-02T21:49:45Z
+
+exit=0
+WARNING: Command group 'config' is experimental and under development. Reference and support levels: https://aka.ms/CLI_refstatus
+[]
+exit=0
+
+== Explicit install, same version as the default profile
+default profile log-analytics version: 1.0.0b3
+WARNING: The installed extension 'log-analytics' is in preview.
+add exit=0
+Name           Version    Preview
+-------------  ---------  ---------
+log-analytics  1.0.0b3    True
+
+== /me per profile
+.azure-readertest2: id f1b2...dfb1  userType Member
+.azure: id 6d4c...2a4d  userType Member

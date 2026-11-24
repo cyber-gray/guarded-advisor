@@ -1,0 +1,40 @@
+Reader-only set: ga-reader-test (Log Analytics Reader on ga-law-shared only, profile ~/.azure-readertest), then T with Privileged Monitoring Data Reader active (default profile) 20 seconds later. Output as printed.
+The WARNING lines are the CLI installing the preview log-analytics extension into the new profile by itself (SESSION_LOG 2026-11-01).
+
+##### profile .azure-readertest  2026-11-01T19:31:23Z
+== AppDependencies | where TimeGenerated > ago(7d) | count
+WARNING: Preview version of extension is disabled by default for extension installation, enabled for modules without stable versions. 
+WARNING: Please run 'az config set extension.dynamic_install_allow_preview=true or false' to config it specifically. 
+WARNING: The command requires the extension log-analytics. It will be installed first.
+WARNING: No stable version of 'log-analytics' to install. Preview versions allowed.
+WARNING: The installed extension 'log-analytics' is in preview.
+Count    TableName
+-------  -------------
+144      PrimaryResult
+exit=0
+== AppGenAIContent | count
+Count    TableName
+-------  -------------
+0        PrimaryResult
+exit=0
+== AdjudicationLog_CL | count
+Count    TableName
+-------  -------------
+0        PrimaryResult
+exit=0
+##### profile .azure  2026-11-01T19:31:43Z
+== AppDependencies | where TimeGenerated > ago(7d) | count
+Count    TableName
+-------  -------------
+144      PrimaryResult
+exit=0
+== AppGenAIContent | count
+Count    TableName
+-------  -------------
+90       PrimaryResult
+exit=0
+== AdjudicationLog_CL | count
+Count    TableName
+-------  -------------
+2        PrimaryResult
+exit=0

@@ -1,0 +1,1 @@
+ga-diag-to-shared-law	workspace=ga-law-shared	destination=Dedicated	logs=allLogs

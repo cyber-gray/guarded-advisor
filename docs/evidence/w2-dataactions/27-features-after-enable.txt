@@ -1,0 +1,11 @@
+Output as printed. T = default CLI profile (.azure); reader = ga-reader-test2 (.azure-readertest2). Subscription IDs replaced by <sub>; object and assignment IDs cut to first 4 and last 4.
+
+After the portal toggle to Data actions only (saved 22:05Z).
+
+2026-11-02T22:08:36Z
+{
+  "dataAuthorizationMode": true,
+  "enableLogAccessUsingOnlyResourcePermissions": true,
+  "legacy": 0,
+  "searchVersion": 1
+}

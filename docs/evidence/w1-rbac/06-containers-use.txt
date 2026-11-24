@@ -1,0 +1,58 @@
+# w1-rbac-containers-use, as T. Read-only. Control plane and an aggregate log query; no blob reads, no keys.
+now: 2026-11-05T20:50:25Z
+OK    T activated instances: 0
+--- 1. containers: name | class | lastModifiedTime | leaseState | publicAccess | deleted | metadata keys
+note: lastModifiedTime is the container's own properties, not the last blob write
+include deleted: yes
+more pages: no
+6763...9501-azureml-blobstore | blobstore | 2026-10-15T21:46:55.0000000Z | Available | None | false | none
+6763...9501-f0e1...bcde-azureml-agent | agent | 2026-10-15T21:46:55.0000000Z | Available | None | false | none
+ga-ai-labv-057e...2fab | neither | 2026-10-22T15:43:02.0000000Z | Available | None | false | none
+ga-ai-labv-12e0...3e50 | neither | 2026-10-22T15:42:55.0000000Z | Available | None | false | none
+ga-ai-labv-14f2...e63d | neither | 2026-10-22T15:42:35.0000000Z | Available | None | false | none
+ga-ai-labv-2097...bf5a | neither | 2026-10-22T15:42:28.0000000Z | Available | None | false | none
+ga-ai-labv-49f4...1e64 | neither | 2026-10-22T15:42:54.0000000Z | Available | None | false | none
+ga-ai-labv-75c4...9823 | neither | 2026-10-22T15:42:22.0000000Z | Available | None | false | none
+ga-ai-labv-8dc7...8fc9 | neither | 2026-10-22T15:42:35.0000000Z | Available | None | false | none
+ga-ai-labv-9a53...3934 | neither | 2026-10-22T15:42:29.0000000Z | Available | None | false | none
+ga-ai-labv-9b86...72ac | neither | 2026-10-22T15:42:39.0000000Z | Available | None | false | none
+ga-ai-labv-a049...e37b | neither | 2026-10-22T15:42:59.0000000Z | Available | None | false | none
+ga-ai-labv-b967...81de | neither | 2026-10-22T15:43:03.0000000Z | Available | None | false | none
+ga-ai-labv-b9cf...8175 | neither | 2026-10-22T15:42:59.0000000Z | Available | None | false | none
+ga-ai-labv-bf44...6990 | neither | 2026-10-22T15:42:51.0000000Z | Available | None | false | none
+ga-ai-labv-c161...6f92 | neither | 2026-10-22T15:42:51.0000000Z | Available | None | false | none
+ga-ai-labv-c638...68b5 | neither | 2026-10-22T15:42:48.0000000Z | Available | None | false | none
+ga-ai-labv-cb8b...6068 | neither | 2026-10-22T15:42:43.0000000Z | Available | None | false | none
+ga-ai-labv-d988...1df2 | neither | 2026-10-22T15:42:39.0000000Z | Available | None | false | none
+ga-ai-labv-ddb2...2441 | neither | 2026-10-22T15:42:44.0000000Z | Available | None | false | none
+ga-ai-labv-f4a4...ccee | neither | 2026-10-22T15:42:22.0000000Z | Available | None | false | none
+ga-ai-labv-f64c...77d8 | neither | 2026-10-22T15:42:47.0000000Z | Available | None | false | none
+counts: agent=1, blobstore=1, neither=20
+--- 2. neither containers: name | ID part form | matches a known lab ID | where
+note: agent and vector-store IDs live in the Foundry data plane, not ARM, so they aren't compared
+known IDs harvested: 14
+ga-ai-labv-057e...2fab | GUID | no | none
+ga-ai-labv-12e0...3e50 | GUID | no | none
+ga-ai-labv-14f2...e63d | GUID | no | none
+ga-ai-labv-2097...bf5a | GUID | no | none
+ga-ai-labv-49f4...1e64 | GUID | no | none
+ga-ai-labv-75c4...9823 | GUID | no | none
+ga-ai-labv-8dc7...8fc9 | GUID | no | none
+ga-ai-labv-9a53...3934 | GUID | no | none
+ga-ai-labv-9b86...72ac | GUID | no | none
+ga-ai-labv-a049...e37b | GUID | no | none
+ga-ai-labv-b967...81de | GUID | no | none
+ga-ai-labv-b9cf...8175 | GUID | no | none
+ga-ai-labv-bf44...6990 | GUID | no | none
+ga-ai-labv-c161...6f92 | GUID | no | none
+ga-ai-labv-c638...68b5 | GUID | no | none
+ga-ai-labv-cb8b...6068 | GUID | no | none
+ga-ai-labv-d988...1df2 | GUID | no | none
+ga-ai-labv-ddb2...2441 | GUID | no | none
+ga-ai-labv-f4a4...ccee | GUID | no | none
+ga-ai-labv-f64c...77d8 | GUID | no | none
+--- 3. blob logs
+diagnostic settings on blobServices: 1
+setting ga-diag-to-shared-law | workspace ga-law-shared | categories enabled: allLogs
+query: failed, see private stderr (not a DIFF)
+RESULT: guards match; read parts 1 to 3 above

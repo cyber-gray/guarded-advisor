@@ -1,0 +1,10 @@
+# P5 rerun, 2026-11-04, as T. AgentToolAudit_CL has no time filter. No data role active.
+run at: 2026-11-04T15:53:52Z
+level AppDependencies:    General
+level AppGenAIContent:    Protected
+level AdjudicationLog_CL: Protected
+level AgentToolAudit_CL:  General
+AppDependencies, last 7d: 144
+AppGenAIContent:          0
+AdjudicationLog_CL:       0
+AgentToolAudit_CL:        2

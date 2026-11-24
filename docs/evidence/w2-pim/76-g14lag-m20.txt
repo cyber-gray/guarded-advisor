@@ -1,0 +1,14 @@
+# G14-lag m20, as T. A +31 reading, not +20: the timer notice arrived late. No reading between 11 and 31 minutes.
+signed in: 6d4c...2a4d
+now: 2026-11-05T01:57:35Z
+activated roles: none
+PMDR deactivation requested: 2026-11-05T01:26:50.887Z, status Revoked
+seconds since deactivation request: 1845
+data action tables/data/read in permissions: no
+raw dataActions (may be empty):
+expectation set before this query: AppDependencies 144, AgentToolAudit_CL 2; Protected tables may still show 90 and 2 during the lag, and should show 0 and 0 by +30
+AppDependencies, last 7 days | General | 144
+AppGenAIContent | Protected | 0
+AdjudicationLog_CL | Protected | 0
+AgentToolAudit_CL | General | 2
+Protected rows visible: no

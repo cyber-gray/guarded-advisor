@@ -1,0 +1,16 @@
+# Retest check 4, as T, Reader only. Permissions API, with protectionLevel/write added.
+signed in: 6d4c...2a4d
+now: 2026-11-05T02:03:47Z
+T's activated instances: 0
+--- ga-law-shared
+dataAuthorizationMode: false
+workspaces/write survives: no
+protectionLevel/write survives at the workspace: no
+protectionLevel/write survives on AdjudicationLog_CL: no
+--- T's scopes, tested against Microsoft.Authorization/roleAssignments/write
+subscription | Reader | roleAssignments/write=no | wildcard write=no
+ga-proj-labv3do | Foundry User | roleAssignments/write=no | wildcard write=no
+ga-jump-lab | Reader, Virtual Machine Administrator Login | roleAssignments/write=no | wildcard write=no
+ga-jump-lab-nic | Reader | roleAssignments/write=no | wildcard write=no
+ga-dcr-redteam-shared | Monitoring Metrics Publisher | roleAssignments/write=no | wildcard write=no
+scopes checked: 5, with a write hit: 0, read errors: 0

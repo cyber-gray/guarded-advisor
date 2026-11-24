@@ -1,0 +1,7 @@
+capture-20261116T1952Z | read 2026-11-16T19:52:31Z | as T (6d4c...2a4d), standing Reader | workspace ga-law-shared | script scripts/w3_evidence_capture.sh at f1bb0ee
+timespan: P30D
+query (GUIDs masked):
+  ApiManagementGatewayLlmLog | count
+rows: 1
+---
+ApiManagementGatewayLlmLog rows readable by T without the data role: 0 (0 expected since 2026-11-14 17:07:20Z; 72 before)

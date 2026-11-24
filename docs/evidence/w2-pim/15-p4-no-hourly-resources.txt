@@ -1,0 +1,6 @@
+# P4, 2026-11-03 Toronto, as T.
+Microsoft.Network/bastionHosts: none
+Microsoft.ApiManagement/service: none
+Microsoft.Network/publicIPAddresses: none
+VMs:
+ga-jump-lab  VM deallocated

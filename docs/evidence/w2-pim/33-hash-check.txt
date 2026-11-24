@@ -1,0 +1,4 @@
+# Hash check, 2026-11-04, as T. sha256 of T's Owner condition, live against P1. The condition itself isn't in the repo.
+P1 hash:  7fc5ba2223c9f0eeeddbae772fc51032e8653480abeed22f5af3caf51039771c
+live now: 7fc5ba2223c9f0eeeddbae772fc51032e8653480abeed22f5af3caf51039771c
+RESULT: MATCH

@@ -1,0 +1,27 @@
+# G14 redo pre-check, as T. Read-only. End state before the redo.
+signed in: 6d4c...2a4d
+now: 2026-11-05T01:05:15Z
+--- T: active instances
+Assigned | Foundry User | ga-proj-labv3do | no condition | permanent
+Assigned | Monitoring Metrics Publisher | ga-dcr-redteam-shared | no condition | permanent
+Assigned | Reader | ga-jump-lab | no condition | permanent
+Assigned | Reader | ga-jump-lab-nic | no condition | permanent
+Assigned | Reader | subscription | no condition | permanent
+Assigned | Virtual Machine Administrator Login | ga-jump-lab | no condition | permanent
+ok | T Assigned count | 6
+ok | T Activated count | 0
+ok | T Reader at subscription, no condition | 1
+ok | T active Owner, any scope | 0
+--- T: eligible instances
+Container Apps SandboxGroup Data Owner | ga-sbx-lab | no condition | 2026-11-19T14:39:49Z
+Owner | subscription | no condition | 2026-11-19T02:21:58Z
+Privileged Monitoring Data Reader | rg-guardedadvisor-shared | no condition | 2026-11-19T23:25:23Z
+ok | T eligible count | 3
+ok | Eligible Owner at subscription, ends 2026-11-19T02:21Z | 1
+ok | Eligible PMDR on rg-guardedadvisor-shared | 1
+ok | Eligible R10 on ga-sbx-lab | 1
+--- G: role assignments
+Owner | subscription | no condition
+ok | G Owner at subscription, no condition | 1
+ok | G Owner assignment ID | 40ae...a03b
+PRE-CHECK PASS

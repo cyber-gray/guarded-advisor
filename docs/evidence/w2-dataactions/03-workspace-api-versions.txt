@@ -1,0 +1,10 @@
+P4b, 2026-11-01, az provider show -n Microsoft.OperationalInsights, workspaces apiVersions (first 8), output as printed.
+
+2026-03-01
+2025-07-01
+2025-02-01
+2023-09-01
+2022-10-01
+2021-12-01-preview
+2021-06-01
+2021-03-01-privatepreview

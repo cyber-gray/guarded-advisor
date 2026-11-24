@@ -1,0 +1,2 @@
+77f9...5e2a	00000000-0000-0000-0000-000000000002	/subscriptions/<sub>/resourceGroups/rg-guardedadvisor-lab/providers/Microsoft.DocumentDB/databaseAccounts/ga-ai-labv3docosmosdb/dbs/enterprise_memory
+cb3f...a5e0	00000000-0000-0000-0000-000000000001	/subscriptions/<sub>/resourceGroups/rg-guardedadvisor-lab/providers/Microsoft.DocumentDB/databaseAccounts/ga-ai-labv3docosmosdb/dbs/larkfield/colls/claims

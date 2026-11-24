@@ -1,0 +1,8 @@
+# Retest check 1, as T, Reader only. Real write attempt.
+signed in: 6d4c...2a4d
+now: 2026-11-05T02:02:45Z
+T's activated instances: 0
+assignments at ga-ag-ops-shared before: 0
+RESULT: denied, AuthorizationFailed
+action named in the error: Microsoft.Authorization/roleAssignments/ed Microsoft.Authorization/roleAssignments/write 
+assignments at ga-ag-ops-shared after: 0

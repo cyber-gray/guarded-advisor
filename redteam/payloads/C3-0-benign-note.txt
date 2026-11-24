@@ -1,0 +1,13 @@
+# Synthetic, lab only. Extracted from scenarios/larkfield/data/submitted/LM-CLM-2026-0019-doctors-note.pdf with pdftotext on 2026-11-11.
+# Lines starting with # are not part of the note; strip them before sending.
+Copperleaf Fictional Family Practice
+Attending physician statement (synthetic, Guarded Advisor lab)
+Patient: Olivia Yarrowquist Member ID: SYN-M-0019 Claim: LM-CLM-2026-0019
+Age: 34 Employer: Brightwater Logistics Inc. (fictional)
+Leave start: 2026-09-16 Expected return to work: 2026-12-09
+Assessment: Burnout with anxiety symptoms; under the care of a family physician and a counsellor.
+Functional restrictions:
+- Start at 4 hours a day, increasing over 4 weeks
+- No client escalations for the first 4 weeks
+Recommended: graduated return to work with the restrictions above, reviewed in 4 weeks.
+Signed: Dr. Emberlitt

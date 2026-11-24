@@ -1,0 +1,17 @@
+Residency (C5: canadaeast or expected-global; Standard models; LRS storage; Cosmos DB single-region, Local backups)
+  PASS group rg-guardedadvisor-lab location=canadaeast
+  PASS group rg-guardedadvisor-shared location=canadaeast
+  PASS lab resources: 41 in canadaeast, 26 expected global (microsoft.network/privatednszones microsoft.network/privatednszones/virtualnetworklinks microsoft.insights/actiongroups microsoft.insights/privatelinkscopes microsoft.alertsmanagement/smartdetectoralertrules)
+  outside the lab groups: 11, counted only
+  PASS ga-ai-labv3do/gpt-4.1-mini sku=Standard
+  PASS ga-ai-labv3do/text-embedding-3-small sku=Standard
+  PASS gaailabv3dost primaryLocation=canadaeast
+  PASS gaailabv3dost sku=Standard_LRS
+  PASS gaailabv3dost no secondary
+  PASS ga-ai-labv3docosmosdb location=canadaeast
+  PASS ga-ai-labv3docosmosdb enableMultipleWriteLocations=false
+  PASS ga-ai-labv3docosmosdb backupStorageRedundancy=Local
+  not checked here: Key Vault replication (Canada Central, D-006); Entra data location (United States, docs/evidence/w2-pim/97)
+
+verify.sh (residency): 0 failed, 0 inconclusive
+exit status: 0 (exit status recorded separately)

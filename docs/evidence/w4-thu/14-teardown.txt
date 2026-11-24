@@ -1,0 +1,174 @@
+subscription: cc42...9d2f
+signed in: 6d4c...2a4d
+now: 2026-11-12T19:12:56Z
+T's activated instances: 1
+activated: Owner at the lab subscription scope
+gate ok | teardown.sh sha256 | 13da9b41e39ead3732b6f6e2dab413528b14ef66595fda00c41dd7b281f4a3df
+gate ok | lines that source another file | 0
+gate ok | trap statements | 0
+gate ok | eval statements | 0
+gate ok | case fall-through | 0
+gate ok | exported functions in the environment | 0
+Pre-check passed: Microsoft.Authorization/roleAssignments/delete on ga-bas-lab.
+Resource group: rg-guardedadvisor-lab (canadaeast)
+API Management instances (bill by the hour while they exist):
+  ga-apim-lab-v3doqe
+Pre-check passed: Microsoft.Authorization/roleAssignments/delete on ga-ai-labv3do.
+Pre-check passed: Microsoft.Authorization/roleAssignments/delete on ga-cs-labv3do.
+Remove the instances' role assignments, diagnostic settings, private endpoints and privatelink.azure-api.net, then delete these instances? [y/N] y
+  removed role assignment <id> held by ga-apim-lab-v3doqe's identity
+  removed role assignment <id> held by ga-apim-lab-v3doqe's identity
+  read-back: role assignments held by ga-apim-lab-v3doqe's identity: 0
+  removed diagnostic setting ga-apim-to-shared-law on ga-apim-lab-v3doqe
+  read-back: diagnostic settings on ga-apim-lab-v3doqe: 0
+  deleted private endpoint ga-apim-lab-v3doqe-private-endpoint
+  read-back: private endpoints to ga-apim-lab-v3doqe: 0
+  deleted zone link apim-ga-vnet-lab-link
+  read-back: links on privatelink.azure-api.net: 0
+  deleted zone privatelink.azure-api.net
+  read-back: privatelink.azure-api.net exists: no
+Deleting ga-apim-lab-v3doqe (takes a few minutes)...
+{
+  "additionalLocations": null,
+  "apiVersionConstraint": null,
+  "certificates": null,
+  "createdAtUtc": null,
+  "customProperties": null,
+  "developerPortalUrl": null,
+  "disableGateway": null,
+  "enableClientCertificate": null,
+  "etag": null,
+  "gatewayRegionalUrl": null,
+  "gatewayUrl": null,
+  "hostnameConfigurations": null,
+  "id": null,
+  "identity": null,
+  "location": null,
+  "managementApiUrl": null,
+  "name": null,
+  "natGatewayState": null,
+  "notificationSenderEmail": null,
+  "outboundPublicIpAddresses": null,
+  "platformVersion": null,
+  "portalUrl": null,
+  "privateEndpointConnections": null,
+  "privateIpAddresses": null,
+  "provisioningState": null,
+  "publicIpAddressId": null,
+  "publicIpAddresses": null,
+  "publicNetworkAccess": null,
+  "publisherEmail": null,
+  "publisherName": null,
+  "restore": null,
+  "scmUrl": null,
+  "sku": null,
+  "status": "Succeeded",
+  "systemData": null,
+  "tags": null,
+  "targetProvisioningState": null,
+  "type": null,
+  "virtualNetworkConfiguration": null,
+  "virtualNetworkType": null,
+  "zones": null
+}
+  read-back: ga-apim-lab-v3doqe exists: no
+Purge soft-deleted ga-apim-lab-v3doqe now? Otherwise it's kept for 48 hours and its name can't be reused. [y/N] y
+  read-back: ga-apim-lab-v3doqe soft-deleted: no
+Done. Remaining API Management instances: 0
+WARNING: couldn't list sandboxes in ga-sbx-lab (needs SandboxGroup Data Owner on the group, R10: activate it in PIM):
+  ERROR: Forbidden
+  Check in the Sandboxes portal that none is left running.
+Bastion hosts (bill by the hour while they exist, with their public IPs):
+  ga-bas-lab
+Delete them (Reader assignments, diagnostic setting, host, public IP)? [y/N] y
+  removed role assignment <id> on ga-bas-lab
+  removed diagnostic setting ga-diag-to-shared-law on ga-bas-lab
+  deleting Bastion host ga-bas-lab (takes several minutes)...
+  deleted: ga-bas-lab
+  deleted public IP ga-pip-bas-lab
+VMs still allocated (compute bills until deallocated):
+  ga-jump-lab
+Deallocate them? [y/N] y
+  deallocated: ga-jump-lab
+No role assignments left on Bastion scopes.
+--- teardown.sh session output
+Pre-check passed: Microsoft.Authorization/roleAssignments/delete on ga-bas-lab.
+Resource group: rg-guardedadvisor-lab (canadaeast)
+API Management instances (bill by the hour while they exist):
+  ga-apim-lab-v3doqe
+Pre-check passed: Microsoft.Authorization/roleAssignments/delete on ga-ai-labv3do.
+Pre-check passed: Microsoft.Authorization/roleAssignments/delete on ga-cs-labv3do.
+Remove the instances' role assignments, diagnostic settings, private endpoints and privatelink.azure-api.net, then delete these instances? [y/N]   removed role assignment <id> held by ga-apim-lab-v3doqe's identity
+  removed role assignment <id> held by ga-apim-lab-v3doqe's identity
+  read-back: role assignments held by ga-apim-lab-v3doqe's identity: 0
+  removed diagnostic setting ga-apim-to-shared-law on ga-apim-lab-v3doqe
+  read-back: diagnostic settings on ga-apim-lab-v3doqe: 0
+  deleted private endpoint ga-apim-lab-v3doqe-private-endpoint
+  read-back: private endpoints to ga-apim-lab-v3doqe: 0
+  deleted zone link apim-ga-vnet-lab-link
+  read-back: links on privatelink.azure-api.net: 0
+  deleted zone privatelink.azure-api.net
+  read-back: privatelink.azure-api.net exists: no
+Deleting ga-apim-lab-v3doqe (takes a few minutes)...
+{
+  "additionalLocations": null,
+  "apiVersionConstraint": null,
+  "certificates": null,
+  "createdAtUtc": null,
+  "customProperties": null,
+  "developerPortalUrl": null,
+  "disableGateway": null,
+  "enableClientCertificate": null,
+  "etag": null,
+  "gatewayRegionalUrl": null,
+  "gatewayUrl": null,
+  "hostnameConfigurations": null,
+  "id": null,
+  "identity": null,
+  "location": null,
+  "managementApiUrl": null,
+  "name": null,
+  "natGatewayState": null,
+  "notificationSenderEmail": null,
+  "outboundPublicIpAddresses": null,
+  "platformVersion": null,
+  "portalUrl": null,
+  "privateEndpointConnections": null,
+  "privateIpAddresses": null,
+  "provisioningState": null,
+  "publicIpAddressId": null,
+  "publicIpAddresses": null,
+  "publicNetworkAccess": null,
+  "publisherEmail": null,
+  "publisherName": null,
+  "restore": null,
+  "scmUrl": null,
+  "sku": null,
+  "status": "Succeeded",
+  "systemData": null,
+  "tags": null,
+  "targetProvisioningState": null,
+  "type": null,
+  "virtualNetworkConfiguration": null,
+  "virtualNetworkType": null,
+  "zones": null
+}
+  read-back: ga-apim-lab-v3doqe exists: no
+Purge soft-deleted ga-apim-lab-v3doqe now? Otherwise it's kept for 48 hours and its name can't be reused. [y/N]   read-back: ga-apim-lab-v3doqe soft-deleted: no
+Done. Remaining API Management instances: 0
+WARNING: couldn't list sandboxes in ga-sbx-lab (needs SandboxGroup Data Owner on the group, R10: activate it in PIM):
+  ERROR: Forbidden
+  Check in the Sandboxes portal that none is left running.
+Bastion hosts (bill by the hour while they exist, with their public IPs):
+  ga-bas-lab
+Delete them (Reader assignments, diagnostic setting, host, public IP)? [y/N]   removed role assignment <id> on ga-bas-lab
+  removed diagnostic setting ga-diag-to-shared-law on ga-bas-lab
+  deleting Bastion host ga-bas-lab (takes several minutes)...
+  deleted: ga-bas-lab
+  deleted public IP ga-pip-bas-lab
+VMs still allocated (compute bills until deallocated):
+  ga-jump-lab
+Deallocate them? [y/N]   deallocated: ga-jump-lab
+No role assignments left on Bastion scopes.
+exit code: 0
+stderr lines in private file: 0

@@ -1,0 +1,12 @@
+// C8: agree and override rate from AdjudicationLog_CL (D-022). Generic fields only (D-012).
+// The table is Protected: reading it needs Privileged Monitoring Data Reader (w2-privread).
+// SMOKE rows come from scripts/smoke_adjudication.py; they check the ingestion path and aren't adjudications.
+AdjudicationLog_CL
+| where record_id != "SMOKE"
+| summarize adjudications = count(),
+            agree = countif(outcome == "agree"),
+            modified = countif(outcome == "modified"),
+            rejected = countif(outcome == "rejected")
+    by scenario
+| extend agree_rate_pct = round(100.0 * agree / adjudications, 1),
+         override_rate_pct = round(100.0 * (modified + rejected) / adjudications, 1)

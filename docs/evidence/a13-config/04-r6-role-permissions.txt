@@ -1,0 +1,13 @@
+{
+  "actions": [
+    "Microsoft.Insights/Register/Action",
+    "Microsoft.Support/*",
+    "Microsoft.Resources/subscriptions/resourceGroups/read"
+  ],
+  "dataActions": [
+    "Microsoft.Insights/Metrics/Write",
+    "Microsoft.Insights/Telemetry/Write"
+  ],
+  "notActions": [],
+  "notDataActions": []
+}

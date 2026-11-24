@@ -1,0 +1,6 @@
+Step 1-pre, 2026-10-31, laptop, T (default CLI profile), window A (nothing activated), before 15:07:20Z.
+Roles reaching ga-law-shared, including inherited; subscription ID masked by sed.
+
+Role    Scope
+------  ---------------------------------------------------
+Owner   /subscriptions/<sub>

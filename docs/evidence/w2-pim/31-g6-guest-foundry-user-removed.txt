@@ -1,0 +1,9 @@
+# G6, 2026-11-04, as T. Read-back after the guest removed its Foundry User.
+total before: 18; after: 17
+--- removed
+G	Foundry User	/subscriptions/<sub>	9dd7...d428
+--- added
+--- G now
+G	Owner	/subscriptions/<sub>	40ae...a03b
+--- T's Foundry User (R1)
+T	Foundry User	/subscriptions/<sub>/resourceGroups/rg-guardedadvisor-lab/providers/Microsoft.CognitiveServices/accounts/ga-ai-labv3do/projects/ga-proj-labv3do	4bad...f8b1

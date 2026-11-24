@@ -1,0 +1,14 @@
+# s4-identify, as T. Read-only.
+now: 2026-11-05T18:00:01Z
+OK    T activated instances: 0
+--- 1. public IP outside the lab
+OK    public IP outside the lab, count: 1
+attached_to=NAT gateway | attached_resource_is_outside_lab_nat_gateway=yes
+--- 2. Directory Readers members
+members: 0
+users, counted only: 0
+groups or other, counted only: 0
+service principals: 0
+more pages: no
+--- appDisplayName | appId | appOwnerOrganizationId | is_microsoft_first_party_tenant | is_this_tenant | servicePrincipalType | createdDateTime
+RESULT: checks match; read 1 and 2 above

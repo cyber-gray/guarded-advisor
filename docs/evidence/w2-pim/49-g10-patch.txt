@@ -1,0 +1,10 @@
+# G10, 2026-11-04, as T, activated. PATCH at 18:54:38Z restoring isExpirationRequired.
+policy assignment: entries=1 role=Owner scope=/subscriptions/<sub>
+drift since G7: none
+rules: 19
+--- rules that differ from the before-read
+Expiration_EndUser_Assignment
+--- values now
+Expiration_EndUser_Assignment required=true max=PT4H
+Enablement_EndUser_Assignment enabled=MultiFactorAuthentication,Justification
+Approval_EndUser_Assignment approvalRequired=false

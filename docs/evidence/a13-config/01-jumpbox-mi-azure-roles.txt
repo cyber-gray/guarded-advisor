@@ -1,0 +1,2 @@
+jumpbox MI principal: cb3f...a5e0
+Monitoring Metrics Publisher	/subscriptions/<sub>/resourcegroups/rg-guardedadvisor-shared/providers/Microsoft.Insights/dataCollectionRules/ga-dcr-agent-shared

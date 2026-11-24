@@ -1,0 +1,17 @@
+# P3b, 2026-11-03 Toronto, as T. The guest's Activity Log events, lab period only.
+# Events read: 3795. Events by the guest: 132. Omitted: 32 events from 2026-09-06 and 2026-09-13 on resources outside the lab (details in the private folder).
+operation                                             group                  status      date        count
+Microsoft.ApiManagement/register/action               Started                2026-10-01  1
+Microsoft.ApiManagement/register/action               Succeeded              2026-10-01  1
+Microsoft.Consumption/budgets/write                   Started                2026-10-01  1
+Microsoft.Consumption/budgets/write                   Succeeded              2026-10-01  1
+Microsoft.ContainerService/register/action            Started                2026-10-01  1
+Microsoft.ContainerService/register/action            Succeeded              2026-10-01  1
+Microsoft.Authorization/roleAssignments/write         Started                2026-10-04  1
+Microsoft.Authorization/roleAssignments/write         Succeeded              2026-10-04  1
+Microsoft.CognitiveServices/accounts/listkeys/action  rg-guardedadvisor-lab  Failed      2026-10-15  33
+Microsoft.CognitiveServices/accounts/listkeys/action  rg-guardedadvisor-lab  Started     2026-10-15  34
+Microsoft.CognitiveServices/accounts/listkeys/action  rg-guardedadvisor-lab  Succeeded   2026-10-15  1
+Microsoft.CognitiveServices/accounts/listkeys/action  rg-guardedadvisor-lab  Failed      2026-10-29  11
+Microsoft.CognitiveServices/accounts/listkeys/action  rg-guardedadvisor-lab  Started     2026-10-29  12
+Microsoft.CognitiveServices/accounts/listkeys/action  rg-guardedadvisor-lab  Succeeded   2026-10-29  1

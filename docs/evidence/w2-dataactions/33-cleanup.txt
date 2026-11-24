@@ -1,0 +1,20 @@
+Output as printed. T = default CLI profile (.azure); reader = ga-reader-test2 (.azure-readertest2). Subscription IDs replaced by <sub>; object and assignment IDs cut to first 4 and last 4.
+
+== Cleanup 1: Log Analytics Reader removed by ID before the user was deleted
+assignments matched: 1  name 980c...f09e
+delete exit=0
+== read-back: assignments on the workspace for principal f1b2...dfb1
+0
+2026-11-02T23:28:57Z
+
+== After the guest deleted ga-reader-test2 and purged it from Deleted users (between 23:28:57Z and 23:34:08Z)
+2026-11-02T23:34:08Z
+users matched: 0
+~/.azure-readertest2
+(the last line: the test CLI profile folder still existed; Tooni removes it again)
+
+== T, Owner only
+2026-11-02T23:34:15Z
+Role    Scope
+------  ---------------------------------------------------
+Owner   /subscriptions/<sub>

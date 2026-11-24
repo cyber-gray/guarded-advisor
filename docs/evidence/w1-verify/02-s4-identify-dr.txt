@@ -1,0 +1,13 @@
+# s4-identify-dr, as T. Read-only. Unified RBAC API, Directory Readers.
+now: 2026-11-05T18:03:10Z
+OK    T activated instances: 0
+--- active: roleAssignments
+count: 1
+more pages: no
+--- principals by @odata.type: type | count
+#microsoft.graph.servicePrincipal | 1
+--- service principals: appDisplayName | appId | appOwnerOrganizationId | microsoft_first_party | microsoft_corporate | directoryScopeId
+Microsoft.Azure.SyncFabric | 0000...0000 | f8cd...255a | yes | no | /
+--- eligible: roleEligibilityScheduleInstances
+eligible: denied (403, from the error's reason text)
+RESULT: guards match; read active and eligible above

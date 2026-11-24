@@ -1,0 +1,77 @@
+# w1-rbac-containers-use-2, as T. Read-only. Part 3 only: an aggregate blob-log query; no blob reads, no keys.
+now: 2026-11-05T20:55:32Z
+OK    T activated instances: 0
+--- 3. blob logs
+setting ga-diag-to-shared-law | workspace ga-law-shared | categories enabled: allLogs
+query window: P30D, rows: 66
+--- container | class | operation group | count | last seen | caller class | caller is the project identity
+$purview | neither | read | 50 | 2026-11-05T14:31:22.0452855Z | no object ID (key, SAS or service) | no
+(account level) | - | list | 2 | 2026-11-05T20:50:31.0112421Z | no object ID (key, SAS or service) | no
+(account level) | - | list | 5 | 2026-10-19T15:38:02.7316093Z | T | no
+(account level) | - | read | 1 | 2026-10-22T15:42:22.454511Z | project identity | yes
+6763...9501-f0e1...bcde-azureml-agent | agent | read | 14 | 2026-10-22T15:43:04.3974357Z | project identity | yes
+6763...9501-f0e1...bcde-azureml-agent | agent | write | 20 | 2026-10-22T15:43:05.6424172Z | project identity | yes
+ga-ai-labv-057e...2fab | neither | list | 3 | 2026-10-22T15:43:03.1270307Z | project identity | yes
+ga-ai-labv-057e...2fab | neither | read | 2 | 2026-10-22T15:43:04.8257467Z | project identity | yes
+ga-ai-labv-057e...2fab | neither | write | 4 | 2026-10-22T15:43:03.3903684Z | project identity | yes
+ga-ai-labv-12e0...3e50 | neither | read | 1 | 2026-10-22T15:42:55.2107341Z | project identity | yes
+ga-ai-labv-12e0...3e50 | neither | write | 2 | 2026-10-22T15:42:55.2174427Z | project identity | yes
+ga-ai-labv-14f2...e63d | neither | read | 1 | 2026-10-22T15:42:35.6461229Z | project identity | yes
+ga-ai-labv-14f2...e63d | neither | write | 2 | 2026-10-22T15:42:35.654404Z | project identity | yes
+ga-ai-labv-2097...bf5a | neither | list | 3 | 2026-10-22T15:42:29.4590891Z | project identity | yes
+ga-ai-labv-2097...bf5a | neither | read | 2 | 2026-10-22T15:42:31.8347687Z | project identity | yes
+ga-ai-labv-2097...bf5a | neither | write | 4 | 2026-10-22T15:42:29.7531926Z | project identity | yes
+ga-ai-labv-3323...46d5 | neither | read | 1 | 2026-10-22T15:42:22.9180921Z | project identity | yes
+ga-ai-labv-4464...c031 | neither | read | 1 | 2026-10-22T15:42:44.3544636Z | project identity | yes
+ga-ai-labv-45cc...bd58 | neither | read | 1 | 2026-10-22T15:43:03.1215399Z | project identity | yes
+ga-ai-labv-49f4...1e64 | neither | list | 3 | 2026-10-22T15:42:55.177879Z | project identity | yes
+ga-ai-labv-49f4...1e64 | neither | read | 2 | 2026-10-22T15:42:56.7847007Z | project identity | yes
+ga-ai-labv-49f4...1e64 | neither | write | 4 | 2026-10-22T15:42:55.4633743Z | project identity | yes
+ga-ai-labv-6403...3aa7 | neither | read | 1 | 2026-10-22T15:42:48.0933555Z | project identity | yes
+ga-ai-labv-70e7...99e3 | neither | read | 1 | 2026-10-22T15:42:59.7759282Z | project identity | yes
+ga-ai-labv-75c4...9823 | neither | read | 1 | 2026-10-22T15:42:22.9516523Z | project identity | yes
+ga-ai-labv-75c4...9823 | neither | write | 2 | 2026-10-22T15:42:22.9907014Z | project identity | yes
+ga-ai-labv-872a...9747 | neither | read | 1 | 2026-10-22T15:42:51.9060654Z | project identity | yes
+ga-ai-labv-8dc7...8fc9 | neither | list | 3 | 2026-10-22T15:42:35.6184578Z | project identity | yes
+ga-ai-labv-8dc7...8fc9 | neither | read | 2 | 2026-10-22T15:42:37.6372821Z | project identity | yes
+ga-ai-labv-8dc7...8fc9 | neither | write | 4 | 2026-10-22T15:42:35.8863906Z | project identity | yes
+ga-ai-labv-9a53...3934 | neither | read | 1 | 2026-10-22T15:42:29.4872434Z | project identity | yes
+ga-ai-labv-9a53...3934 | neither | write | 2 | 2026-10-22T15:42:29.494601Z | project identity | yes
+ga-ai-labv-9b86...72ac | neither | read | 1 | 2026-10-22T15:42:39.795624Z | project identity | yes
+ga-ai-labv-9b86...72ac | neither | write | 2 | 2026-10-22T15:42:39.8029039Z | project identity | yes
+ga-ai-labv-a049...e37b | neither | list | 3 | 2026-10-22T15:42:59.7810492Z | project identity | yes
+ga-ai-labv-a049...e37b | neither | read | 2 | 2026-10-22T15:43:01.4277961Z | project identity | yes
+ga-ai-labv-a049...e37b | neither | write | 4 | 2026-10-22T15:43:00.0673395Z | project identity | yes
+ga-ai-labv-aa11...4c3a | neither | read | 1 | 2026-10-22T15:42:55.1726979Z | project identity | yes
+ga-ai-labv-b967...81de | neither | read | 1 | 2026-10-22T15:43:03.1549473Z | project identity | yes
+ga-ai-labv-b967...81de | neither | write | 2 | 2026-10-22T15:43:03.1622361Z | project identity | yes
+ga-ai-labv-b9cf...8175 | neither | read | 1 | 2026-10-22T15:42:59.8086355Z | project identity | yes
+ga-ai-labv-b9cf...8175 | neither | write | 2 | 2026-10-22T15:42:59.8153819Z | project identity | yes
+ga-ai-labv-be2c...b648 | neither | read | 1 | 2026-10-22T15:42:35.6127052Z | project identity | yes
+ga-ai-labv-bf44...6990 | neither | list | 3 | 2026-10-22T15:42:51.9109829Z | project identity | yes
+ga-ai-labv-bf44...6990 | neither | read | 2 | 2026-10-22T15:42:53.2776712Z | project identity | yes
+ga-ai-labv-bf44...6990 | neither | write | 4 | 2026-10-22T15:42:52.1767969Z | project identity | yes
+ga-ai-labv-c161...6f92 | neither | read | 1 | 2026-10-22T15:42:51.9412342Z | project identity | yes
+ga-ai-labv-c161...6f92 | neither | write | 2 | 2026-10-22T15:42:51.9487303Z | project identity | yes
+ga-ai-labv-c638...68b5 | neither | read | 1 | 2026-10-22T15:42:48.1288799Z | project identity | yes
+ga-ai-labv-c638...68b5 | neither | write | 2 | 2026-10-22T15:42:48.136475Z | project identity | yes
+ga-ai-labv-cb8b...6068 | neither | list | 3 | 2026-10-22T15:42:44.3620286Z | project identity | yes
+ga-ai-labv-cb8b...6068 | neither | read | 2 | 2026-10-22T15:42:46.2232353Z | project identity | yes
+ga-ai-labv-cb8b...6068 | neither | write | 4 | 2026-10-22T15:42:44.6141404Z | project identity | yes
+ga-ai-labv-d988...1df2 | neither | list | 3 | 2026-10-22T15:42:39.7703013Z | project identity | yes
+ga-ai-labv-d988...1df2 | neither | read | 2 | 2026-10-22T15:42:41.1283257Z | project identity | yes
+ga-ai-labv-d988...1df2 | neither | write | 4 | 2026-10-22T15:42:40.0229932Z | project identity | yes
+ga-ai-labv-ddb2...2441 | neither | read | 1 | 2026-10-22T15:42:44.3918035Z | project identity | yes
+ga-ai-labv-ddb2...2441 | neither | write | 2 | 2026-10-22T15:42:44.3986734Z | project identity | yes
+ga-ai-labv-deaa...b5aa | neither | read | 1 | 2026-10-22T15:42:39.7653146Z | project identity | yes
+ga-ai-labv-ec3f...e9e8 | neither | read | 1 | 2026-10-22T15:42:29.4531435Z | project identity | yes
+ga-ai-labv-f4a4...ccee | neither | list | 3 | 2026-10-22T15:42:22.9236975Z | project identity | yes
+ga-ai-labv-f4a4...ccee | neither | read | 2 | 2026-10-22T15:42:26.333214Z | project identity | yes
+ga-ai-labv-f4a4...ccee | neither | write | 4 | 2026-10-22T15:42:23.6010378Z | project identity | yes
+ga-ai-labv-f64c...77d8 | neither | list | 3 | 2026-10-22T15:42:48.1010851Z | project identity | yes
+ga-ai-labv-f64c...77d8 | neither | read | 2 | 2026-10-22T15:42:49.7781878Z | project identity | yes
+ga-ai-labv-f64c...77d8 | neither | write | 4 | 2026-10-22T15:42:48.3427115Z | project identity | yes
+--- summary over the neither containers, last 30 days
+neither containers with any read or write:  of 20
+by caller class (containers with read or write): 
+RESULT: guards match; read part 3 above

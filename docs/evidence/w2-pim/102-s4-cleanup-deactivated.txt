@@ -1,0 +1,6 @@
+read_at=2026-11-05T16:53:12Z tag=s4-cleanup-deactivated
+OK    T activated instances: 0
+OK    G assignments visible to T: 0
+OK    Owner at subscription: 0
+--- Owner and UAA now: role | principal type | principal
+RESULT: all match

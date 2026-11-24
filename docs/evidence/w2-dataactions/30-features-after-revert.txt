@@ -1,0 +1,19 @@
+Output as printed. T = default CLI profile (.azure); reader = ga-reader-test2 (.azure-readertest2). Subscription IDs replaced by <sub>; object and assignment IDs cut to first 4 and last 4.
+
+After the portal toggle back to Control and data actions (saved 22:52Z, 2 minutes past the 22:50Z hard stop). Baseline 01 had no dataAuthorizationMode: functionally reverted, not identical (D-029).
+
+2026-11-02T22:53:27Z
+{
+  "dataAuthorizationMode": false,
+  "enableLogAccessUsingOnlyResourcePermissions": true,
+  "legacy": 0,
+  "searchVersion": 1
+}
+
+2026-11-02T22:56:22Z
+{
+  "dataAuthorizationMode": false,
+  "enableLogAccessUsingOnlyResourcePermissions": true,
+  "legacy": 0,
+  "searchVersion": 1
+}

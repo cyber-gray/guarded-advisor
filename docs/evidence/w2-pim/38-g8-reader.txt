@@ -1,0 +1,6 @@
+# G8, 2026-11-04, as T. Permanent Reader through az role assignment create, while T held its conditioned Owner.
+--- T's assignments at subscription scope
+Owner   condition=yes  2026-10-04T03:13:46  b3f4...4ac1
+Reader  condition=no   2026-11-04T16:18:48  c502...83bb
+--- T's Reader, schedule instance at subscription scope
+type=Assigned  member=Direct  start=2026-11-04T16:18:48  end=none

@@ -1,0 +1,16 @@
+read_at=2026-11-05T16:03:49Z tag=s4-g15-readback not_before=2026-11-05T16:02:00Z
+OK    Owner at subscription: 0
+OK    G assignments: 0
+OK    T activated instances: 0
+OK    T eligible Owner at subscription: 1
+OK    T eligible Owner end: 2026-11-19T02:21
+OK    Owner outside subscription, same as s4-prep: 0
+OK    User Access Administrator outside subscription, same as s4-prep: 0
+--- Owner and UAA now: role | scope type | zone | principal type | principal
+--- activity log: status | eventTimestamp | caller_is_G
+activity log events: 2
+Started | 2026-11-05T15:44:48.6854412Z | caller_is_G=yes
+Succeeded | 2026-11-05T15:44:49.7323201Z | caller_is_G=yes
+OK    activity log Succeeded delete events: 1
+OK    activity log caller_is_G: yes
+RESULT: all match

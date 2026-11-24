@@ -1,0 +1,18 @@
+Step 1a, CLI, T, window A (nothing activated). az monitor log-analytics query --workspace <customer ID>, output as printed.
+
+2026-10-31T15:07:20Z
+== AppDependencies | where TimeGenerated > ago(7d) | count
+Count    TableName
+-------  -------------
+144      PrimaryResult
+exit=0
+== AppGenAIContent | count
+Count    TableName
+-------  -------------
+0        PrimaryResult
+exit=0
+== AdjudicationLog_CL | count
+Count    TableName
+-------  -------------
+0        PrimaryResult
+exit=0

@@ -1,0 +1,10 @@
+read_at=2026-11-05T16:31:20Z tag=s4-g17-after
+DIFF  G assignments visible to T: got '1', expected '0'
+OK    Owner at subscription: 0
+OK    T activated instances: 0
+--- activity log from 15:55Z: status | eventTimestamp | operation | caller_is_G | target | assignment
+activity log events: 2
+Started | 2026-11-05T16:19:14.3552367Z | write | caller_is_G=yes | ga-ag-ops-shared | bb96...f476
+Succeeded | 2026-11-05T16:19:15.8083862Z | write | caller_is_G=yes | ga-ag-ops-shared | bb96...f476
+OK    activity log events with a caller other than G: 0
+RESULT: 1 differ; stop for Tooni

@@ -1,0 +1,16 @@
+# w1-residency-replicas, as T. Read-only. Lab resources only.
+now: 2026-11-05T18:11:21Z
+OK    T activated instances: 0
+--- storage: name | sku.name | primaryLocation | secondaryLocation | status
+lab storage accounts: 1
+gaailabv3dost | Standard_LRS | canadaeast | none | ok
+OK    flagged lab storage accounts: 0
+--- cosmos: name | enableMultipleWriteLocations | backup storage redundancy
+lab Cosmos DB accounts: 1
+ga-ai-labv3docosmosdb | false | Local
+--- cosmos locations: name | locationName | failoverPriority | status
+ga-ai-labv3docosmosdb | Canada East | 0 | ok
+OK    flagged Cosmos DB locations: 0
+--- not read here
+Key Vault: replicates to Canada Central and it can't be stopped; it holds no personal information (the decision log, D-006)
+RESULT: all match

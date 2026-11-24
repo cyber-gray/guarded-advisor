@@ -1,0 +1,17 @@
+read_at=2026-11-05T15:21:42Z tag=s4-prep
+OK    T activated instances: 0
+OK    a. Owner at subscription and below: 1
+OK    a. UAA at subscription and below: 0
+OK    a. Owner or UAA above subscription: 0
+OK    a. Owner at subscription is G: 2d99...a273
+--- a. counts: role | scope type | zone | count
+Owner | subscription | subscription | 1
+--- a. principals, masked: role | scope type | zone | principal type | principal
+Owner | subscription | subscription | User | 2d99...a273
+--- b. root read
+b. denied (403, from the error's reason text)
+--- c. security contacts
+c. version=2023-12-01-preview contacts=1
+c. name=default | byRole state=On roles=Owner | alerts state=isEnabled=true minSeverity=High | email_set=no
+c. FLAG: roles cover Owner only and no email is set; after G15 no standing Owner receives these emails
+RESULT: a matches; read b and c above
